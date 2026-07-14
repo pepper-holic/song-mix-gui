@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PerspectiveState>
+	<PerspectiveFrameState name="ToolbarL" visible="1" detached="0" windowID="SongToolbar">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="SongToolbar" W="2560" H="49" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Song.AddInPanel" visible="1" detached="0" windowID="{4AFF7ACB-AE54-4F81-94FE-A4A71E76D708}">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="{4AFF7ACB-AE54-4F81-94FE-A4A71E76D708}" W="2560" H="70" X="0" Y="0"
+				                      flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="InfoView" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DetachedInfoView" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="WindowAreaGapHorizontal" visible="1" detached="0" windowID="WindowAreaGapHorizontal">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="WindowAreaGapHorizontal" W="2560" H="3" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="WindowAreaGapVertical" visible="1" detached="0" windowID="WindowAreaGapVertical">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="WindowAreaGapVertical" W="4" H="1172" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="OuterLeftZone" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="204" H="400" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="TrackListInspector" W="209" H="1242" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="InspectorLeftZone" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="ArrangementZone" visible="1" detached="0" windowID="Song">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="Song" W="2552" H="454" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EditorZone" visible="1" detached="0" windowID="Console">
+		<Attributes x:id="viewStates" count="4">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="433" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="Console" W="2552" H="718" X="0" Y="0" flags="0">
+					<Attributes x:id="viewState" size="0" narrow="0" notes.divider="80" icons.divider="80" big.divider="398"
+					            small.w="2172" small.h="468" big.w="2552" big.h="718"/>
+				</FrameItem::ViewState>
+				<FrameItem::ViewState windowID="ChannelInspector" W="2552" H="401" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="Editor1" W="2552" H="292" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="BrowserZone" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="Browser" W="380" H="1172" X="0" Y="0" flags="0">
+					<Attributes x:id="viewState" url="object://studioapp/LoopBrowser"/>
+				</FrameItem::ViewState>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DetachedBrowser" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AIAssistantZone" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="340" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DetachedAIAssistant" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="WindowAreaGapVertical" visible="1" detached="0" windowID="WindowAreaGapVertical">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="WindowAreaGapVertical" W="4" H="1172" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="WindowAreaGapHorizontal" visible="1" detached="0" windowID="WindowAreaGapHorizontal">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="WindowAreaGapHorizontal" W="2560" H="3" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Song.TransportPanel" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Transport" visible="1" detached="0" windowID="TransportPanel">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="TransportPanel" W="2560" H="49" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioEffect" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="91">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="62207CB6B6DF47FEB47A4A334B0DF23A" W="900" H="615" X="712" Y="280"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="BAEEED84793C42A4B15CE5B59E259495" W="900" H="615" X="712" Y="280"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="2AAD7EF280274004BBAF1657EF0930A0" W="900" H="615" X="996" Y="271"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="AA27EFCACD954FDEA24E51F599A0182E" W="900" H="615" X="712" Y="280"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="E18868A468A64F7D8CF2D9D64B4E9973" W="900" H="699" X="830" Y="305"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="B132261CAB9A4D62813D3EF657CB6986" W="900" H="699" X="830" Y="305"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="C5CCBB0F56204ED882EC18E3DBD4833C" W="900" H="699" X="830" Y="305"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="7DD122BEFA7C482CB7767F65D2B3C4AD" W="900" H="699" X="1421" Y="276"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="F31B26EA9B414AE892211E8596AD533D" W="900" H="699" X="1421" Y="276"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="4B4FA0DF0E78487BA4FDAE7B4B418269" W="900" H="699" X="1421" Y="276"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="0A3EC3BE7A764F57998AB0C4E931CE05" W="900" H="699" X="1421" Y="276"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="2BB23277D99845478BCC9E76E386A9D2" W="900" H="699" X="1421" Y="276"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="0FC5E86957AA4DAB91671A8886E65357" W="900" H="699" X="855" Y="155"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="9DA6374F1CFA4E37AFFD190498D7C743" W="900" H="699" X="68" Y="52" flags="1"/>
+				<FrameItem::ViewState windowID="368113362BB041D4A365958740D12C5C" W="900" H="699" X="712" Y="280"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="67D7675390E54162A06328A88BD08B05" W="900" H="699" X="572" Y="259"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="F2E6E0F497A242EDAD11AE1F8EA65D24" W="900" H="699" X="1421" Y="276"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="3F1906326BEE4420BC51D712C4E17284" W="900" H="700" X="1268" Y="212"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="EC3C5E1EAF2040298A936D0ABF7053DA" W="900" H="699" X="1097" Y="243"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="15A89B0EE20544B0B54BDB245377ADFA" W="900" H="699" X="968" Y="44"
+				                      flags="1"/>
+				<FrameItem::ViewState windowID="FC61E66728634638B2AB72F7631FF675" W="900" H="699" X="794" Y="232"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="FA2B480A774645D3B0DCE729B6B67069" W="900" H="699" X="1006" Y="217"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="A4F85CCD6C624145918703C58A2B71B5.o" W="820" H="492" X="830" Y="389"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="273DAF5F68304AC191F4EE2F25636592" W="431" H="722" X="821" Y="318"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="344FA457C3844DA48236411C328DBF67" W="739" H="340" X="821" Y="318"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="C283A8FFD50741D6BD2FEF85D23A78E0" W="1305" H="708" X="771" Y="198"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="601E7DEE3B184B9C857ABFA02F91A0E1" W="614" H="381" X="771" Y="198"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="62AA2AFFA53840C48330D7A55EC2F8F8" W="431" H="722" X="771" Y="198"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="2EFD1A9A129E44669087C4A21C0EC9ED" W="739" H="340" X="1705" Y="218"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="1CF6DD4017C24ED29ECBCC174D9F30BC" W="614" H="381" X="771" Y="198"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="0E13257C1A2C47B88EFFA99F84C8F6F3" W="739" H="340" X="821" Y="318"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="960EA93A322B49B79F6386FC4B1C9C30" W="739" H="340" X="1268" Y="212"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="50BDC8C29E62409D91ACB05B00738E55" W="739" H="340" X="821" Y="318"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="D35EC5E813F8497D89B249BAB1615674" W="431" H="722" X="1097" Y="243"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="13E82F2FB2314D51AB158304F765159C" W="739" H="340" X="74" Y="579"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="980A935C5C0146C4832A3FC30B5D4021" W="614" H="381" X="1097" Y="243"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="68AE2EA340DD446BA1D6F514229CBB97" W="739" H="340" X="1097" Y="243"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="63CE977190AC4F64998AA7C4835BB161" W="298" H="648" X="1097" Y="243"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="E0D6F23A2904407BA3E715F6055C84DD" W="1140" H="774" X="487" Y="229"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="AF1031100CE64D19BDD9716260DBDBDF" W="739" H="340" X="1006" Y="217"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="6BE9CD6EB25F49B98C2EB14494489F9F" W="739" H="340" X="1006" Y="217"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="6179AD9145E74964B38F93622E3145EF" W="545" H="234" X="1006" Y="217"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="C887670C34D0481F8E4640D87E1ABA5D" W="298" H="648" X="1097" Y="243"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="BE262577312D4FA18D01F94B140559F9" W="900" H="700" X="827" Y="385"
+				                      flags="1"/>
+				<FrameItem::ViewState windowID="B30EB9C6ACC049FA970B84988C90965F.o" W="820" H="492" X="523" Y="719"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="95DAEEA0563246C38D3361EA2336D135" W="900" H="699" X="518" Y="383"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="464C26B947924C73A4EF5EDD0939381B" W="900" H="699" X="844" Y="345"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="A07EC967801D4879A4FF5E1F5EE2040F" W="777" H="510" X="766" Y="176"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="5CECB97D938D4F74A5BF8F0DCAD322D5" W="840" H="688" X="801" Y="230"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="34335D02666A4918BDC69C75F48D84A8" W="777" H="510" X="996" Y="271"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="418AFE4DB242496883D916C62997A7F3" W="777" H="510" X="1447" Y="224"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="19EE0B040D5C4C7393AD2BF414420B65" W="777" H="510" X="794" Y="232"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="B12B037D283C4E379A244E4ED824A698" W="900" H="699" X="709" Y="198"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="B253B8CFBC72454E8213E14D69D847AA" W="945" H="724" X="712" Y="280"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="F70EA17592084947995138AAA21EC897" W="945" H="724" X="1346" Y="486"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="3241061B22824006BF4927CCB9487FFC" W="1305" H="708" X="818" Y="206"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="7A6C1AB2DC564EA88C2E26843158D8F2" W="739" H="340" X="818" Y="206"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="6D26E73E50924C8BAF35197B2A958E68" W="739" H="340" X="794" Y="232"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="7D18AEAB034E49C6A0741562A7E8F33A" W="900" H="615" X="818" Y="206"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="7AEF0C5EEB344154A665BA83580E883D.o" W="820" H="492" X="572" Y="259"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="28817EC8201F494BB58AAB8FBDBDEEC9" W="453" H="779" X="1920" Y="194"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="D7AA5F6EBFA04B3597D1603A7CA0DDC5" W="900" H="654" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="FF97CBAC1F3843379588B713CE83CB9F" W="1305" H="498" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="A8F9EC30C47443B38D19DC5084AA3604" W="1305" H="498" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="046CF688DAAB4405ACFA0A818E428A0D.o" W="820" H="492" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="842E0DC5C44540CF8FDB5850F7CF19EE" W="545" H="234" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="12A5DDD81833480B833AB51370B7DB38" W="850" H="674" X="1528" Y="240"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="D63A279CD02148BB82333C770FD283EC" W="1305" H="708" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="88BC6F0EA7A64A638A9F55E2705006A0" W="531" H="252" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="1085819F600A4BDAA88546A969A22469" W="945" H="724" X="1399" Y="692"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="34C93448823E41E49EFD4F50666F66F2" W="453" H="779" X="1259" Y="122"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="A457A78FA0294E76AD88433F2F825AFD" W="900" H="654" X="688" Y="356"
+				                      flags="1"/>
+				<FrameItem::ViewState windowID="ABE43BC2BB2D4E0C87A9968F1ECE4991" W="935" H="491" X="349" Y="717"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="74C07480283048AAB9865C502849864D" W="850" H="442" X="518" Y="759"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="04046E53B9D6421897054528903FDC39" W="1305" H="498" X="628" Y="447"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="B850B5FAA12D45F29999CBE1B6F45DA7" W="900" H="701" X="712" Y="280"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="D03ED24A698D44578BCBB203D20F888E" W="808" H="345" X="1612" Y="128"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="1A082A8EF03C4579A4E3095C2EAA078E.o" W="820" H="492" X="1612" Y="128"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="49B7A2D691E242F8AF6C7E9696B11537" W="1815" H="860" X="376" Y="348"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="9DC369B207A44A79B42D3755B524E901" W="1024" H="787" X="376" Y="348"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="9BCA7E0D25B744F290D8B96410DF7F56" W="1130" H="544" X="376" Y="348"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="17CB2E2C1F004912B627FAB36A0ACBEC" W="1815" H="860" X="376" Y="348"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="A38C88D1A7E34CC4B4E4F3F812AEA60E" W="1815" H="860" X="376" Y="348"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="7403D58D10704FAABDC0A40F1756B03E" W="1305" H="708" X="69" Y="536"
+				                      flags="1"/>
+				<FrameItem::ViewState windowID="1289D5B72B0740C8870E68A9FE93CC8D" W="453" H="779" X="628" Y="447"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="9993FC3CEAC34E4396E48B5FB9E369EB" W="545" H="234" X="628" Y="447"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="9256CF1434E14F12B1F6CBA7B90DB652" W="1305" H="498" X="628" Y="447"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="6C7B887221F34745AF847A0462C9F793.o" W="820" H="492" X="628" Y="447"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="51570C04E8F848A99172CB4984BCDE24" W="900" H="700" X="1268" Y="212"
+				                      flags="0"/>
+				<FrameItem::ViewState windowID="A10E7D5A01724833990ECDFE9E698102" W="900" H="703" X="518" Y="383"
+				                      flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicEffect" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioSynth" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioPanner" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="SpatialAudio" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DeviceEditor" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="CombinatorItems" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Popups" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Song.Popups" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Document.Popups" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Chord.Popups" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Lyrics.Popups" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="VideoPlayer" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DetachedMixer" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="Console" W="0" H="0" X="0" Y="0" flags="0">
+					<Attributes x:id="viewState" size="0"/>
+				</FrameItem::ViewState>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DetachedChannelInspector" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="DetachedEditor" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="SongTracks" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="UpperTrackList" visible="1" detached="0" windowID="UpperTrackList">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="UpperTrackList" W="2542" H="31" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="SignatureEditor" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="TempoEditor" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="TrackList" visible="1" detached="0" windowID="TrackList">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="TrackList" W="2542" H="381" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="ScratchPadOrLauncher" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="500" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="Launcher" W="500" H="336" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedArrangementOverview" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="ArrangementOverview" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedTrackListContent" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EditScenesManager" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EditGroupManager" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="TrackListEmbeddedInspector" visible="0" detached="0" windowID="TrackListEmbeddedInspector">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="TrackListEmbeddedInspector" W="200" H="1200" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedInspectorContent" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedInspector" visible="0" detached="0" windowID="EmbeddedInspector">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="EmbeddedInspector" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="InspectorEventDetails" visible="0" detached="0" windowID="InspectorEventDetails">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="InspectorEventDetails" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="InspectorChannelFader" visible="0" detached="0" windowID="InspectorChannelFader">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="InspectorChannelFader" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedGlobalInspectorContent" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedInspector" visible="0" detached="0" windowID="EmbeddedInspector">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="EmbeddedInspector" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="InspectorGlobalEventDetails" visible="0" detached="0" windowID="InspectorGlobalEventDetails">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="InspectorGlobalEventDetails" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedLauncherPlaylist" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="LauncherPlaylist" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="LauncherPlaylist" W="200" H="378" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedDeviceEditorFrame" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedDeviceEditor" visible="0" detached="0" windowID="NoEmbeddedDeviceEditor">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="NoEmbeddedDeviceEditor" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioEditorAddInPanel" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioEditor.AddInPanel" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioChordsLane" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioEditor.ChordsLane" visible="0" detached="0" windowID="AudioChordsLane">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="AudioChordsLane" W="2292" H="28" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicEditorAddInPanel" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicEditor.AddInPanel" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicEditor.InplacePanel" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedChannelSelectorContent" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MixGroupManager1" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="EmbeddedChannelSelector" visible="0" detached="0" windowID="EmbeddedChannelSelector">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="EmbeddedChannelSelector" W="198" H="819" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MixerPanels" visible="1" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="0"/>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="ChannelSelectorZone" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="ChannelSelector" W="198" H="819" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MixScenesManager" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="MixScenesManager" W="198" H="819" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="SynthRack" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="SynthRack" W="178" H="675" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicDeviceRack" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="InputContainer" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="InputContainer" W="262" H="819" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="ChannelContainer" visible="1" detached="0" windowID="ChannelContainer">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="ChannelContainer" W="2399" H="708" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="OutputContainer" visible="0" detached="0" windowID="">
+		<Attributes x:id="viewStates" count="2">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+				<FrameItem::ViewState windowID="OutputContainer" W="2" H="819" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Song.DetachedAddInPanel" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Song.DetachedAddInPanelEx" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioEditor.DetachedMacroPanel" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicEditor.DetachedMacroPanel" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="Song.DetachedQuantizePanel" visible="0" detached="0" windowID="" Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="AudioEditor.DetachedQuantizePanel" visible="0" detached="0" windowID=""
+	                       Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<PerspectiveFrameState name="MusicEditor.DetachedQuantizePanel" visible="0" detached="0" windowID=""
+	                       Z="0">
+		<Attributes x:id="viewStates" count="1">
+			<List x:id="items">
+				<FrameItem::ViewState windowID="" W="0" H="0" X="0" Y="0" flags="0"/>
+			</List>
+		</Attributes>
+	</PerspectiveFrameState>
+	<Attributes x:id="layout" version="1">
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends0A38CC4FCFED4B818D2F746F10BB5915">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends0D1FBA1EC8E145D29C32B96132634120">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends1357DA61A6CE46ADB6523F99ABC4AD1D">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends233A6A9F74C940FBA963DDCE1EF10C12">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends2E8F63DD4AFB4960A66A967EA8BDFC7A">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends2F711B67C0394C5691D0D7B7BA45FF21">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends3335ECD45358443C87B5FC64563FC0EB">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends5496AF910BE5402C914F663C21E37C8C">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends5A618BED11214B57BDCB01C578BC466A">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends7249DE44E4B14BC88228C4F5423E99FC">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends791DA8DE43B444F6A54CE37040E30A58">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends7AEF0C5EEB344154A665BA83580E883D">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends95A18FF110A74EFBAB95EB2E8E0D2672">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends9DB57DD68C2A40B88F8DE990A14431D4">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSends9F3D103ADB254F36A270E810C3AE5D47">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsA4F85CCD6C624145918703C58A2B71B5">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsA67F73BBD3404957B2C8B08C4D8CE90A">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsA75B03A159514D0681EF56E2143FB17D">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsAB01A55DCD1D4B9888EE683ACDDD0352">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsB694C1C869834EFBA566D64823E368EE">
+			<Attributes i0="Form AudioFxInsertsStack" x0="85" y0="319" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsC50694B10EED4F5388FBF97328ADC50F">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="ChannelContainer47ChannelContainer47RemoteInsertsSendsDA135823E87E4D049FE3D8C4E12FA785">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="85" y0="281" i1="Divider ://Workspace/hostapp/~/CustomParams/MixerFxRack.divider"
+			            x1="85" y1="6" i2="Form AudioSendsCueMixEmbedded" x2="85" y2="44"/>
+		</Section>
+		<Section path="Console47EditorZone47PrePostInserts0B817B300B67449CA8D49C39E1F5185D">
+			<Attributes i0="Form AudioBusFxInsertsStack" x0="81" y0="184" i1="Divider ://Workspace/hostapp/~/DividerGroups/outputRack"
+			            x1="81" y1="6" i2="Form PostFaderInserts" x2="81" y2="90"/>
+		</Section>
+		<Section path="EmbeddedChannelSelector47EmbeddedChannelSelector47ChannelListInspector">
+			<Attributes h="0" v="0"/>
+		</Section>
+		<Section path="EmbeddedChannelSelector47EmbeddedChannelSelector47ChannelListInspector.HeaderView">
+			<Attributes columnOrder="number;level;visible;icon;color;title;group;"/>
+		</Section>
+		<Section path="Launcher47ScratchPadOrLauncher47CellsScrollView">
+			<Attributes h="0" v="0"/>
+		</Section>
+		<Section path="Song47ArrangementZone47ScenesScrollView">
+			<Attributes h="0" v="0"/>
+		</Section>
+		<Section path="Song47ArrangementZone47TrackScroller">
+			<Attributes i0="Form TrackControlsButtonsHeader" x0="255" y0="32" i1="VariantView ://WindowManager/Launcher"
+			            x1="2284" y1="32" i2="Divider ://Workspace/studioapp/~/ScratchPadLauncherDivider/divider"
+			            x2="0" y2="32" i3="VariantView ://WindowManager/Launcher" x3="3" y3="32"/>
+		</Section>
+		<Section path="TrackList47TrackList47TrackListScrollView">
+			<Attributes h="0" v="0"/>
+		</Section>
+		<Section path="TrackList47TrackList47TrackScroller">
+			<Attributes i0="ImageView" x0="255" y0="17" i1="Form TimeScrollBar+Zoom" x1="2287" y1="17" i2="VariantView ../LauncherGui/separateFocusSelector"
+			            x2="0" y2="523"/>
+		</Section>
+		<Section path="TrackListEmbeddedInspector47TrackListEmbeddedInspector47TrackListInspector">
+			<Attributes h="0" v="0"/>
+		</Section>
+		<Section path="TrackListEmbeddedInspector47TrackListEmbeddedInspector47TrackListInspector.HeaderView">
+			<Attributes columnOrder="number;level;visible;icon;color;title;group;" title.width="164"/>
+		</Section>
+	</Attributes>
+	<Attributes x:id="params" MixerFaderStandard_divider="398" MixerNotes_divider="80" MixerIcons_divider="80"
+	            MixerFxRack_divider="50" MixerFxRackWide_divider="50" MixerFxRackInspector_divider="300"
+	            CueMixerFxRack_divider="300" CueMixerFxRackWide_divider="300" CueMixerFxRackInspector_divider="300"
+	            CueMixerFxRackChannelInspector_divider="160" SongPopupNotes_divider="170" SynthRacks_divider="180"
+	            transportAlign="1" performanceMonitor_showDetails="0" performanceMonitor_showDevices="0"
+	            musicpatterneditor_showVariations="0" scoreeditor_inspectorTab="0" soundvariations_editSymbols="0"
+	            ChannelInspectorMeters="0" chordselector_guitartabs="0" ShowPluginDetails="0"/>
+</PerspectiveState>

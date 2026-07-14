@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<NotepadData>
+	<NotepadItem id="{BE06072A-9254-414A-A16C-7C3D51EAAA09}" title="입력 L+R" text=""/>
+	<NotepadItem id="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}" title="입력 L" text=""/>
+	<NotepadItem id="{521E0F46-541D-4ADD-81DB-01E49C5A93F8}" title="입력 R" text=""/>
+	<NotepadItem id="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}" title="메인" text=""/>
+	<NotepadItem id="{5496AF91-0BE5-402C-914F-663C21E37C8C}" title="K.BUS" text=""/>
+	<NotepadItem id="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}" title="T.BUS" text=""/>
+	<NotepadItem id="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}" title="CYM.BUS" text=""/>
+	<NotepadItem id="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}" title="DR.B" text=""/>
+	<NotepadItem id="{C50694B1-0EED-4F53-88FB-F97328ADC50F}" title="GT.B" text=""/>
+	<NotepadItem id="{7249DE44-E4B1-4BC8-8228-C4F5423E99FC}" title="BASS.B" text=""/>
+	<NotepadItem id="{CB2FF5C4-6662-4F15-A2B5-B63B5DDE0CFA}" title="DR Parallel" text=""/>
+	<NotepadItem id="{6C7B8872-21F3-4745-AF84-7A0462C9F793}" title="FX 1" text=""/>
+	<NotepadItem id="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" title="kick out" text=""/>
+	<NotepadItem id="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" title="kick" text=""/>
+	<NotepadItem id="{093B3001-9933-4836-A52C-B7B1C201ED22}" title="SN B" text=""/>
+	<NotepadItem id="{451EEB2B-459B-4321-BC16-9250B01EB385}" title="SN T" text=""/>
+	<NotepadItem id="{A2B21718-2D3A-4F44-A99F-403550BA713A}" title="SN T 2" text=""/>
+	<NotepadItem id="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" title="SN T 3" text=""/>
+	<NotepadItem id="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" title="TOM M" text=""/>
+	<NotepadItem id="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" title="TOM F" text=""/>
+	<NotepadItem id="{1979FC64-0172-4C17-A838-6C287C38333F}" title="TOM S" text=""/>
+	<NotepadItem id="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" title="RIDE" text=""/>
+	<NotepadItem id="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" title="HI HAT" text=""/>
+	<NotepadItem id="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" title="OVER L" text=""/>
+	<NotepadItem id="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" title="OVER R" text=""/>
+	<NotepadItem id="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" title="guitar" text=""/>
+	<NotepadItem id="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" title="guitar dud" text=""/>
+	<NotepadItem id="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" title="bass" text=""/>
+	<NotepadItem id="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" title="bass 2" text=""/>
+	<NotepadItem id="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" title="vox" text=""/>
+	<NotepadItem id="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" title="The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)"
+	             text=""/>
+	<NotepadItem id="{9E216095-0354-420F-A52D-9801EA3592DD}" title="S.BUS" text=""/>
+	<NotepadItem id="{45A6A67A-01F7-4856-B2A8-4DD55C3940FD}" title="MIXOUT" text=""/>
+</NotepadData>

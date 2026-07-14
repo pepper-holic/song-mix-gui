@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AudioIOManager previewChannel="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}">
+	<List x:id="deviceList">
+		<AudioIOAssignment deviceID="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}" deviceName="SSL" machineID="YHK_DESKTOP"
+		                   deviceType="ASIO" inputCount="4" outputCount="4">
+			<Attributes x:id="inputs">
+				<PortAssignment name="{BE06072A-9254-414A-A16C-7C3D51EAAA09}">
+					<Association key="L" value="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}/AudioOutput00"/>
+					<Association key="R" value="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}/AudioOutput01"/>
+				</PortAssignment>
+				<PortAssignment name="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}">
+					<Association key="M" value="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}/AudioOutput00"/>
+				</PortAssignment>
+				<PortAssignment name="{521E0F46-541D-4ADD-81DB-01E49C5A93F8}">
+					<Association key="M" value="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}/AudioOutput01"/>
+				</PortAssignment>
+			</Attributes>
+			<Attributes x:id="outputs">
+				<PortAssignment name="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}">
+					<Association key="L" value="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}/AudioInput00"/>
+					<Association key="R" value="{C0E4A803-D72F-4B6E-89B1-903E90F1F71B}/AudioInput01"/>
+				</PortAssignment>
+			</Attributes>
+		</AudioIOAssignment>
+	</List>
+</AudioIOManager>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaInformation>
+	<Attribute id="Media:Artwork" value="artwork.png"/>
+	<Attribute id="Document:Notes" value="notes.txt"/>
+	<Attribute id="Media:Artist" value="Hokang Yu"/>
+	<Attribute id="Media:ArtistPage" value=""/>
+	<Attribute id="Media:Genre" value=""/>
+	<Attribute id="Media:Year" value="2026"/>
+	<Attribute id="Document:MimeType" value="application/x.presonus-song"/>
+	<Attribute id="Document:FormatVersion" value="9"/>
+	<Attribute id="Document:Title" value="naiite_14"/>
+	<Attribute id="Document:Creator" value="yhkze"/>
+	<Attribute id="Document:Generator" value="Studio Pro/8.1.0.112630"/>
+	<Attribute id="Media:SampleRate" value="48000"/>
+	<Attribute id="Media:FrameType" value="1"/>
+	<Attribute id="Media:Tempo" value="160"/>
+	<Attribute id="Media:TimeSignatureNumerator" value="4"/>
+	<Attribute id="Media:TimeSignatureDenominator" value="4"/>
+	<Attribute id="Media:KeySignature" value="-"/>
+	<Attribute id="Media:TrackCount" value="19"/>
+	<Attribute id="Media:Length" value="31.96875"/>
+	<Attribute id="Media:BitDepth" value="24"/>
+	<Attribute id="Media:TimeFormat" value="2"/>
+	<Attribute id="Document:Description" value="MIX_FIXED"/>
+</MetaInformation>

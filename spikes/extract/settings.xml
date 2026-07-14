@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings name="Settings" version="1">
+	<Section path="SongRenderer">
+		<Attributes markerIndex="0" outputList="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}" fileName="naiite_14_w_vox">
+			<Url x:id="mixdown" type="2" url="file:///C:/Users/yhkze/Documents/Studio Pro/Songs/NAIITE_EP/naiite_14/Mixdown/"/>
+		</Attributes>
+	</Section>
+	<Section path="SongVideoRenderer">
+		<Attributes/>
+	</Section>
+	<Section path="SoundVariations">
+		<Attributes version="1"/>
+	</Section>
+	<Section path="SpatialAudioExporter">
+		<Attributes/>
+	</Section>
+	<Section path="StemRenderer">
+		<Attributes/>
+	</Section>
+</Settings>

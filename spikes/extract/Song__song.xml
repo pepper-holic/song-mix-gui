@@ -1,0 +1,1163 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Song popup="0" copyrighted="0" masterWithEffects="1">
+	<Attributes x:id="Root" defaultTimeFormat="2" stretch="0" envelopeVisibility="2" timeFormat="0" length="300">
+		<Attributes x:id="timeContext" sampleRate="48000" frameType="1" frameOffset="0" timeOffset="0" barOffset="0">
+			<TempoMap x:id="tempoMap">
+				<Attributes x:id="envelope">
+					<EnvelopePoint value="0.38461538461538463673505816586839500814676284790039"/>
+				</Attributes>
+				<TempoMapSegment curveType="0" start="0" end="1.7976931348623156386368421785227527018228425601508e+200"
+				                 tempo="0.375"/>
+			</TempoMap>
+			<TimeSignatureMap x:id="timeSignatureMap">
+				<TimeSignatureMapSegment start="0" numerator="4" denominator="4" type="0"/>
+			</TimeSignatureMap>
+			<KeySignatureMap x:id="keySignatureMap">
+				<Attributes root="0" scale="" start="0" anchor="1"/>
+			</KeySignatureMap>
+			<TimeZoneMap x:id="timeZoneMap">
+				<TimeZone start="0" end="1172.161814058956906592356972396373748779296875" name=""/>
+			</TimeZoneMap>
+		</Attributes>
+		<List x:id="Tracks">
+			<MarkerTrack version="1" trackID="{0259DEDA-1275-49DA-BAA0-D0CD55892DFB}" timeFormat="2">
+				<Attributes x:id="attributes" height="28"/>
+				<MarkerEvent markerStop="0" markerType="2" timeFormat="2" name="스타트"/>
+				<MarkerEvent markerStop="0" markerType="3" start="85.25" timeFormat="2" name="엔드"/>
+				<MarkerEvent markerStop="0" markerType="0" start="48.25" timeFormat="2" name="Volume Auto"/>
+			</MarkerTrack>
+			<ChordTrack version="1" timeFormat="2" color="FFAB641A" followEnabled="1" trackPlaybackEnabled="0"
+			            chordAuditionEnabled="1" playbackOctave="5" playbackVelocity="0.800000011920928955078125"
+			            chordDisplayMode="1" chordDisplayStyle="1">
+				<Attributes x:id="attributes" hidden="1"/>
+				<UID x:id="channelID" uid="{13E8CDBE-02D3-4C24-AD48-CBD5C6A6335A}"/>
+			</ChordTrack>
+			<ArrangerTrack version="1" timeFormat="2" color="FFCB7300">
+				<Attributes x:id="attributes" hidden="1"/>
+			</ArrangerTrack>
+			<LyricsTrack version="1" trackID="{F3D454D6-931D-4B65-B13D-63FF63CAA371}" timeFormat="2">
+				<Attributes x:id="attributes" hidden="1"/>
+				<Attributes x:id="lyrics">
+					<LyricsEvent start="89.3588244566954159608940244652330875396728515625" iid="1" text="hy450max"/>
+				</Attributes>
+			</LyricsTrack>
+			<VideoTrack version="1" timeFormat="0" name="비디오" color="FFB89246">
+				<Attributes x:id="attributes" hidden="1"/>
+			</VideoTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="1" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}"
+			            timeFormat="2" name="kick out" color="FFFF2A94">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{A4F85CCD-6C62-4145-9187-03C58A2B71B5}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{A4F85CCD-6C62-4145-9187-03C58A2B71B5}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/kick out/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{A4F85CCD-6C62-4145-9187-03C58A2B71B5}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/kick out/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{748F275E-7028-4A9F-9088-46DC17B234E4}" timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="kick out" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="2" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}"
+			            timeFormat="2" name="kick" color="FFFF2A47">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{95A18FF1-10A7-4EFB-AB95-EB2E8E0D2672}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{95A18FF1-10A7-4EFB-AB95-EB2E8E0D2672}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/kick/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{95A18FF1-10A7-4EFB-AB95-EB2E8E0D2672}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/kick/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{56BEF854-D05F-4630-A63A-5CDCD0827FAA}" start="0.0037684099155891694933606661521707792417146265506744"
+					            timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="kick" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="3" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{093B3001-9933-4836-A52C-B7B1C201ED22}"
+			            timeFormat="2" name="SN B" color="FFFF2A94">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{B694C1C8-6983-4EFB-A566-D64823E368EE}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{B694C1C8-6983-4EFB-A566-D64823E368EE}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN B/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{B694C1C8-6983-4EFB-A566-D64823E368EE}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN B/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{C514AA0F-4681-49AF-9F89-3D73F4A9A637}" timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="SN B" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="4" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{451EEB2B-459B-4321-BC16-9250B01EB385}"
+			            timeFormat="2" name="SN T" color="FF54FC1D">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{A67F73BB-D340-4957-B2C8-B08C4D8CE90A}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{A67F73BB-D340-4957-B2C8-B08C4D8CE90A}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN T/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{A67F73BB-D340-4957-B2C8-B08C4D8CE90A}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN T/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="44.75" timeFormat="0" length="0.84375"
+					            offset="16.78125" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="40.75" timeFormat="0" length="1.198492147953988506969835725612938404083251953125"
+					            offset="15.28125" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="35.68692647928600791829012450762093067169189453125"
+					            timeFormat="0" length="0.850257575606864435258103185333311557769775390625"
+					            offset="13.382597429732253857537216390483081340789794921875" name="SN T"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="30.75" timeFormat="0" length="1.563284538434384529637100058607757091522216796875"
+					            offset="11.53125" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="22.25" timeFormat="0" length="2.785524544356494658359224558807909488677978515625"
+					            offset="8.34375" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="13.5" timeFormat="0" length="3"
+					            offset="5.0625" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="5" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{A2B21718-2D3A-4F44-A99F-403550BA713A}"
+			            timeFormat="2" name="SN T 2" color="FF54FC1D">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{43A81524-DD6A-4DAE-B91B-A20CE263C516}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{43A81524-DD6A-4DAE-B91B-A20CE263C516}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN T 2/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{43A81524-DD6A-4DAE-B91B-A20CE263C516}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN T 2/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="48.25" timeFormat="0" length="11.34375"
+					            offset="18.09375" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" timeFormat="0" length="4.6875" name="SN T"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="6" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}"
+			            timeFormat="2" name="SN T 3" color="FF54FC1D">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{1C6B7BFF-B6FE-4364-B64E-861B79E26A3B}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{1C6B7BFF-B6FE-4364-B64E-861B79E26A3B}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN T 3/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{1C6B7BFF-B6FE-4364-B64E-861B79E26A3B}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/SN T 3/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="78.5" timeFormat="0" length="2.56252267573696457247933722101151943206787109375"
+					            offset="29.4375" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="37.95428001423764641231173300184309482574462890625"
+					            timeFormat="0" length="0.4858949946608817072046804241836071014404296875"
+					            offset="14.2328550053391182927953195758163928985595703125" name="SN T"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="43.945979061210636018586228601634502410888671875"
+					            timeFormat="0" length="0.301507852046011493030164274387061595916748046875"
+					            offset="16.479742147953988506969835725612938404083251953125" name="SN T"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="34.918758769158358745698933489620685577392578125"
+					            timeFormat="0" length="0.288062891297869327900116331875324249267578125"
+					            offset="13.094534538434384529637100058607757091522216796875" name="SN T"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="12.5" timeFormat="0" length="0.375"
+					            offset="4.6875" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="21.5" timeFormat="0" length="0.28125"
+					            offset="8.0625" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="29.678065451617317904720039223320782184600830078125"
+					            timeFormat="0" length="0.401975455643505341640775441192090511322021484375"
+					            offset="11.129274544356494658359224558807909488677978515625" name="SN T"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="39.25" timeFormat="0" length="0.5625"
+					            offset="14.71875" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+					<AudioEvent clipID="{FAED8CD2-4CF7-442C-A6B1-0E48557FFB39}" start="47" timeFormat="0" length="0.46875"
+					            offset="17.625" name="SN T" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="7" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{FD50328E-198C-47A6-83FC-E31DDFE5147B}"
+			            timeFormat="2" name="TOM M" color="FF2AFF94">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{0D1FBA1E-C8E1-45D2-9C32-B96132634120}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{0D1FBA1E-C8E1-45D2-9C32-B96132634120}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/TOM M/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{0D1FBA1E-C8E1-45D2-9C32-B96132634120}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/TOM M/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="8" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}"
+			            timeFormat="2" name="TOM F" color="FF2AFC38">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{9DB57DD6-8C2A-40B8-8F8D-E990A14431D4}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{9DB57DD6-8C2A-40B8-8F8D-E990A14431D4}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/TOM F/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{9DB57DD6-8C2A-40B8-8F8D-E990A14431D4}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/TOM F/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{7B1D8879-1035-47EB-8FB1-D6D983F96C1E}" start="71.0318972033257836073971702717244625091552734375"
+					            timeFormat="0" length="0.650385487528343020358079229481518268585205078125"
+					            offset="26.63696145124716707641709945164620876312255859375" name="TOM F"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{7B1D8879-1035-47EB-8FB1-D6D983F96C1E}" start="63.58935752078608771853396319784224033355712890625"
+					            timeFormat="0" length="0.61165532879818584888198529370129108428955078125"
+					            offset="23.8460090702947837826286558993160724639892578125" name="TOM F"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{7B1D8879-1035-47EB-8FB1-D6D983F96C1E}" start="56.04716553287982350184392998926341533660888671875"
+					            timeFormat="0" length="0.617414965986395003483266918919980525970458984375"
+					            offset="21.017687074829932925013054045848548412322998046875" name="TOM F"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{7B1D8879-1035-47EB-8FB1-D6D983F96C1E}" start="48.238911564625851724485983140766620635986328125"
+					            timeFormat="0" length="0.756938775510203498697592294774949550628662109375"
+					            offset="18.089591836734694396682243677787482738494873046875" name="TOM F"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="9" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{1979FC64-0172-4C17-A838-6C287C38333F}"
+			            timeFormat="2" name="TOM S" color="FF2AFFE5">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{5A618BED-1121-4B57-BDCB-01C578BC466A}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{5A618BED-1121-4B57-BDCB-01C578BC466A}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/TOM S/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{5A618BED-1121-4B57-BDCB-01C578BC466A}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/TOM S/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="78.2564474678760433334900881163775920867919921875"
+					            timeFormat="0" length="0.601473922902496127562699257396161556243896484375"
+					            offset="29.346167800453514473701943643391132354736328125" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="70.846984126984125396120361983776092529296875"
+					            timeFormat="0" length="0.5871882086167801162446266971528530120849609375"
+					            offset="26.567619047619047023545135743916034698486328125" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="63.37070294784580681834995630197227001190185546875"
+					            timeFormat="0" length="0.60242630385487672128874692134559154510498046875"
+					            offset="23.764013605442176668702813913114368915557861328125" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="55.68610733182162420007443870417773723602294921875"
+					            timeFormat="0" length="0.626916099773239920978085137903690338134765625"
+					            offset="20.882290249433108186849494813941419124603271484375" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="47.49073318216175465522610465995967388153076171875"
+					            timeFormat="0" length="0.785102040816326507410849444568157196044921875"
+					            offset="17.809024943310657107531369547359645366668701171875" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="38.43930461073318127773745800368487834930419921875"
+					            timeFormat="0" length="0.8652834467120182893040691851638257503509521484375"
+					            offset="14.414739229024943867329966451507061719894409179688" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="30.187271352985636241328393225558102130889892578125"
+					            timeFormat="0" length="0.7244897959183678182171206572093069553375244140625"
+					            offset="11.320226757369614034587357309646904468536376953125" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+					<AudioEvent clipID="{3956EA8A-2B54-4D96-B964-484C3DF618C5}" start="11.944610733182161155241374217439442873001098632812"
+					            timeFormat="0" length="0.6759863945578228339172710548155009746551513671875"
+					            offset="4.4792290249433106552601202565710991621017456054688" name="TOM S"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1000000000000000055511151231257827021181583404541"
+						            fadeOut.length="0.1000000000000000055511151231257827021181583404541"/>
+					</AudioEvent>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="10" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}"
+			            timeFormat="2" name="RIDE" color="FFFFF33A">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{791DA8DE-43B4-44F6-A54C-E37040E30A58}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{791DA8DE-43B4-44F6-A54C-E37040E30A58}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/RIDE/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{791DA8DE-43B4-44F6-A54C-E37040E30A58}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/RIDE/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{73DB3176-B048-4216-A22C-7CF988870355}" timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="RIDE" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="11" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}"
+			            timeFormat="2" name="HI HAT" color="FFFF2AE2">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{2E8F63DD-4AFB-4960-A66A-967EA8BDFC7A}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{2E8F63DD-4AFB-4960-A66A-967EA8BDFC7A}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/HI HAT/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{2E8F63DD-4AFB-4960-A66A-967EA8BDFC7A}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/HI HAT/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{FC63957C-FDA1-47C6-BAEB-ECC5F558DB70}" timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="HI HAT" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="12" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{C8BA2D03-7166-4F14-AA14-285782DFDE72}"
+			            timeFormat="2" name="OVER L" color="FFFF5E2A">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{0A38CC4F-CFED-4B81-8D2F-746F10BB5915}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{0A38CC4F-CFED-4B81-8D2F-746F10BB5915}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/OVER L/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{0A38CC4F-CFED-4B81-8D2F-746F10BB5915}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/OVER L/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{658F25C2-7D49-40DB-A5A7-7F0A1C233331}" timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="OVER L" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="13" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}"
+			            timeFormat="2" name="OVER R" color="FFFFAD2A">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{2F711B67-C039-4C56-91D0-D7B7BA45FF21}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{2F711B67-C039-4C56-91D0-D7B7BA45FF21}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/OVER R/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{2F711B67-C039-4C56-91D0-D7B7BA45FF21}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/OVER R/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{0A1D5A0C-5525-4B91-8F96-B62CC7CAC523}" timeFormat="0" length="32.00002267573696457247933722101151943206787109375"
+					            name="OVER R" speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="14" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}"
+			            timeFormat="2" name="guitar" color="FFCA2AFF">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{AB01A55D-CD1D-4B98-88EE-683ACDDD0352}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{AB01A55D-CD1D-4B98-88EE-683ACDDD0352}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/guitar/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{AB01A55D-CD1D-4B98-88EE-683ACDDD0352}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/guitar/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{3A5E2896-EEC1-4C0E-9480-9F025797DB1C}" start="5.25" timeFormat="0" length="30.03127267573696457247933722101151943206787109375"
+					            offset="1.96875" name="guitar" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="15" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{3669876D-DC84-4087-B6B6-4E50B27D99A0}"
+			            timeFormat="2" name="guitar dud" color="FF722AFF">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{1357DA61-A6CE-46AD-B652-3F99ABC4AD1D}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{1357DA61-A6CE-46AD-B652-3F99ABC4AD1D}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/guitar dud/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{1357DA61-A6CE-46AD-B652-3F99ABC4AD1D}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/guitar dud/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{72A4822D-9537-4353-89E0-6E5D838EA923}" start="5.25" timeFormat="0" length="30.03127267573696457247933722101151943206787109375"
+					            offset="1.96875" name="guitar dud" speed="1" transpose="0" tune="0"
+					            normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="16" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}"
+			            timeFormat="2" name="bass" color="FF2A2AFF">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{A75B03A1-5951-4D06-81EF-56E2143FB17D}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{A75B03A1-5951-4D06-81EF-56E2143FB17D}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/bass/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{A75B03A1-5951-4D06-81EF-56E2143FB17D}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/bass/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{33D0A73F-B209-4F40-AD7D-A6EBCB820D9C}" start="5.25" timeFormat="0" length="30.03127267573696457247933722101151943206787109375"
+					            offset="1.96875" name="bass" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="17" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}"
+			            timeFormat="2" name="bass 2" color="FF2A2AFF">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{3335ECD4-5358-443C-87B5-FC64563FC0EB}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{3335ECD4-5358-443C-87B5-FC64563FC0EB}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/bass 2/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{3335ECD4-5358-443C-87B5-FC64563FC0EB}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/bass 2/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{33D0A73F-B209-4F40-AD7D-A6EBCB820D9C}" start="5.25" timeFormat="0" length="30.03127267573696457247933722101151943206787109375"
+					            offset="1.96875" name="bass" speed="1" transpose="0" tune="0" normalize="0"
+					            modification="0"/>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="18" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{9F2735F0-5586-4744-9F36-35E7E800F0E5}"
+			            timeFormat="2" name="vox" color="FFFFF33A">
+				<SpeakerSetup x:id="trackFormat" type="Mono"/>
+				<UID x:id="channelID" uid="{3380E327-576C-4209-B35D-AC94C82E4AF1}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{3380E327-576C-4209-B35D-AC94C82E4AF1}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/vox/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{3380E327-576C-4209-B35D-AC94C82E4AF1}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/vox/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12" expanded="1" layersExpanded="1"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{FF983441-3768-413A-834C-1D4925735C4B}" start="73.6923333333333374639551038853824138641357421875"
+					            timeFormat="0" length="3.50722916666666861829071422107517719268798828125"
+					            offset="27.634624999999999772626324556767940521240234375" name="vox 1(7)"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1499999999999999944488848768742172978818416595459"
+						            fadeOut.length="0.1499999999999999944488848768742172978818416595459"/>
+					</AudioEvent>
+					<AudioEvent clipID="{FF983441-3768-413A-834C-1D4925735C4B}" start="66.4477222222222252412393572740256786346435546875"
+					            timeFormat="0" length="2.465416666666666145601993775926530361175537109375"
+					            offset="24.9178958333333326891079195775091648101806640625" name="vox 1(7)"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1499999999999999944488848768742172978818416595459"
+						            fadeOut.length="0.1499999999999999944488848768742172978818416595459"/>
+					</AudioEvent>
+					<AudioEvent clipID="{FF983441-3768-413A-834C-1D4925735C4B}" start="58.73388888888888459405279718339443206787109375"
+					            timeFormat="0" length="2.268291666666669925689348019659519195556640625"
+					            offset="22.02520833333333172276979894377291202545166015625" name="vox 1(7)"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1499999999999999944488848768742172978818416595459"
+						            fadeOut.length="0.1499999999999999944488848768742172978818416595459"/>
+					</AudioEvent>
+					<AudioEvent clipID="{FF983441-3768-413A-834C-1D4925735C4B}" start="51.18655555555555025648573064245283603668212890625"
+					            timeFormat="0" length="2.183583333333334763892707997001707553863525390625"
+					            offset="19.1949583333333322343605686910450458526611328125" name="vox 1(7)"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1499999999999999944488848768742172978818416595459"
+						            fadeOut.length="0.1499999999999999944488848768742172978818416595459"/>
+					</AudioEvent>
+					<AudioEvent clipID="{FF983441-3768-413A-834C-1D4925735C4B}" start="13.069833333333333413861510052811354398727416992188"
+					            timeFormat="0" length="13.739041666666668817242680233903229236602783203125"
+					            offset="4.9011874999999998081534613447729498147964477539062" name="vox 1(7)"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0">
+						<Attributes x:id="volumeCurve" fadeIn.length="0.1499999999999999944488848768742172978818416595459"
+						            fadeOut.length="0.1499999999999999944488848768742172978818416595459"/>
+					</AudioEvent>
+				</List>
+			</MediaTrack>
+			<MediaTrack mediaType="Audio" tempoFollow="1" materialMode="0" trackNumber="19" layersFollow="0" followLayerName="0"
+			            followGlobalTransposition="0" version="1" trackID="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}"
+			            timeFormat="2" mute="1" name="The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)"
+			            color="FF722AFF">
+				<SpeakerSetup x:id="trackFormat" type="Stereo"/>
+				<UID x:id="channelID" uid="{B30EB9C6-ACC0-49FA-970B-84988C90965F}"/>
+				<Attributes x:id="AutomationRegionList" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{B30EB9C6-ACC0-49FA-970B-84988C90965F}/volume"
+					                  metaIdentity="AudioTrackChannel/volume" userRenamed="0"
+					                  color="FFFFD829" mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)/볼륨.envelopex"/>
+					</AutomationRegion>
+					<AutomationRegion title="팬  L/R" identity="param:///AudioMixer/{B30EB9C6-ACC0-49FA-970B-84988C90965F}/Panner/panX1"
+					                  metaIdentity="AudioPanner/panX1" userRenamed="0" color="FFC7FF3A"
+					                  mute="0">
+						<Url x:id="points" type="1" url="media:///Envelopes/The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)/팬  L_R.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+				<List x:id="Events">
+					<AudioEvent clipID="{A44745C8-8AD5-4568-9DA9-0C1806CDC591}" timeFormat="0" length="1119.661814058956906592356972396373748779296875"
+					            offset="40.5" name="The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)"
+					            speed="1" transpose="0" tune="0" normalize="0" modification="0"/>
+				</List>
+			</MediaTrack>
+			<AutomationTrack version="1" trackID="{9E216095-0354-420F-A52D-9801EA3592DD}" timeFormat="2" name="S.BUS">
+				<Attributes x:id="AutomationRegionList" focusRegion="0" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{7AEF0C5E-EB34-4154-A665-BA83580E883D}/volume"
+					                  metaIdentity="AudioGroupChannel/volume" userRenamed="0"
+					                  color="FFFF9300" mute="1">
+						<Url x:id="points" type="1" url="media:///Envelopes/S.BUS/볼륨.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+			</AutomationTrack>
+			<AutomationTrack version="1" trackID="{45A6A67A-01F7-4856-B2A8-4DD55C3940FD}" timeFormat="2" name="MIXOUT">
+				<Attributes x:id="AutomationRegionList" focusRegion="0" visible="1">
+					<AutomationRegion title="볼륨" identity="param:///AudioMixer/{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/volume"
+					                  metaIdentity="AudioGroupChannel/volume" userRenamed="0"
+					                  color="FFFF9300" mute="1">
+						<Url x:id="points" type="1" url="media:///Envelopes/MIXOUT/볼륨.envelopex"/>
+					</AutomationRegion>
+				</Attributes>
+				<Attributes x:id="attributes" height="12"/>
+			</AutomationTrack>
+		</List>
+		<Attributes x:id="launcher" launchMode="1" quantize="5" playlistActive="0">
+			<List x:id="scenes">
+				<LauncherScene name="씬 1" color="FF2A2AFF" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 2" color="FF722AFF" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 3" color="FFCA2AFF" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 4" color="FFFF2AE2" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 5" color="FFFF2A94" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 6" color="FFFF2A47" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 7" color="FFFF5E2A" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+				<LauncherScene name="씬 8" color="FFFFAD2A" width="100">
+					<List x:id="cells">
+						<LauncherCell trackId="{821EA896-7FE7-4C2F-B412-2610A05FBA0E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{063BB65D-BAD2-4B5A-B5F8-B4C66494F287}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{093B3001-9933-4836-A52C-B7B1C201ED22}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{451EEB2B-459B-4321-BC16-9250B01EB385}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{A2B21718-2D3A-4F44-A99F-403550BA713A}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FD50328E-198C-47A6-83FC-E31DDFE5147B}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4F62378C-6A21-4B11-8FF6-CB4BEAC9A1D7}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{1979FC64-0172-4C17-A838-6C287C38333F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{AF623DE2-7B46-48C3-9F9A-795BB77982C9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C807C89C-DA7F-4AE1-93CF-848F396D41E8}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{C8BA2D03-7166-4F14-AA14-285782DFDE72}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{64D1C5B0-9248-4EB1-9BBA-0D545F90981F}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0CB093D8-7EF9-4B8B-BEF6-2EA4C340151E}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{3669876D-DC84-4087-B6B6-4E50B27D99A0}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{0995A459-5E54-4AE2-B7E5-02D034FFF0B9}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{4162FE41-A43B-48F5-BD5E-EFA4759E8A88}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{FAAD745C-B191-4418-9629-BFF4ACF5A5AC}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{9F2735F0-5586-4744-9F36-35E7E800F0E5}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+						<LauncherCell trackId="{B021F6A2-DC50-4875-AD81-EC033C9E12B4}" quantize="0" start="0" end="0" loopStart="0">
+							<Attributes x:id="content" timeFormat="2"/>
+						</LauncherCell>
+					</List>
+				</LauncherScene>
+			</List>
+		</Attributes>
+	</Attributes>
+</Song>

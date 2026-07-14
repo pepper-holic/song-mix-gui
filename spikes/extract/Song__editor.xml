@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SongEditor>
+	<Attributes x:id="TrackList" rulerFormat="2" secondaryRulerFormat="0" timeLineFormat="0" dataZoom="1"
+	            autoZoomActive="0" autoZoomMode="2" snapEnabled="1" snapBase="0" cursorLoopSnapper.enabled="0"
+	            eventSnapper.enabled="0" zeroCrossingSnapper.enabled="0" gridSnapper.enabled="1"
+	            eventEndSnapper.enabled="0" relativeSnapper.enabled="0" showSecondaryRuler="0"
+	            trackHeightZoom="12" rippleEnabled="0" showTrackNotes="0" trackNotesDivider="84"
+	            showTrackIcons="0" trackIconsDivider="84">
+		<Attributes x:id="TimeLine1" timeZoom="0.06413011252880096435546875" timeOffset="0" autoScroll="0"
+		            autoScrollMode="0"/>
+		<Attributes x:id="TimeLine2" timeZoom="0.00999999977648258209228515625" timeOffset="0" autoScroll="0"
+		            autoScrollMode="0"/>
+		<Attributes x:id="quantize" type="0" mode="0" base="0.25" swing="0" range="1" strength="1" end="0"
+		            velocity="0" patternName="" numerator="4" denominator="4" program="0">
+			<List x:id="programs">
+				<QuantizeGrid type="0" mode="0" base="0.25" swing="0" range="1" strength="1" end="0" velocity="0"
+				              patternName="" numerator="4" denominator="4"/>
+				<QuantizeGrid type="0" mode="0" base="0.5" swing="0" range="1" strength="1" end="0" velocity="0"
+				              patternName="" numerator="4" denominator="4"/>
+				<QuantizeGrid type="0" mode="0" base="1" swing="0" range="1" strength="1" end="0" velocity="0" patternName=""
+				              numerator="4" denominator="4"/>
+				<QuantizeGrid type="1" mode="0" base="0.25" swing="0" range="1" strength="1" end="0" velocity="0"
+				              patternName="" numerator="4" denominator="4"/>
+				<QuantizeGrid type="1" mode="0" base="0.5" swing="0" range="1" strength="1" end="0" velocity="0"
+				              patternName="" numerator="4" denominator="4"/>
+				<QuantizeGrid type="0" mode="0" base="0.25" swing="0.20000000298023223876953125" range="1" strength="1"
+				              end="0" velocity="0" patternName="" numerator="4" denominator="4"/>
+				<QuantizeGrid type="0" mode="0" base="0.5" swing="0.20000000298023223876953125" range="1" strength="1"
+				              end="0" velocity="0" patternName="" numerator="4" denominator="4"/>
+			</List>
+		</Attributes>
+		<Attributes x:id="TimeZoneComponent" zoneStart="0">
+			<Attributes x:id="loopState" loopStart="0" loopEnd="31.96875" loopActive="1"/>
+		</Attributes>
+		<Attributes x:id="TimeLineSynchronizer" enabled="0"/>
+		<Attributes x:id="ChannelOrganizer" syncFolderBusChannels="1" groupBusChannels="1" groupFXChannels="1"
+		            groupVCAChannels="1" visibilitySyncEnabled="1" followFolderExpand="0"/>
+		<Attributes x:id="ArrangerPlayback" syncMode="1"/>
+		<Attributes x:id="ScratchPad" savedSongCursorTime="0" zoneStart="0" scratchPadList="0">
+			<Attributes x:id="loopState" loopStart="0" loopEnd="31.96875" loopActive="1"/>
+		</Attributes>
+	</Attributes>
+	<Attributes x:id="PoolBrowser" showThumbnails="0" listViewType="2">
+		<Attributes x:id="childs">
+			<Attributes x:id="Sorter" sortBy="0"/>
+			<Attributes x:id="Search" visible="1"/>
+		</Attributes>
+	</Attributes>
+	<Attributes x:id="SongSetup" lastSelected=""/>
+	<Attributes x:id="Editor">
+		<List x:id="instances">
+			<Attributes pinned="0" id="Editor1" track="{9F2735F0-5586-4744-9F36-35E7E800F0E5}">
+				<Attributes x:id="editors">
+					<Attributes x:id="AudioEditor" rulerFormat="3" secondaryRulerFormat="3" timeLineFormat="0" dataZoom="1"
+					            autoZoomActive="0" autoZoomMode="1" snapEnabled="1" snapBase="2" cursorLoopSnapper.enabled="0"
+					            eventSnapper.enabled="0" hotspotSnapper.enabled="0" zeroCrossingSnapper.enabled="0"
+					            gridSnapper.enabled="1" eventEndSnapper.enabled="0" relativeSnapper.enabled="0">
+						<Attributes x:id="GlobalTracks" MarkerTrack="0" ArrangerTrack="0" ChordTrack="0" signatures="0"/>
+						<Attributes x:id="TimeZoneComponent" zoneStart="0">
+							<Attributes x:id="loopState" loopStart="0" loopEnd="53.840000000000003410605131648480892181396484375"
+							            loopActive="0"/>
+						</Attributes>
+						<Attributes x:id="Quantize" type="0" mode="0" base="0.25" swing="0" range="1" strength="1" end="0"
+						            velocity="0" patternName="" numerator="4" denominator="4" program="0">
+							<List x:id="programs">
+								<QuantizeGrid type="0" mode="0" base="0.25" swing="0" range="1" strength="1" end="0" velocity="0"
+								              patternName="" numerator="4" denominator="4"/>
+								<QuantizeGrid type="0" mode="0" base="0.5" swing="0" range="1" strength="1" end="0" velocity="0"
+								              patternName="" numerator="4" denominator="4"/>
+								<QuantizeGrid type="0" mode="0" base="1" swing="0" range="1" strength="1" end="0" velocity="0"
+								              patternName="" numerator="4" denominator="4"/>
+								<QuantizeGrid type="1" mode="0" base="0.25" swing="0" range="1" strength="1" end="0" velocity="0"
+								              patternName="" numerator="4" denominator="4"/>
+								<QuantizeGrid type="1" mode="0" base="0.5" swing="0" range="1" strength="1" end="0" velocity="0"
+								              patternName="" numerator="4" denominator="4"/>
+								<QuantizeGrid type="0" mode="0" base="0.25" swing="0.20000000298023223876953125" range="1" strength="1"
+								              end="0" velocity="0" patternName="" numerator="4" denominator="4"/>
+								<QuantizeGrid type="0" mode="0" base="0.5" swing="0.20000000298023223876953125" range="1" strength="1"
+								              end="0" velocity="0" patternName="" numerator="4" denominator="4"/>
+							</List>
+						</Attributes>
+						<Attributes x:id="TimeLine1" timeZoom="0.16213388741016387939453125" timeOffset="0" autoScroll="1"
+						            autoScrollMode="0"/>
+					</Attributes>
+				</Attributes>
+			</Attributes>
+		</List>
+	</Attributes>
+	<Attributes x:id="TempoEditor" minBpm="140" maxBpm="180" rulerFormat="2" secondaryRulerFormat="0" timeLineFormat="0"
+	            dataZoom="1" autoZoomActive="0" autoZoomMode="2">
+		<Attributes x:id="TimeLine1" timeZoom="0.06413011252880096435546875" timeOffset="0" autoScroll="0"
+		            autoScrollMode="0"/>
+		<Attributes x:id="TimeLine2" timeZoom="0.00999999977648258209228515625" timeOffset="0" autoScroll="0"
+		            autoScrollMode="0"/>
+	</Attributes>
+	<Attributes x:id="MusicPatternPartEditor" followSong="1">
+		<Attributes x:id="PatternEdit" drumZoom="30" stepZoomFactor="1" melodicHZoom="30" melodicVZoom="15"
+		            audition="1" linkDrumZoom="1">
+			<Attributes x:id="DrumInstrument" wanted="0" preferredLayout="0"/>
+			<Attributes x:id="ControlLaneManager" showLanes="0" numLanes="1">
+				<List x:id="lanes">
+					<Attributes height="60" paramID="velocity"/>
+				</List>
+			</Attributes>
+		</Attributes>
+		<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+	</Attributes>
+	<Attributes x:id="ScoreEditManager" showTempos="1"/>
+	<Attributes x:id="Lyrics" showRuler="1" showInputField="0" displayCentered="0" quartersAhead="0" displayFontSize="15"
+	            gridlist="3" enlargeCurrentText="0" textcolor_past="-8355712" textcolor_current="-1405369"
+	            textcolor_future="-1645084" displayLane="0" trackLane="0">
+		<List x:id="visibleLanes">
+			<Data value="{F3D454D6-931D-4B65-B13D-63FF63CAA371}"/>
+		</List>
+	</Attributes>
+	<Attributes x:id="LauncherGui" visibilityMode="0"/>
+</SongEditor>

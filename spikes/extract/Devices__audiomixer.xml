@@ -1,0 +1,2838 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AudioMixer>
+	<Attributes x:id="channels" name="Channels" flags="1">
+		<ChannelGroup name="AudioInput" flags="1">
+			<AudioInputChannel gain="1" iconid="" name="Channel01" label="입력 L+R" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{BE06072A-9254-414A-A16C-7C3D51EAAA09}"/>
+				<Attributes x:id="Inserts">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{6F67E3D7-4262-4993-B0B8-9684DF108EFB}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioInputChannel>
+			<AudioInputChannel gain="1" iconid="" name="Channel02" label="입력 L" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}"/>
+				<Attributes x:id="Inserts">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{AF8389FC-1654-4B60-93BE-58059B820248}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioInputChannel>
+			<AudioInputChannel gain="1" iconid="" name="Channel03" label="입력 R" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{521E0F46-541D-4ADD-81DB-01E49C5A93F8}"/>
+				<Attributes x:id="Inserts">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{65BA0B22-119B-4AAE-A862-1C72F7FD59B6}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioInputChannel>
+		</ChannelGroup>
+		<ChannelGroup name="AudioOutput" flags="1">
+			<AudioOutputChannel gain="0.70794578438413791054983903450192883610725402832031" meteringPosition="0"
+			                    iconid="" name="Channel01" label="메인" mute="0" solo="0"
+			                    soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}"/>
+				<Attributes x:id="Inserts">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{0C393EC9-5173-4C07-97F6-F3BB28BD4682}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="PostFaderInserts">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{74E84DAC-73BD-4329-914A-E7A851007C25}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="AudioClick" on="1" gain="1"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioOutputChannel>
+		</ChannelGroup>
+		<ChannelGroup name="AudioTrack" flags="1">
+			<AudioTrackChannel gain="0.999975426773886511000455357134342193603515625" pan="0.5" iconid="" name="Channel01"
+			                   label="bass" mute="0" solo="0" soloSafe="0" color="FF2A2AFF">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{A75B03A1-5951-4D06-81EF-56E2143FB17D}"/>
+				<Connection x:id="destination" objectID="{7249DE44-E4B1-4BC8-8228-C4F5423E99FC}/Input" friendlyName="BASS.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{33EDE335-9E67-4964-97EC-71F11FB286B2}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 B.L">
+							<UID x:id="uniqueID" uid="{9DA6374F-1CFA-4E37-AFFD-190498D7C743}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/bass/1 - Pro-Q 3 B.L.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="B.L" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/B.L.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{7F897423-34CA-4066-AB22-5C9E6DB623D9}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{6B3D790E-4C96-457F-AB2E-A8F2D0E641EB}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0" iconid="" name="Channel02" label="guitar dud" mute="0" solo="0"
+			                   soloSafe="0" color="FF722AFF">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{1357DA61-A6CE-46AD-B652-3F99ABC4AD1D}"/>
+				<Connection x:id="destination" objectID="{C50694B1-0EED-4F53-88FB-F97328ADC50F}/Input" friendlyName="GT.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{F56E5533-834C-4F8C-80FD-B7CB088730EB}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 G.R">
+							<UID x:id="uniqueID" uid="{A3F4A93B-C24D-4D1F-9F29-33AED2D02BAB}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="Pro-Q 3" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/GTdud.multipreset?preset=0"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/guitar dud/1 - Pro-Q 3 G.R.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="GTdud" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/GTdud.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{9DC2D51C-9FFE-4C36-A0CD-571DAC32A107}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0" panMode="1"
+				            name="Panner">
+					<UID x:id="uniqueID" uid="{3E2EB7A4-FDF2-441C-9025-85E98B00D283}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="1" iconid="" name="Channel03" label="guitar" mute="0" solo="0" soloSafe="0"
+			                   color="FFCA2AFF">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{AB01A55D-CD1D-4B98-88EE-683ACDDD0352}"/>
+				<Connection x:id="destination" objectID="{C50694B1-0EED-4F53-88FB-F97328ADC50F}/Input" friendlyName="GT.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{E9037C83-4B67-4B9D-816B-433CCE9AD80B}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 G.L">
+							<UID x:id="uniqueID" uid="{2BB23277-D998-4547-8BCC-9E76E386A9D2}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/guitar/1 - Pro-Q 3 G.L.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{01BC53C8-A9D7-4E8D-908C-8326933ABA2C}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="1" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0" panMode="1"
+				            name="Panner">
+					<UID x:id="uniqueID" uid="{4808531B-DBC4-42D5-A30E-8595A60965A6}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.2000000476837158203125" iconid="" name="Channel04" label="HI HAT"
+			                   mute="0" solo="0" soloSafe="0" color="FFFF2AE2">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{2E8F63DD-4AFB-4960-A66A-967EA8BDFC7A}"/>
+				<Connection x:id="destination" objectID="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}/Input" friendlyName="CYM.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{9913D7A7-20C8-4750-822B-4B16ACCF89EC}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 C.H">
+							<UID x:id="uniqueID" uid="{4B4FA0DF-0E78-487B-A4FD-AE7B4B418269}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/HI HAT/1 - Pro-Q 3 C.H.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{DBA7492E-CDB6-4FB9-9B03-3FB2E35BBBEE}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.2000000476837158203125" panX2="0" panWidth="1" stereoMode="0"
+				            spatialObjectMode="0" panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{D3103FF6-F112-4758-A785-3ABAE75468FE}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="0.6493657646704065200538025237619876861572265625" pan="0.5" iconid="" name="Channel05"
+			                   label="kick out" mute="0" solo="0" soloSafe="0" color="FFFF2A94">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{A4F85CCD-6C62-4145-9187-03C58A2B71B5}"/>
+				<Connection x:id="destination" objectID="{5496AF91-0BE5-402C-914F-663C21E37C8C}/Input" friendlyName="K.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{4576CA7E-388A-48BD-9D15-10A961667E16}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 K.O">
+							<UID x:id="uniqueID" uid="{62207CB6-B6DF-47FE-B47A-4A334B0DF23A}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/kick out/1 - Pro-Q 3 K.O.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{07777FE5-9125-4443-8A08-81974662A7DF}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{1836C513-09D9-457B-BFA3-F916B0C462C9}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.5" iconid="" name="Channel06" label="kick" mute="0" solo="0" soloSafe="0"
+			                   color="FFFF2A47">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{95A18FF1-10A7-4EFB-AB95-EB2E8E0D2672}"/>
+				<Connection x:id="destination" objectID="{5496AF91-0BE5-402C-914F-663C21E37C8C}/Input" friendlyName="K.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{D0BC470C-4D0C-43EF-B823-9CC9B92293E1}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 K.I">
+							<UID x:id="uniqueID" uid="{BAEEED84-793C-42A4-B15C-E5B59E259495}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/kick/1 - Pro-Q 3 K.I.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{26CFEF90-446C-4E16-876A-CF3AF2EF7A45}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{0B45B80F-E48B-4EBF-88A1-99DD7341DBE6}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="1" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="1" iconid="" name="Channel07" label="OVER L" mute="0" solo="0" soloSafe="0"
+			                   color="FFFF5E2A">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{0A38CC4F-CFED-4B81-8D2F-746F10BB5915}"/>
+				<Connection x:id="destination" objectID="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}/Input" friendlyName="CYM.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{38C5D3BF-7B02-4C4C-9FEC-C1DBF46CC4D3}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 O.L">
+							<UID x:id="uniqueID" uid="{F31B26EA-9B41-4AE8-9221-1E8596AD533D}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/OVER L/1 - Pro-Q 3 O.L.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{A466267F-9F52-4257-8AB2-7FD379304B00}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="1" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0" panMode="1"
+				            name="Panner">
+					<UID x:id="uniqueID" uid="{591D188D-307D-407A-BA91-08BE6DD079BD}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0" iconid="" name="Channel08" label="OVER R" mute="0" solo="0" soloSafe="0"
+			                   color="FFFFAD2A">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{2F711B67-C039-4C56-91D0-D7B7BA45FF21}"/>
+				<Connection x:id="destination" objectID="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}/Input" friendlyName="CYM.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{B70A58BF-0DC6-431A-9E20-DCB197FAF27C}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 O.R">
+							<UID x:id="uniqueID" uid="{0A3EC3BE-7A76-4F57-998A-B0C4E931CE05}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/OVER R/1 - Pro-Q 3 O.R.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{6B50799C-3194-4345-8D4B-2C43A45239EE}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0" panMode="1"
+				            name="Panner">
+					<UID x:id="uniqueID" uid="{3610E5EB-3104-433F-B90A-3DDDFACF5589}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.84931504726409912109375" iconid="" name="Channel09" label="RIDE"
+			                   mute="0" solo="0" soloSafe="0" color="FFFFF33A">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{791DA8DE-43B4-44F6-A54C-E37040E30A58}"/>
+				<Connection x:id="destination" objectID="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}/Input" friendlyName="CYM.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{B1FF29AD-B0C2-4C89-AE9E-5621F883A27E}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 C.R">
+							<UID x:id="uniqueID" uid="{7DD122BE-FA7C-482C-B776-7F65D2B3C4AD}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/RIDE/1 - Pro-Q 3 C.R.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{566370D4-1688-4ED9-AC66-5FB226FDC199}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.84931504726409912109375" panX2="0" panWidth="1" stereoMode="0"
+				            spatialObjectMode="0" panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{F0581F1D-1734-41BA-8353-0F8180DEDC75}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="0.7498757611064803541012224741280078887939453125" pan="0.5" iconid="" name="Channel10"
+			                   label="SN B" mute="0" solo="0" soloSafe="0" color="FFFF2A94">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{B694C1C8-6983-4EFB-A566-D64823E368EE}"/>
+				<Connection x:id="destination" objectID="{7AEF0C5E-EB34-4154-A665-BA83580E883D}/Input" friendlyName="S.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{39446E0E-ADF0-4DFA-A07B-7FA6E8D45EBE}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 S.B">
+							<UID x:id="uniqueID" uid="{AA27EFCA-CD95-4FDE-A24E-51F599A0182E}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/SN B/1 - Pro-Q 3 S.B.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{3D116BDF-A9AF-4649-B727-AF3434402CFA}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{E9D36C4B-0601-4D11-9790-B0CE167A6852}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.5" iconid="" name="Channel11" label="SN T" mute="0" solo="0" soloSafe="0"
+			                   color="FF54FC1D">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{A67F73BB-D340-4957-B2C8-B08C4D8CE90A}"/>
+				<Connection x:id="destination" objectID="{7AEF0C5E-EB34-4154-A665-BA83580E883D}/Input" friendlyName="S.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{85954795-EC50-4B3C-ADD2-559BB936EF15}"/>
+						<UID x:id="deviceClassID" uid="{ABCDEF01-9182-FAEB-5374-536C54524732}"/>
+						<Attributes x:id="deviceData" name="Trigger 2 ST">
+							<UID x:id="uniqueID" uid="{B253B8CF-BC72-454E-8213-E14D69D847AA}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{ABCDEF01-9182-FAEB-5374-536C54524732}" name="Trigger 2"
+							            category="AudioEffect" subCategory="VST3"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Input"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Output"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="MIDI Input 1"/>
+									<PortDescription flags="3" label="MIDI Input 2"/>
+									<PortDescription flags="3" label="MIDI Input 3"/>
+									<PortDescription flags="3" label="MIDI Input 4"/>
+									<PortDescription flags="3" label="MIDI Input 5"/>
+									<PortDescription flags="3" label="MIDI Input 6"/>
+									<PortDescription flags="3" label="MIDI Input 7"/>
+									<PortDescription flags="3" label="MIDI Input 8"/>
+									<PortDescription flags="3" label="MIDI Input 9"/>
+									<PortDescription flags="3" label="MIDI Input 10"/>
+									<PortDescription flags="3" label="MIDI Input 11"/>
+									<PortDescription flags="3" label="MIDI Input 12"/>
+									<PortDescription flags="3" label="MIDI Input 13"/>
+									<PortDescription flags="3" label="MIDI Input 14"/>
+									<PortDescription flags="3" label="MIDI Input 15"/>
+									<PortDescription flags="3" label="MIDI Input 16"/>
+								</List>
+								<List x:id="musicOutputs">
+									<PortDescription flags="3" label="MIDI Output 1"/>
+									<PortDescription flags="3" label="MIDI Output 2"/>
+									<PortDescription flags="3" label="MIDI Output 3"/>
+									<PortDescription flags="3" label="MIDI Output 4"/>
+									<PortDescription flags="3" label="MIDI Output 5"/>
+									<PortDescription flags="3" label="MIDI Output 6"/>
+									<PortDescription flags="3" label="MIDI Output 7"/>
+									<PortDescription flags="3" label="MIDI Output 8"/>
+									<PortDescription flags="3" label="MIDI Output 9"/>
+									<PortDescription flags="3" label="MIDI Output 10"/>
+									<PortDescription flags="3" label="MIDI Output 11"/>
+									<PortDescription flags="3" label="MIDI Output 12"/>
+									<PortDescription flags="3" label="MIDI Output 13"/>
+									<PortDescription flags="3" label="MIDI Output 14"/>
+									<PortDescription flags="3" label="MIDI Output 15"/>
+									<PortDescription flags="3" label="MIDI Output 16"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/SN T/1 - Trigger 2 ST.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="SN_T" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/SN_T.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{5A6691DA-7539-454E-8CA1-DB69C7C2BEF1}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{60AA3645-5002-4658-946D-4731EABD7853}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.75" iconid="" name="Channel12" label="TOM F" mute="0" solo="0"
+			                   soloSafe="0" color="FF2AFC38">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{9DB57DD6-8C2A-40B8-8F8D-E990A14431D4}"/>
+				<Connection x:id="destination" objectID="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}/Input" friendlyName="T.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{FFF4A854-F274-4B90-8948-0656BB7EAF01}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 T.F">
+							<UID x:id="uniqueID" uid="{B132261C-AB9A-4D62-813D-3EF657CB6986}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/TOM F/1 - Pro-Q 3 T.F.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{80F99321-8966-4401-9020-51BFE7E198D2}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.75" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{35580D02-CF30-4FCF-A90A-44D987D2D090}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.800000011920928955078125" iconid="" name="Channel13" label="TOM M"
+			                   mute="0" solo="0" soloSafe="0" color="FF2AFF94">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{0D1FBA1E-C8E1-45D2-9C32-B96132634120}"/>
+				<Connection x:id="destination" objectID="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}/Input" friendlyName="T.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{A4458BFB-BA5F-49B5-80C5-7BDF8DE8F495}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 T.M">
+							<UID x:id="uniqueID" uid="{E18868A4-68A6-4F7D-8CF2-D9D64B4E9973}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/TOM M/1 - Pro-Q 3 T.M.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{13D085F6-1E00-421A-821F-D8DEC15C41CA}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.800000011920928955078125" panX2="0" panWidth="1" stereoMode="0"
+				            spatialObjectMode="0" panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{1C20735E-7B89-4440-BBD4-9047F0FC15DD}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.25" iconid="" name="Channel14" label="TOM S" mute="0" solo="0"
+			                   soloSafe="0" color="FF2AFFE5">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{5A618BED-1121-4B57-BDCB-01C578BC466A}"/>
+				<Connection x:id="destination" objectID="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}/Input" friendlyName="T.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{6AB13EB4-2EDE-42D6-A1E3-17F052DC1E4C}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 T.S">
+							<UID x:id="uniqueID" uid="{C5CCBB0F-5620-4ED8-82EC-18E3DBD4833C}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/TOM S/1 - Pro-Q 3 T.S.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{E5EC14B3-7EB3-4909-B2B5-31AB20A0B172}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.25" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{6F385D2B-4F15-494B-8069-B3953CD24004}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="0.999975426773886511000455357134342193603515625" pan="0.5" iconid="" name="Channel15"
+			                   label="bass 2" mute="0" solo="0" soloSafe="0" color="FF2A2AFF">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{3335ECD4-5358-443C-87B5-FC64563FC0EB}"/>
+				<Connection x:id="destination" objectID="{7249DE44-E4B1-4BC8-8228-C4F5423E99FC}/Input" friendlyName="BASS.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{4F9D78E6-E0E1-435F-83B8-AABBB1AAB583}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 B.H">
+							<UID x:id="uniqueID" uid="{15A89B0E-E205-44B0-B54B-DB245377ADFA}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/bass 2/1 - Pro-Q 3 B.H.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{C571C799-C727-4FFD-B2E9-453502B3B264}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{27DDF2F1-18A5-4372-826C-FB7C1BE007A3}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.5" iconid="" name="Channel16" label="The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)"
+			                   mute="1" solo="0" soloSafe="0" color="FF722AFF">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{B30EB9C6-ACC0-49FA-970B-84988C90965F}"/>
+				<Connection x:id="destination" objectID="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}/Input" friendlyName="메인"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{0B037E18-CDBA-4752-B318-F85A9F10B2A1}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 THE KILL">
+							<UID x:id="uniqueID" uid="{95DAEEA0-5632-46C3-8D33-61EA2336D135}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/The Kill - Make &apos;Em Suffer (2012) Full Album HQ (Grindcore)/1 - Pro-Q 3 THE KILL.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{FE61600F-B8B8-429A-9928-3236F0718DC6}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{EC1ACF8A-554C-481D-ADC9-0BB7EBFDD824}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="-10.080000400543212890625" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.5" iconid="" name="Channel18" label="SN T 2" mute="0" solo="0"
+			                   soloSafe="0" color="FF54FC1D">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{43A81524-DD6A-4DAE-B91B-A20CE263C516}"/>
+				<Connection x:id="destination" objectID="{7AEF0C5E-EB34-4154-A665-BA83580E883D}/Input" friendlyName="S.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{9A25F32B-BD1C-4CB8-A08A-BEF25D489594}"/>
+						<UID x:id="deviceClassID" uid="{ABCDEF01-9182-FAEB-5374-536C54524732}"/>
+						<Attributes x:id="deviceData" name="Trigger 2 ST2">
+							<UID x:id="uniqueID" uid="{F70EA175-9208-4947-9951-38AAA21EC897}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{ABCDEF01-9182-FAEB-5374-536C54524732}" name="Trigger 2"
+							            category="AudioEffect" subCategory="VST3"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Input"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Output"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="MIDI Input 1"/>
+									<PortDescription flags="3" label="MIDI Input 2"/>
+									<PortDescription flags="3" label="MIDI Input 3"/>
+									<PortDescription flags="3" label="MIDI Input 4"/>
+									<PortDescription flags="3" label="MIDI Input 5"/>
+									<PortDescription flags="3" label="MIDI Input 6"/>
+									<PortDescription flags="3" label="MIDI Input 7"/>
+									<PortDescription flags="3" label="MIDI Input 8"/>
+									<PortDescription flags="3" label="MIDI Input 9"/>
+									<PortDescription flags="3" label="MIDI Input 10"/>
+									<PortDescription flags="3" label="MIDI Input 11"/>
+									<PortDescription flags="3" label="MIDI Input 12"/>
+									<PortDescription flags="3" label="MIDI Input 13"/>
+									<PortDescription flags="3" label="MIDI Input 14"/>
+									<PortDescription flags="3" label="MIDI Input 15"/>
+									<PortDescription flags="3" label="MIDI Input 16"/>
+								</List>
+								<List x:id="musicOutputs">
+									<PortDescription flags="3" label="MIDI Output 1"/>
+									<PortDescription flags="3" label="MIDI Output 2"/>
+									<PortDescription flags="3" label="MIDI Output 3"/>
+									<PortDescription flags="3" label="MIDI Output 4"/>
+									<PortDescription flags="3" label="MIDI Output 5"/>
+									<PortDescription flags="3" label="MIDI Output 6"/>
+									<PortDescription flags="3" label="MIDI Output 7"/>
+									<PortDescription flags="3" label="MIDI Output 8"/>
+									<PortDescription flags="3" label="MIDI Output 9"/>
+									<PortDescription flags="3" label="MIDI Output 10"/>
+									<PortDescription flags="3" label="MIDI Output 11"/>
+									<PortDescription flags="3" label="MIDI Output 12"/>
+									<PortDescription flags="3" label="MIDI Output 13"/>
+									<PortDescription flags="3" label="MIDI Output 14"/>
+									<PortDescription flags="3" label="MIDI Output 15"/>
+									<PortDescription flags="3" label="MIDI Output 16"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/SN T 2/1 - Trigger 2 ST2.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{B8EFDB1F-D103-4F04-B21D-0512710471D0}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{00F1D3B9-91C7-4DA3-9B46-7AD359194984}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="0.17782360766839389043525443412363529205322265625" pan="0.5" iconid="" name="Channel19"
+			                   label="vox" mute="0" solo="0" soloSafe="0" color="FFFFF33A">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{3380E327-576C-4209-B35D-AC94C82E4AF1}"/>
+				<Connection x:id="destination" objectID="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/Input" friendlyName="MIXOUT"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{3FD1B654-F302-44E8-9469-4587E5871F47}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 VOX">
+							<UID x:id="uniqueID" uid="{C5D153B2-9D71-4F86-8629-D67BA2C486AC}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+									<PortDescription type="1" subType="1" label="Mono Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="Pro-Q 3" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/NAIITE_VOX.multipreset?preset=0"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/vox/1 - Pro-Q 3 VOX.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{D0890B1D-8978-4180-B0AE-859A5A4F8E16}"/>
+						<UID x:id="deviceClassID" uid="{56535447-6E52-6467-6169-6E2072656475}"/>
+						<Attributes x:id="deviceData" name="Gain Reduction Deluxe">
+							<UID x:id="uniqueID" uid="{1289D5B7-2B07-40C8-870E-68A9FE93CC8D}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535447-6E52-6467-6169-6E2072656475}" name="Gain Reduction Deluxe"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Input"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Output"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="Gain Reduction Deluxe" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/NAIITE_VOX.multipreset?preset=1"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/vox/2 - Gain Reduction Deluxe.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX03">
+						<UID x:id="uniqueID" uid="{739DD217-9C10-4A8E-8ED1-DA58C2571A35}"/>
+						<UID x:id="deviceClassID" uid="{ABCDEF01-9182-FAEB-496B-6D6D54723133}"/>
+						<Attributes x:id="deviceData" name="De Esser">
+							<UID x:id="uniqueID" uid="{AA577E70-5A2A-44F4-97AC-11BC246103CE}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{ABCDEF01-9182-FAEB-496B-6D6D54723133}" name="De Esser"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Input 1-2"/>
+									<PortDescription type="1" subType="1" label="Sidechain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Output 1-2"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="De Esser" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/NAIITE_VOX.multipreset?preset=2"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/vox/3 - De Esser.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX04">
+						<UID x:id="uniqueID" uid="{4B9AFB98-29A1-47A0-82DD-0F856AAAA40B}"/>
+						<UID x:id="deviceClassID" uid="{5653544D-4551-326D-6161-672065713200}"/>
+						<Attributes x:id="deviceData" name="Maag EQ2">
+							<UID x:id="uniqueID" uid="{9993FC3C-EAC3-4E43-96E4-8B5FB9E369EB}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{5653544D-4551-326D-6161-672065713200}" name="Maag EQ2"
+							            category="AudioEffect" subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Mono In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Mono Out"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="Maag EQ2" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/NAIITE_VOX.multipreset?preset=3"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/vox/4 - Maag EQ2.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="NAIITE_VOX" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/NAIITE_VOX.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{5F716F6B-4EDD-4106-BD5A-FED03023A51B}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{D61FD75D-5A38-4297-AA0B-CB57C3527312}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes name="Send01" bypass="0" prefader="0" level="0.5" pan="0.5" lockPan="1">
+						<Connection x:id="destination" objectID="{6C7B8872-21F3-4745-AF84-7A0462C9F793}/Input" friendlyName="FX 1"/>
+						<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+						            panMode="1" name="Panner">
+							<UID x:id="uniqueID" uid="{03553F05-A102-486D-9987-2B021D2B9706}"/>
+						</Attributes>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+			<AudioTrackChannel gain="1" pan="0.5" iconid="" name="Channel20" label="SN T 3" mute="0" solo="0"
+			                   soloSafe="0" color="FF54FC1D">
+				<SpeakerSetup x:id="speakerType" type="Mono"/>
+				<UID x:id="uniqueID" uid="{1C6B7BFF-B6FE-4364-B64E-861B79E26A3B}"/>
+				<Connection x:id="destination" objectID="{7AEF0C5E-EB34-4154-A665-BA83580E883D}/Input" friendlyName="S.BUS"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{4090AD44-E655-4390-B7A4-0062CADB5AD1}"/>
+						<UID x:id="deviceClassID" uid="{ABCDEF01-9182-FAEB-5374-536C54524732}"/>
+						<Attributes x:id="deviceData" name="Trigger 2 (2)">
+							<UID x:id="uniqueID" uid="{1085819F-600A-4BDA-A885-46A969A22469}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{ABCDEF01-9182-FAEB-5374-536C54524732}" name="Trigger 2"
+							            category="AudioEffect" subCategory="VST3"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="1" label="Input"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="1" label="Output"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="MIDI Input 1"/>
+									<PortDescription flags="3" label="MIDI Input 2"/>
+									<PortDescription flags="3" label="MIDI Input 3"/>
+									<PortDescription flags="3" label="MIDI Input 4"/>
+									<PortDescription flags="3" label="MIDI Input 5"/>
+									<PortDescription flags="3" label="MIDI Input 6"/>
+									<PortDescription flags="3" label="MIDI Input 7"/>
+									<PortDescription flags="3" label="MIDI Input 8"/>
+									<PortDescription flags="3" label="MIDI Input 9"/>
+									<PortDescription flags="3" label="MIDI Input 10"/>
+									<PortDescription flags="3" label="MIDI Input 11"/>
+									<PortDescription flags="3" label="MIDI Input 12"/>
+									<PortDescription flags="3" label="MIDI Input 13"/>
+									<PortDescription flags="3" label="MIDI Input 14"/>
+									<PortDescription flags="3" label="MIDI Input 15"/>
+									<PortDescription flags="3" label="MIDI Input 16"/>
+								</List>
+								<List x:id="musicOutputs">
+									<PortDescription flags="3" label="MIDI Output 1"/>
+									<PortDescription flags="3" label="MIDI Output 2"/>
+									<PortDescription flags="3" label="MIDI Output 3"/>
+									<PortDescription flags="3" label="MIDI Output 4"/>
+									<PortDescription flags="3" label="MIDI Output 5"/>
+									<PortDescription flags="3" label="MIDI Output 6"/>
+									<PortDescription flags="3" label="MIDI Output 7"/>
+									<PortDescription flags="3" label="MIDI Output 8"/>
+									<PortDescription flags="3" label="MIDI Output 9"/>
+									<PortDescription flags="3" label="MIDI Output 10"/>
+									<PortDescription flags="3" label="MIDI Output 11"/>
+									<PortDescription flags="3" label="MIDI Output 12"/>
+									<PortDescription flags="3" label="MIDI Output 13"/>
+									<PortDescription flags="3" label="MIDI Output 14"/>
+									<PortDescription flags="3" label="MIDI Output 15"/>
+									<PortDescription flags="3" label="MIDI Output 16"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/SN T 3/1 - Trigger 2 (2).vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="SN_T" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/SN_T.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{EA59BBBC-4D06-427E-8959-96E888BBFF60}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="1" name="Panner">
+					<UID x:id="uniqueID" uid="{D9CC6B0B-09C0-40C5-A4A6-3F9803B4F1B2}"/>
+				</Attributes>
+				<Attributes x:id="RecordUnit">
+					<Connection x:id="recordPort" objectID="{E20AFF6F-7795-4E1F-BF01-3268A31F3526}/Output" friendlyName="입력 L">
+						<Attributes x:id="data" recordArmed="0" monitorActive="0"/>
+					</Connection>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioTrackChannel>
+		</ChannelGroup>
+		<ChannelGroup name="AudioGroup" flags="1">
+			<AudioGroupChannel gain="0.999975426773886511000455357134342193603515625" pan="0.5" iconid="" name="Channel01"
+			                   label="K.BUS" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{5496AF91-0BE5-402C-914F-663C21E37C8C}"/>
+				<Connection x:id="destination" objectID="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}/Input" friendlyName="DR.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{8E1915B2-693B-43C4-8704-06C65B8C908F}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 K.B">
+							<UID x:id="uniqueID" uid="{36811336-2BB0-41D4-A365-958740D12C5C}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/K.BUS/1 - Pro-Q 3 K.B.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{6BACD3A6-AB06-4E5D-9A88-0B2BBF1CDF28}"/>
+						<UID x:id="deviceClassID" uid="{56535453-5054-5073-706C-207472616E73}"/>
+						<Attributes x:id="deviceData" name="SPL Transient Designer Plus">
+							<UID x:id="uniqueID" uid="{273DAF5F-6830-4AC1-91F4-EE2F25636592}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535453-5054-5073-706C-207472616E73}" name="SPL Transient Designer Plus"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Aux In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/K.BUS/2 - SPL Transient Designer Plus.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX05">
+						<UID x:id="uniqueID" uid="{AF0F7732-154F-424D-A8F9-07681838737D}"/>
+						<UID x:id="deviceClassID" uid="{56535437-3643-5363-6C61-2D3736207374}"/>
+						<Attributes x:id="deviceData" name="CLA-76 Stereo">
+							<UID x:id="uniqueID" uid="{0E13257C-1A2C-47B8-8EFF-A99F84C8F6F3}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535437-3643-5363-6C61-2D3736207374}" name="CLA-76 Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/K.BUS/3 - CLA-76 Stereo.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX04">
+						<UID x:id="uniqueID" uid="{DAFBC8F0-DC02-4A0C-922A-23212DB1FC3C}"/>
+						<UID x:id="deviceClassID" uid="{5653544A-636C-506A-7374-20636C697000}"/>
+						<Attributes x:id="deviceData" name="JST Clip">
+							<UID x:id="uniqueID" uid="{601E7DEE-3B18-4B9C-857A-BFA02F91A0E1}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{5653544A-636C-506A-7374-20636C697000}" name="JST Clip"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Input"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Output"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/K.BUS/4 - JST Clip.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{8075DE1E-EC9A-439E-A99F-624A6CD836F6}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{4B0A6BA8-5E73-4CFC-A0DF-44577A1CA1DB}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="1" pan="0.5" iconid="" name="Channel02" label="S.BUS" mute="0" solo="0" soloSafe="0"
+			                   color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{7AEF0C5E-EB34-4154-A665-BA83580E883D}"/>
+				<Connection x:id="destination" objectID="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}/Input" friendlyName="DR.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{80A845A8-7F1E-4655-9763-ECA66DF74BED}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 SN.B">
+							<UID x:id="uniqueID" uid="{67D76753-90E5-4162-A063-28A88BD08B05}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/S.BUS/1 - Pro-Q 3 SN.B.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{100A3CBD-A75E-46B4-9968-5F493CFF23F8}"/>
+						<UID x:id="deviceClassID" uid="{56535453-5054-5073-706C-207472616E73}"/>
+						<Attributes x:id="deviceData" name="SPL Transient Designer Plus">
+							<UID x:id="uniqueID" uid="{62AA2AFF-A538-40C4-8330-D7A55EC2F8F8}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535453-5054-5073-706C-207472616E73}" name="SPL Transient Designer Plus"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Aux In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/S.BUS/2 - SPL Transient Designer Plus.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX05">
+						<UID x:id="uniqueID" uid="{36A1DFBD-828F-4A3B-9F9B-D983734444D7}"/>
+						<UID x:id="deviceClassID" uid="{56535437-3643-5363-6C61-2D3736207374}"/>
+						<Attributes x:id="deviceData" name="CLA-76 Stereo 2">
+							<UID x:id="uniqueID" uid="{50BDC8C2-9E62-409D-91AC-B05B00738E55}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535437-3643-5363-6C61-2D3736207374}" name="CLA-76 Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/S.BUS/3 - CLA-76 Stereo 2.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX04">
+						<UID x:id="uniqueID" uid="{817B5889-AC00-40B2-8AD7-B17B6E9F1E0B}"/>
+						<UID x:id="deviceClassID" uid="{5653544A-636C-506A-7374-20636C697000}"/>
+						<Attributes x:id="deviceData" name="JST Clip">
+							<UID x:id="uniqueID" uid="{1CF6DD40-17C2-4ED2-9ECB-CC174D9F30BC}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{5653544A-636C-506A-7374-20636C697000}" name="JST Clip"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Input"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Output"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/S.BUS/4 - JST Clip.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{ED7880C6-3057-44B7-A6DD-2CCC401EB30E}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{B432BC03-A5CD-421C-914D-AA9ABDC5430A}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="0.807310549646217623376287519931793212890625" pan="0.449999988079071044921875"
+			                   iconid="" name="Channel03" label="T.BUS" mute="0" solo="0"
+			                   soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}"/>
+				<Connection x:id="destination" objectID="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}/Input" friendlyName="DR.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{2003484D-75EE-40AD-9337-1795E3C9B6E6}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 T.B">
+							<UID x:id="uniqueID" uid="{F2E6E0F4-97A2-42ED-AD11-AE1F8EA65D24}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/T.BUS/1 - Pro-Q 3 T.B.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{BABF67C4-66E5-42F9-B5D2-6654C954B141}"/>
+						<UID x:id="deviceClassID" uid="{56535453-5054-5073-706C-207472616E73}"/>
+						<Attributes x:id="deviceData" name="SPL Transient Designer Plus">
+							<UID x:id="uniqueID" uid="{D35EC5E8-13F8-497D-89B2-49BAB1615674}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535453-5054-5073-706C-207472616E73}" name="SPL Transient Designer Plus"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Aux In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/T.BUS/2 - SPL Transient Designer Plus.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX03">
+						<UID x:id="uniqueID" uid="{6DEF7A11-A0D1-4B06-B980-2EB6919FB5DC}"/>
+						<UID x:id="deviceClassID" uid="{56535437-3643-5363-6C61-2D3736207374}"/>
+						<Attributes x:id="deviceData" name="CLA-76 Stereo 3">
+							<UID x:id="uniqueID" uid="{13E82F2F-B231-4D51-AB15-8304F765159C}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535437-3643-5363-6C61-2D3736207374}" name="CLA-76 Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/T.BUS/3 - CLA-76 Stereo 3.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{5B30EA5B-BAC2-44F6-8154-4A7BEF1CCC48}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.449999988079071044921875" panX2="0" panWidth="1" stereoMode="0"
+				            spatialObjectMode="0" panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{44DF01C3-8007-4E63-A8B0-E2538FA823EA}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="0.999975426773886511000455357134342193603515625" pan="0.5" iconid="" name="Channel04"
+			                   label="CYM.BUS" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}"/>
+				<Connection x:id="destination" objectID="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}/Input" friendlyName="DR.B"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{33C4C1B2-CFAA-4578-A4A1-A983343DE602}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 C.B">
+							<UID x:id="uniqueID" uid="{51570C04-E8F8-48A9-9172-CB4984BCDE24}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="Pro-Q 3" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/CYM.multipreset?preset=0"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/CYM.BUS/1 - Pro-Q 3 C.B.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="CYM" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/CYM.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{C2C3A304-56F0-44E2-A951-0E78E15E316E}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{64221E27-BF34-49BD-A766-2EE0606CE707}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="0.6493657646704065200538025237619876861572265625" pan="0.5" iconid="" name="Channel05"
+			                   label="DR.B" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}"/>
+				<Connection x:id="destination" objectID="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/Input" friendlyName="MIXOUT"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{72D0D3A1-A575-47E2-AF8C-78EA5065D7EC}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 D.B">
+							<UID x:id="uniqueID" uid="{EC3C5E1E-AF20-4029-8A93-6D0ABF7053DA}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/DR.B/1 - Pro-Q 3 D.B.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{FE123096-4161-4463-AF2D-EB263A79691F}"/>
+						<UID x:id="deviceClassID" uid="{56535453-4C43-5373-736C-636F6D702073}"/>
+						<Attributes x:id="deviceData" name="SSLComp Stereo">
+							<UID x:id="uniqueID" uid="{63CE9771-90AC-4F64-998A-A7C4835BB161}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535453-4C43-5373-736C-636F6D702073}" name="SSLComp Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo SideChain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/DR.B/2 - SSLComp Stereo.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{83DBFCD3-7F33-4CBF-ADCF-B2F2CA044FF7}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{2EC77539-C1FF-402C-A564-3D21B5F21BA5}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes name="Send01" bypass="0" prefader="0" level="0.5" pan="0.5" lockPan="1">
+						<UID x:id="uniqueID" uid="{590CF5FC-DE74-4343-9400-027EB9200397}"/>
+						<Connection x:id="destination" objectID="{CB2FF5C4-6662-4F15-A2B5-B63B5DDE0CFA}/Input" friendlyName="DR Parallel"/>
+						<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+						            panMode="2" name="Panner">
+							<UID x:id="uniqueID" uid="{EAC8851A-7773-49F2-80B0-1D11DF062702}"/>
+						</Attributes>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="0.6493657646704065200538025237619876861572265625" pan="0.5" iconid="" name="Channel06"
+			                   label="GT.B" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{C50694B1-0EED-4F53-88FB-F97328ADC50F}"/>
+				<Connection x:id="destination" objectID="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/Input" friendlyName="MIXOUT"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{F95DF451-AD42-441E-B17A-E78DFFD19025}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 GT.B">
+							<UID x:id="uniqueID" uid="{FC61E667-2863-4638-B2AB-72F7631FF675}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/GT.B/1 - Pro-Q 3 GT.B.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{E2716F3E-9CB7-455C-AC1C-7D003EA37F1F}"/>
+						<UID x:id="deviceClassID" uid="{56535437-3643-5363-6C61-2D3736207374}"/>
+						<Attributes x:id="deviceData" name="CLA-76 Stereo 5">
+							<UID x:id="uniqueID" uid="{6BE9CD6E-B25F-49B9-8C2E-B14494489F9F}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535437-3643-5363-6C61-2D3736207374}" name="CLA-76 Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/GT.B/2 - CLA-76 Stereo 5.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX03">
+						<UID x:id="uniqueID" uid="{1D9EA4DA-7C2C-434A-9136-35C291DA0D15}"/>
+						<UID x:id="deviceClassID" uid="{5653544D-4551-326D-6161-672065713200}"/>
+						<Attributes x:id="deviceData" name="Maag EQ2">
+							<UID x:id="uniqueID" uid="{6179AD91-45E7-4964-B38F-93622E3145EF}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{5653544D-4551-326D-6161-672065713200}" name="Maag EQ2"
+							            category="AudioEffect" subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/GT.B/3 - Maag EQ2.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{43341C47-455F-4CE4-BD4D-1FA868D16AD0}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{BA9AB5EC-20EB-4B93-B796-8C9908BAB85A}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="0.2872914611048287270023138262331485748291015625" pan="0.5" iconid="" name="Channel07"
+			                   label="BASS.B" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{7249DE44-E4B1-4BC8-8228-C4F5423E99FC}"/>
+				<Connection x:id="destination" objectID="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/Input" friendlyName="MIXOUT"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{E3D63683-E9EA-4BC6-8270-3336F07BFA6A}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 BASS.B">
+							<UID x:id="uniqueID" uid="{FA2B480A-7746-45D3-B0DC-E729B6B67069}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/BASS.B/1 - Pro-Q 3 BASS.B.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{F8FF20FA-62B1-4DD2-99BE-7A8DFF59D97B}"/>
+						<UID x:id="deviceClassID" uid="{56535441-7462-3561-6D70-6C6974756265}"/>
+						<Attributes x:id="deviceData" name="AmpliTube 5">
+							<UID x:id="uniqueID" uid="{E0D6F23A-2904-407B-A3E7-15F6055C84DD}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535441-7462-3561-6D70-6C6974756265}" name="AmpliTube 5"
+							            category="AudioEffect" subCategory="VST3/Distortion"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Input 1"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Output 1"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="MIDI Input 1"/>
+									<PortDescription flags="3" label="MIDI Input 2"/>
+									<PortDescription flags="3" label="MIDI Input 3"/>
+									<PortDescription flags="3" label="MIDI Input 4"/>
+									<PortDescription flags="3" label="MIDI Input 5"/>
+									<PortDescription flags="3" label="MIDI Input 6"/>
+									<PortDescription flags="3" label="MIDI Input 7"/>
+									<PortDescription flags="3" label="MIDI Input 8"/>
+									<PortDescription flags="3" label="MIDI Input 9"/>
+									<PortDescription flags="3" label="MIDI Input 10"/>
+									<PortDescription flags="3" label="MIDI Input 11"/>
+									<PortDescription flags="3" label="MIDI Input 12"/>
+									<PortDescription flags="3" label="MIDI Input 13"/>
+									<PortDescription flags="3" label="MIDI Input 14"/>
+									<PortDescription flags="3" label="MIDI Input 15"/>
+									<PortDescription flags="3" label="MIDI Input 16"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/BASS.B/2 - AmpliTube 5.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX03">
+						<UID x:id="uniqueID" uid="{951999A7-A7E2-4576-8630-B05417489364}"/>
+						<UID x:id="deviceClassID" uid="{56535437-3643-5363-6C61-2D3736207374}"/>
+						<Attributes x:id="deviceData" name="CLA-76 Stereo 4">
+							<UID x:id="uniqueID" uid="{AF103110-0CE6-4D19-BDD9-716260DBDBDF}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535437-3643-5363-6C61-2D3736207374}" name="CLA-76 Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/BASS.B/3 - CLA-76 Stereo 4.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{757DA7DC-AF3C-49F8-9147-D2810EDD9844}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{08E9F6AF-18B5-4783-947D-B7D0401082F9}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="1.0000000236495907302014529705047607421875" pan="0.5" iconid="" name="Channel08"
+			                   label="MIXOUT" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}"/>
+				<Connection x:id="destination" objectID="{0B817B30-0B67-449C-A8D4-9C39E1F5185D}/Input" friendlyName="메인"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{DFDBF577-FF10-4713-8D11-8B6D9C26B456}"/>
+						<UID x:id="deviceClassID" uid="{56535453-4C43-5373-736C-636F6D702073}"/>
+						<Attributes x:id="deviceData" name="SSLComp Stereo 2">
+							<UID x:id="uniqueID" uid="{C887670C-34D0-481F-8E46-40D87E1ABA5D}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535453-4C43-5373-736C-636F6D702073}" name="SSLComp Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo SideChain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/MIXOUT/1 - SSLComp Stereo 2.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{4BF9BFDE-44D6-46A3-92CB-234D6F923E6D}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 MIX">
+							<UID x:id="uniqueID" uid="{BE262577-312D-4FA1-8D01-F94B140559F9}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/MIXOUT/2 - Pro-Q 3 MIX.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX05" bypass="1">
+						<UID x:id="uniqueID" uid="{3476359E-6A52-449C-B9D3-7F4149CA0E8F}"/>
+						<UID x:id="deviceClassID" uid="{5653544C-3450-446C-3420-756C7472616D}"/>
+						<Attributes x:id="deviceData" name="L4 Ultramaximizer Stereo 2">
+							<UID x:id="uniqueID" uid="{19EE0B04-0D5C-4C73-93AD-2BF414420B65}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{5653544C-3450-446C-3420-756C7472616D}" name="L4 Ultramaximizer Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo SideChain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/MIXOUT/3 - L4 Ultramaximizer Stereo 2.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{D03ED24A-698D-4457-8BCB-B203D20F888E}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{29F63BBB-5E31-4CB4-903F-6A7C05DD10AA}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+			<AudioGroupChannel gain="0.21540636149224923201472847722470760345458984375" pan="0.5" iconid="" name="Channel09"
+			                   label="DR Parallel" mute="0" solo="0" soloSafe="0" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{CB2FF5C4-6662-4F15-A2B5-B63B5DDE0CFA}"/>
+				<Connection x:id="destination" objectID="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/Input" friendlyName="MIXOUT"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX02">
+						<UID x:id="uniqueID" uid="{AB46133E-8155-45BD-8622-930D2A1350E7}"/>
+						<UID x:id="deviceClassID" uid="{56535437-3643-5363-6C61-2D3736207374}"/>
+						<Attributes x:id="deviceData" name="CLA-76 Stereo 7">
+							<UID x:id="uniqueID" uid="{6D26E73E-5092-4C8B-AF35-197B2A958E68}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535437-3643-5363-6C61-2D3736207374}" name="CLA-76 Stereo"
+							            category="AudioEffect" subCategory="VST3/Dynamics"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/DR Parallel/1 - CLA-76 Stereo 7.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{B7F36F44-A92B-408C-B43D-A834EAC6A555}"/>
+						<UID x:id="deviceClassID" uid="{56535453-7444-6364-6563-617069746174}"/>
+						<Attributes x:id="deviceData" name="Decapitator">
+							<UID x:id="uniqueID" uid="{3241061B-2282-4006-BF49-27CCB9487FFC}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{56535453-7444-6364-6563-617069746174}" name="Decapitator"
+							            category="AudioEffect" subCategory="VST3/Distortion"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Event In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/DR Parallel/2 - Decapitator.vstpreset"/>
+					</Attributes>
+					<Attributes name="FX03">
+						<UID x:id="uniqueID" uid="{26A174AB-743E-49E1-83B7-5F3F6A3461A8}"/>
+						<UID x:id="deviceClassID" uid="{72C4DB71-7A4D-459A-B97E-51745D84B39D}"/>
+						<Attributes x:id="deviceData" name="Pro-Q 3 DR.Parallel">
+							<UID x:id="uniqueID" uid="{7D18AEAB-034E-49C6-A074-1562A7E8F33A}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{72C4DB71-7A4D-459A-B97E-51745D84B39D}" name="Pro-Q 3" category="AudioEffect"
+							            subCategory="VST3/EQ"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+									<PortDescription type="1" subType="3" label="Stereo Side Chain"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Midi In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="기본값" dirty="1"/>
+						<String x:id="presetPath" text="Presets/Channels/DR Parallel/3 - Pro-Q 3 DR.Parallel.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{4E06DD05-599B-4314-98EE-A66E3BE6692A}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{6815F84E-CDDE-43D8-B442-507409106F0A}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+				<Attributes x:id="AudioBusMixFX" passThrough="1">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+			</AudioGroupChannel>
+		</ChannelGroup>
+		<ChannelGroup name="AudioEffect" flags="1">
+			<AudioEffectChannel gain="0.999975426773886511000455357134342193603515625" pan="0.5" iconid="" name="Channel01"
+			                    label="FX 1" mute="0" solo="0" soloSafe="1" color="￹00000000">
+				<SpeakerSetup x:id="speakerType" type="Stereo"/>
+				<UID x:id="uniqueID" uid="{6C7B8872-21F3-4745-AF84-7A0462C9F793}"/>
+				<Connection x:id="destination" objectID="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}/Input" friendlyName="MIXOUT"/>
+				<Attributes x:id="Inserts">
+					<Attributes name="FX01">
+						<UID x:id="uniqueID" uid="{5319B533-CAA9-400D-8155-D5E203ED0A8A}"/>
+						<UID x:id="deviceClassID" uid="{5653544C-504C-386C-6974-746C65706C61}"/>
+						<Attributes x:id="deviceData" name="Little Plate 2">
+							<UID x:id="uniqueID" uid="{9256CF14-34E1-4F12-B1F6-CBA7B90DB652}"/>
+						</Attributes>
+						<Attributes x:id="ghostData" presetType="vstpreset">
+							<Attributes x:id="classInfo" classID="{5653544C-504C-386C-6974-746C65706C61}" name="Little Plate"
+							            category="AudioEffect" subCategory="VST3/Reverb"/>
+							<Attributes x:id="IO">
+								<List x:id="audioInputs">
+									<PortDescription flags="3" subType="3" label="Stereo In"/>
+								</List>
+								<List x:id="audioOutputs">
+									<PortDescription flags="3" subType="3" label="Stereo Out"/>
+								</List>
+								<List x:id="musicInputs">
+									<PortDescription flags="3" label="Event In"/>
+								</List>
+							</Attributes>
+						</Attributes>
+						<Attributes x:id="Presets" pname="Little Plate" dirty="1">
+							<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/NAIITE_VOX.multipreset?preset=5"/>
+						</Attributes>
+						<String x:id="presetPath" text="Presets/Channels/FX 1/1 - Little Plate 2.vstpreset"/>
+					</Attributes>
+					<Attributes x:id="Presets" pname="vox_rvb" dirty="0">
+						<Attributes x:id="url" type="1" url="file:///C:/Users/yhkze/Documents/Studio Pro/Presets/Fender/FX Chains/vox_rvb.multipreset"/>
+					</Attributes>
+					<Attributes x:id="Combinator" name="Combinator">
+						<UID x:id="uniqueID" uid="{A397273E-9532-4A54-8305-38BEFADCEDED}"/>
+					</Attributes>
+				</Attributes>
+				<Attributes x:id="Panner" panX1="0.5" panX2="0" panWidth="1" stereoMode="0" spatialObjectMode="0"
+				            panMode="2" name="Panner">
+					<UID x:id="uniqueID" uid="{522980DE-895E-4DEA-984D-85F09C24A4EC}"/>
+				</Attributes>
+				<Attributes x:id="Sends">
+					<Attributes x:id="Presets" pname="기본값" dirty="0"/>
+				</Attributes>
+				<Attributes x:id="InputFX" gain="0" invertPhaseL="0" invertPhaseR="0"/>
+				<Attributes x:id="MacroControls" showMacroPads="0">
+					<Attributes x:id="float-1" color="0"/>
+					<Attributes x:id="float-2" color="0"/>
+					<Attributes x:id="float-3" color="0"/>
+					<Attributes x:id="float-4" color="0"/>
+					<Attributes x:id="float-5" color="0"/>
+					<Attributes x:id="float-6" color="0"/>
+					<Attributes x:id="float-7" color="0"/>
+					<Attributes x:id="float-8" color="0"/>
+					<Attributes x:id="bool-1" color="0"/>
+					<Attributes x:id="bool-2" color="0"/>
+					<Attributes x:id="bool-3" color="0"/>
+					<Attributes x:id="bool-4" color="0"/>
+					<Attributes x:id="bool-5" color="0"/>
+					<Attributes x:id="bool-6" color="0"/>
+					<Attributes x:id="bool-7" color="0"/>
+					<Attributes x:id="bool-8" color="0"/>
+					<Attributes x:id="pad-x-1" color="0"/>
+					<Attributes x:id="pad-y-1" color="0"/>
+					<Attributes x:id="pad-x-2" color="0"/>
+					<Attributes x:id="pad-y-2" color="0"/>
+				</Attributes>
+			</AudioEffectChannel>
+		</ChannelGroup>
+	</Attributes>
+	<Attributes x:id="ListenBusManager" useListenBus="0" soloThroughListenBus="0" prefaderListen="0"/>
+</AudioMixer>

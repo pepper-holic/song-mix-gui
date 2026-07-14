@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MixerConsole>
+	<Attributes x:id="channelSettings" version="1">
+		<Section path="0A38CC4FCFED4B818D2F746F10BB5915">
+			<Attributes visible="1" expanded="0" order="14"/>
+		</Section>
+		<Section path="0B817B300B67449CA8D49C39E1F5185D">
+			<Attributes visible="1" expanded="0" order="32"/>
+		</Section>
+		<Section path="0D1FBA1EC8E145D29C32B96132634120">
+			<Attributes visible="1" expanded="0" order="9"/>
+		</Section>
+		<Section path="1357DA61A6CE46ADB6523F99ABC4AD1D">
+			<Attributes visible="1" expanded="0" order="17"/>
+		</Section>
+		<Section path="1A082A8EF03C4579A4E3095C2EAA078E">
+			<Attributes visible="1" expanded="0" order="31"/>
+		</Section>
+		<Section path="1C6B7BFFB6FE4364B64E861B79E26A3B">
+			<Attributes visible="1" expanded="0" order="8"/>
+		</Section>
+		<Section path="233A6A9F74C940FBA963DDCE1EF10C12">
+			<Attributes visible="1" expanded="0" order="25"/>
+		</Section>
+		<Section path="2E8F63DD4AFB4960A66A967EA8BDFC7A">
+			<Attributes visible="1" expanded="0" order="13"/>
+		</Section>
+		<Section path="2F711B67C0394C5691D0D7B7BA45FF21">
+			<Attributes visible="1" expanded="0" order="15"/>
+		</Section>
+		<Section path="3335ECD45358443C87B5FC64563FC0EB">
+			<Attributes visible="1" expanded="0" order="19"/>
+		</Section>
+		<Section path="3380E327576C4209B35DAC94C82E4AF1">
+			<Attributes visible="1" expanded="0" order="20"/>
+		</Section>
+		<Section path="43A81524DD6A4DAEB91BA20CE263C516">
+			<Attributes visible="1" expanded="0" order="7"/>
+		</Section>
+		<Section path="521E0F46541D4ADD81DB01E49C5A93F8">
+			<Attributes visible="1" expanded="0" order="2"/>
+		</Section>
+		<Section path="5496AF910BE5402C914F663C21E37C8C">
+			<Attributes visible="1" expanded="0" order="23"/>
+		</Section>
+		<Section path="5A618BED11214B57BDCB01C578BC466A">
+			<Attributes visible="1" expanded="0" order="11"/>
+		</Section>
+		<Section path="6C7B887221F34745AF847A0462C9F793">
+			<Attributes visible="1" expanded="0" order="22"/>
+		</Section>
+		<Section path="7249DE44E4B14BC88228C4F5423E99FC">
+			<Attributes visible="1" expanded="0" order="30"/>
+		</Section>
+		<Section path="791DA8DE43B444F6A54CE37040E30A58">
+			<Attributes visible="1" expanded="0" order="12"/>
+		</Section>
+		<Section path="7AEF0C5EEB344154A665BA83580E883D">
+			<Attributes visible="1" expanded="0" order="24"/>
+		</Section>
+		<Section path="95A18FF110A74EFBAB95EB2E8E0D2672">
+			<Attributes visible="1" expanded="0" order="4"/>
+		</Section>
+		<Section path="9DB57DD68C2A40B88F8DE990A14431D4">
+			<Attributes visible="1" expanded="0" order="10"/>
+		</Section>
+		<Section path="9F3D103ADB254F36A270E810C3AE5D47">
+			<Attributes visible="1" expanded="0" order="27"/>
+		</Section>
+		<Section path="A4F85CCD6C624145918703C58A2B71B5">
+			<Attributes visible="1" expanded="0" order="3"/>
+		</Section>
+		<Section path="A67F73BBD3404957B2C8B08C4D8CE90A">
+			<Attributes visible="1" expanded="0" order="6"/>
+		</Section>
+		<Section path="A75B03A159514D0681EF56E2143FB17D">
+			<Attributes visible="1" expanded="0" order="18"/>
+		</Section>
+		<Section path="AB01A55DCD1D4B9888EE683ACDDD0352">
+			<Attributes visible="1" expanded="0" order="16"/>
+		</Section>
+		<Section path="B30EB9C6ACC049FA970B84988C90965F">
+			<Attributes visible="1" expanded="0" order="21"/>
+		</Section>
+		<Section path="B694C1C869834EFBA566D64823E368EE">
+			<Attributes visible="1" expanded="0" order="5"/>
+		</Section>
+		<Section path="BE06072A9254414AA16C7C3D51EAAA09">
+			<Attributes visible="1" expanded="0" order="0"/>
+		</Section>
+		<Section path="C50694B10EED4F5388FBF97328ADC50F">
+			<Attributes visible="1" expanded="0" order="29"/>
+		</Section>
+		<Section path="CB2FF5C466624F15A2B5B63B5DDE0CFA">
+			<Attributes visible="1" expanded="1" order="28"/>
+		</Section>
+		<Section path="DA135823E87E4D049FE3D8C4E12FA785">
+			<Attributes visible="1" expanded="0" order="26"/>
+		</Section>
+		<Section path="E20AFF6F77954E1FBF013268A31F3526">
+			<Attributes visible="1" expanded="0" order="1"/>
+		</Section>
+	</Attributes>
+	<Attributes x:id="layoutSettings" version="1">
+		<Section path="ChannelCont1">
+			<Attributes h="0" v="0"/>
+		</Section>
+		<Section path="ChannelCont2">
+			<Attributes h="126" v="0"/>
+		</Section>
+		<Section path="ChannelCont3">
+			<Attributes h="0" v="0"/>
+		</Section>
+	</Attributes>
+	<Attributes x:id="channelBanks" remoteEdit="0">
+		<ChannelShowHidePreset x:id="ScreenBank" name="" version="1">
+			<List x:id="visible">
+				<UID uid="{A4F85CCD-6C62-4145-9187-03C58A2B71B5}"/>
+				<UID uid="{95A18FF1-10A7-4EFB-AB95-EB2E8E0D2672}"/>
+				<UID uid="{B694C1C8-6983-4EFB-A566-D64823E368EE}"/>
+				<UID uid="{A67F73BB-D340-4957-B2C8-B08C4D8CE90A}"/>
+				<UID uid="{43A81524-DD6A-4DAE-B91B-A20CE263C516}"/>
+				<UID uid="{1C6B7BFF-B6FE-4364-B64E-861B79E26A3B}"/>
+				<UID uid="{0D1FBA1E-C8E1-45D2-9C32-B96132634120}"/>
+				<UID uid="{9DB57DD6-8C2A-40B8-8F8D-E990A14431D4}"/>
+				<UID uid="{5A618BED-1121-4B57-BDCB-01C578BC466A}"/>
+				<UID uid="{791DA8DE-43B4-44F6-A54C-E37040E30A58}"/>
+				<UID uid="{2E8F63DD-4AFB-4960-A66A-967EA8BDFC7A}"/>
+				<UID uid="{0A38CC4F-CFED-4B81-8D2F-746F10BB5915}"/>
+				<UID uid="{2F711B67-C039-4C56-91D0-D7B7BA45FF21}"/>
+				<UID uid="{AB01A55D-CD1D-4B98-88EE-683ACDDD0352}"/>
+				<UID uid="{1357DA61-A6CE-46AD-B652-3F99ABC4AD1D}"/>
+				<UID uid="{A75B03A1-5951-4D06-81EF-56E2143FB17D}"/>
+				<UID uid="{3335ECD4-5358-443C-87B5-FC64563FC0EB}"/>
+				<UID uid="{3380E327-576C-4209-B35D-AC94C82E4AF1}"/>
+				<UID uid="{B30EB9C6-ACC0-49FA-970B-84988C90965F}"/>
+				<UID uid="{6C7B8872-21F3-4745-AF84-7A0462C9F793}"/>
+				<UID uid="{5496AF91-0BE5-402C-914F-663C21E37C8C}"/>
+				<UID uid="{7AEF0C5E-EB34-4154-A665-BA83580E883D}"/>
+				<UID uid="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}"/>
+				<UID uid="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}"/>
+				<UID uid="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}"/>
+				<UID uid="{CB2FF5C4-6662-4F15-A2B5-B63B5DDE0CFA}"/>
+				<UID uid="{C50694B1-0EED-4F53-88FB-F97328ADC50F}"/>
+				<UID uid="{7249DE44-E4B1-4BC8-8228-C4F5423E99FC}"/>
+				<UID uid="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}"/>
+			</List>
+		</ChannelShowHidePreset>
+		<ChannelShowHidePreset x:id="RemoteBank" name="" version="1">
+			<List x:id="visible">
+				<UID uid="{A4F85CCD-6C62-4145-9187-03C58A2B71B5}"/>
+				<UID uid="{95A18FF1-10A7-4EFB-AB95-EB2E8E0D2672}"/>
+				<UID uid="{B694C1C8-6983-4EFB-A566-D64823E368EE}"/>
+				<UID uid="{A67F73BB-D340-4957-B2C8-B08C4D8CE90A}"/>
+				<UID uid="{43A81524-DD6A-4DAE-B91B-A20CE263C516}"/>
+				<UID uid="{1C6B7BFF-B6FE-4364-B64E-861B79E26A3B}"/>
+				<UID uid="{0D1FBA1E-C8E1-45D2-9C32-B96132634120}"/>
+				<UID uid="{9DB57DD6-8C2A-40B8-8F8D-E990A14431D4}"/>
+				<UID uid="{5A618BED-1121-4B57-BDCB-01C578BC466A}"/>
+				<UID uid="{791DA8DE-43B4-44F6-A54C-E37040E30A58}"/>
+				<UID uid="{2E8F63DD-4AFB-4960-A66A-967EA8BDFC7A}"/>
+				<UID uid="{0A38CC4F-CFED-4B81-8D2F-746F10BB5915}"/>
+				<UID uid="{2F711B67-C039-4C56-91D0-D7B7BA45FF21}"/>
+				<UID uid="{AB01A55D-CD1D-4B98-88EE-683ACDDD0352}"/>
+				<UID uid="{1357DA61-A6CE-46AD-B652-3F99ABC4AD1D}"/>
+				<UID uid="{A75B03A1-5951-4D06-81EF-56E2143FB17D}"/>
+				<UID uid="{3335ECD4-5358-443C-87B5-FC64563FC0EB}"/>
+				<UID uid="{3380E327-576C-4209-B35D-AC94C82E4AF1}"/>
+				<UID uid="{B30EB9C6-ACC0-49FA-970B-84988C90965F}"/>
+				<UID uid="{6C7B8872-21F3-4745-AF84-7A0462C9F793}"/>
+				<UID uid="{5496AF91-0BE5-402C-914F-663C21E37C8C}"/>
+				<UID uid="{7AEF0C5E-EB34-4154-A665-BA83580E883D}"/>
+				<UID uid="{233A6A9F-74C9-40FB-A963-DDCE1EF10C12}"/>
+				<UID uid="{DA135823-E87E-4D04-9FE3-D8C4E12FA785}"/>
+				<UID uid="{9F3D103A-DB25-4F36-A270-E810C3AE5D47}"/>
+				<UID uid="{CB2FF5C4-6662-4F15-A2B5-B63B5DDE0CFA}"/>
+				<UID uid="{C50694B1-0EED-4F53-88FB-F97328ADC50F}"/>
+				<UID uid="{7249DE44-E4B1-4BC8-8228-C4F5423E99FC}"/>
+				<UID uid="{1A082A8E-F03C-4579-A4E3-095C2EAA078E}"/>
+			</List>
+		</ChannelShowHidePreset>
+	</Attributes>
+	<Attributes x:id="HardwareControls" controlsVisible="1"/>
+	<Attributes x:id="MixerSnapshots" recallVisibility="1" recallVolume="1" recallPan="1" recallMute="1"
+	            recallInserts="0" recallSends="0" recallCueMix="0" recallInputFX="0" recallSelected="0"
+	            recallInputChannels="0" recallOutputChannels="0" snapshotName="-">
+	</Attributes>
+	<Attributes x:id="ChannelGui" vcaPortsVisibleState="0" showChannelConnections="1" hiddenChannelConnections="0"
+	            showChannelNotes="0" showChannelIcons="0" showChannelInputControls="1" hiddenChannelInputControls="0"
+	            showChannelGroupControl="0" hiddenChannelGroupControl="0" showSendsSection="1"
+	            showSendsWideSection="1"/>
+</MixerConsole>

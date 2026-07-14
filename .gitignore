@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / frontend build
+node_modules/
+app/frontend/dist/
+app/frontend/*.tsbuildinfo
+
+# Studio One autosave/history snapshots (regenerable, filtered by app/main.py too)
+**/History/
+
+# Generated caches, screenshots, probe/round-trip outputs from spikes & verify scripts
+spikes/out/
+.omc/verify/Cache/
+
+# OMC tool-local runtime state (machine-specific, no value to collaborators) —
+# these directories get created under .omc/ anywhere a tool ran (repo root,
+# app/frontend/, engine/, spikes/extract/, ...), not just at the repo root.
+**/.omc/state/
+**/.omc/sessions/
+**/.omc/project-memory.json
+
+# OS
+.DS_Store
+Thumbs.db

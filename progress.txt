@@ -1,0 +1,442 @@
+# Ralph progress — song-mix-gui (2026-07-11)
+
+## 상태: 15/26 스토리 통과 (Phase 0·1 완료, Phase 2 GUI 진행 중)
+
+## Iteration 1 주요 결정·학습
+- 환경: Python 3.14 (pedalboard 0.9.23 wheel 정상!), Node v24, PySide6 설치 완료.
+- .song 구조 실측: zip(deflate XML + stored vstpreset, CRLF, data descriptor 없음).
+  XML은 `x:` 접두사 미선언 → 파싱 시 xmlns 주입, 쓰기는 텍스트 수술만.
+- 라운드트립 전략 확정: 무수정 entry는 로컬헤더+데이터 원시 블록 복사 + 중앙디렉토리 재구성
+  → 전 코퍼스 116곡 바이트 동일 재작성 검증 완료 (test_songcore 233 passed).
+- UID 참조 형태: braced {G} (uid=/objectID=/id=/trackID=/param:///AudioMixer) + 대시제거 HEX32
+  (mixerconsole Section path, perspective windowID). settings/audioiomanager는 입출력 채널만 참조.
+- notepad.xml에 스테일 UID 실존(S.BUS/MIXOUT 구 UID) → notepad는 dangling 허용됨.
+- **파라미터 주입 레시피 (S0.2 핵심)**: plugin.load_preset(vstpreset) 후 컨트롤러 파라미터가
+  갱신 안 되는 플러그인(FabFilter) 존재 → `load_preset → raw_state 캡처 → 새 인스턴스에
+  raw_state 주입`으로 완전 동기화. host_probe.py에 구현.
+- 플러그인 등급(22종): 해석가능 16 / 부분해석 1(mvMeter2) / 복사만 5
+  (JST Clip·GRD·AmpliTube5 = pedalboard 스캔 실패, EQP-1A·DeEsser = WaveShell 16.6 셸 자체 실패).
+  WaveShell 15.5/16.7/17.1은 정상 (CLA-76, SSLComp, L4, Scheps OC2, Magma 로드+주입 성공).
+- **런타임 결정: A′ (PySide6+QWebEngineView+QWebChannel + pedalboard 인프로세스)**
+  근거: 브리지 왕복 8ms/부팅 0.49s 실측 (.omc/verify/runtime-decision.md).
+  단, 플러그인 로드는 크래시 격리를 위해 서브프로세스 프로브 유지.
+- 코퍼스: 116 = 고유 29 + History 87. 고유 기준 빈도 1위 Pro-Q 3(507). 라벨 중복 채널 실존
+  (2곡) → transfer의 라벨 충돌 검사 필수 확인됨.
+- transfer 엔진: 서브트리(그룹/FX만) 전송 + UID 재생성 + 내부 재배선 + root→종단 접합
+  (동명 라벨 우선, 없으면 메인 직결) + 외부 send 제거(기록) + Presets/Envelopes 복사 +
+  콘솔/notepad 동반 기재 + fail-closed validate. 덮어쓰기는 기존 채널 제거 + 유입 라우팅 재배선.
+
+## 산출물
+- spikes/: roundtrip_poc, mutate_poc, uid_catalog, host_probe, host_poc, lock_poc, qwebchannel_poc, corpus_scan, zipsurgery
+- engine/songcore/: container, mixer_parser, topology, uid_refs, transfer (+tests 256 passed)
+- .omc/verify/: 01~04 검증용 .song 4개, uid-syntax-catalog.md, companion-files-analysis.md,
+  plugin-grade-table.md, plugin-frequency-unique.md, runtime-decision.md
+- .omc/MANUAL_CHECKLIST.md: 수동 확인 4건 + 잠금 실측 1건
+
+## 남은 작업
+- US-015~018: PySide6+React Flow GUI (셸/그래프/상세패널/탭+스플릿)
+- US-019~021: DnD 전송 UI, 충돌 다이얼로그, 저장 파이프라인
+- US-023~025: 인벤토리 스캔, 해석 서비스(host_probe 서브프로세스), 파라미터 UI
+- US-026: AC 체크리스트 + RUN_REPORT.md
+
+## 테스트 실행법
+- 엔진 전체: `python -m pytest engine/tests -q` (256개, ~1.3s)
+- 스파이크 재실행: `python spikes/host_poc.py` (등급표 재생성, ~수분)
+
+## Iteration 1 완료 (전 스토리 통과)
+- GUI: PySide6 셸 + React Flow 프론트 빌드, 헤드리스 self-test/E2E PASS
+  (그래프 30노드, 상세패널, 파라미터 테이블 11행, 해석불가 배지, 스플릿, DnD 전송,
+   충돌 모달→덮어쓰기, .bak, 재파싱 error 0).
+- introspect: 인벤토리 캐시 + 해석 서비스 (서브프로세스 프로브, md5 캐시) pytest 5 passed.
+- 최종: 엔진 261 passed. RUN_REPORT.md / MANUAL_CHECKLIST.md 작성 완료.
+- E2E 디버깅 학습: 합성 DragEvent에는 mouseEnter가 선행되지 않음 → 드래그 페이로드는
+  이벤트 시점 전역 상태가 아니라 노드 data에 정적으로 주입해야 함.
+
+## 디슬롭 패스 (아키텍트 APPROVE 후)
+- 아키텍트 검증: APPROVE (조건부 = 수동 확인 대기 유지). MEDIUM 1건(e2e cp949 크래시) → sys.stdout.reconfigure(utf-8)로 수정, 기본 콘솔에서 E2E PASS 재확인.
+- 죽은 코드 제거: mixer_parser no-op 라인, main.py no-op 타이머+지연 import, host_probe 미사용 변수,
+  App.tsx 도달불가 chain 분기+팬텀 전역(__chainTargetUid), transfer.py 미사용 반환값/파라미터/PurePosixPath.
+- addDoc 업데이터 내 부수효과 제거 → ?open= 자동열기 재실행 루프 유발 → autoOpened ref 가드로 수정
+  (self-test 타임아웃으로 회귀에서 검출됨 — 회귀 우선 원칙이 실제로 버그를 잡음).
+- self-test 프로브를 노드+엣지 렌더 완료 조건으로 강화 (타이밍 레이스 제거).
+- 최종 회귀: pytest 261 passed + 프론트 빌드 + SELF-TEST PASS(30/31) + E2E PASS.
+
+## 사용자 피드백 반영 (2026-07-12)
+1) 드래그가 화면 패닝으로 먹히는 문제: React Flow가 노드 포인터를 가로챔 →
+   ChannelNode에 nodrag/nopan 클래스 추가로 네이티브 HTML5 드래그 복구.
+   + 대안 UX 추가: 노드 우클릭=복사, 대상 패널 빈 곳 우클릭(또는 Ctrl+V)=붙여넣기.
+   노드 클릭 시 패널 포커스 이동으로 Ctrl+C도 즉시 동작. 트랙 채널 복사 시 비범위 안내.
+2) 파라미터 로딩 느림: song 열 때 백그라운드 프리웜 스레드 추가 —
+   host_probe --presets-json 배치 모드(플러그인 1회 로드로 전체 프리셋 해석) +
+   service.prewarm(플러그인별 그룹화, md5 캐시 선기록). 이후 클릭은 캐시 즉시 응답.
+   Inventory.load에 스레드 락(동시 셸 스캔 방지).
+- 검증: pytest 262 passed(프리웜 배치 테스트 추가), 프론트 빌드, E2E PASS
+  (우클릭 복사→붙여넣기→충돌 모달 경로 포함, DnD 경로 회귀 유지).
+
+## v2 계획 세션 (2026-07-12)
+- 딥 인터뷰 9라운드 → .omc/specs/deep-interview-song-mix-gui-v2.md (모호성 17%, 임계 20%)
+  우선순위 확정: 사용성(Undo 다단계·검색·최근파일·비교뷰) → 성능(예산 4종) → 범위확장(트랙 전송·오토메이션·send 보존·체인 이식).
+- 컨센서스 계획 → .omc/plans/song-mix-gui-v2-consensus-plan.md (pending approval)
+  - Architect APPROVE(조건부): 스파이크 t=0 병렬 발사(Phase 0-S), validate 3종 확장, 프리웜 큐 락,
+    LauncherCell 체크리스트, Undo 스냅샷 소스 확정. song.xml 구조 주장 전부 실측 검증됨.
+  - Critic REVISE→반영: P3를 플러그인 그룹 입도로 재정의(배치 효율 보존), AC-4 diff를
+    compare.py(Python)로 분리해 pytest 검증, song_parser.py 신설 스코프, Undo push 시점 명문화.
+- 문서 정리: CLAUDE.md 신설(부트스트랩 가이드), NEXT_SESSION_PROMPT.md 갱신(v2 실행 프롬프트 포함).
+- 토큰 최적화 질의 답변: 추가 MCP/룰 불필요 — 파일 기반 메모리(CLAUDE.md/progress/specs)로 충분.
+
+## v1 수동 게이트 판정 (2026-07-12, 사용자 확인)
+- 01/02/03/04 전부 통과 — **텍스트 수술 쓰기의 Studio One 수용성 확정** (v2 최대 전제 해소).
+- 핵심 판정: mixerconsole/notepad 동반 기재는 **선택적**(미기재도 콘솔 재생성) → 엔진은 안전 기본값 유지.
+- 교훈: 전송 검증 파일은 대상 곡 폴더 안에 두어야 미디어 로딩됨(.omc/verify/에서 열면 상대경로 끊김)
+  → v2 Phase 0-S 스파이크(05/06/07)는 대상 곡 폴더에 사본 배치 + .omc/verify/에는 백업 보관.
+- 사용자 관찰 "COPY에 입력 없음/send 안 됨"은 설계대로(버스 트리+세팅만 이식, 트랙 연결은 v2).
+- 잔여 수동 항목: S0.3 잠금 실측만 (문서화 목적, 기능 영향 없음).
+
+## v2 실행 세션 (2026-07-13, ralph) — Phase 0-S/U/S 대부분 완료, P/S1 잔여
+
+### 상태 요약 (.omc/state/sessions/528a8692-.../prd.json 참조)
+- 완료(passes:true, 테스트로 검증됨): Phase 0-S 스파이크 3종(05/06/07 + MANUAL_CHECKLIST),
+  U1 Undo 스택(엔진+브리지+프론트+E2E), song_parser.py, S3b 버스 오토메이션 전송.
+- 부분 완료(엔진만, UI 다이얼로그 배선은 main.py/App.tsx 여유 생기면 진행):
+  S2 외부 send 보존(preserve_external_sends 파라미터), U4 compare.py(프론트는 완료됨—아래 참조).
+- 배경 에이전트가 별도 완료: U2 검색/필터, U3 최근 파일, U4 프론트(ComparePanel.tsx,
+  Shift/Alt+우클릭 비교), U5 UI/UX 폴리시 — 전부 pytest 526 + 빌드 + self-test + E2E 통과 확인됨
+  (에이전트 자체 보고 기준, 이 세션에서 직접 재확인은 아래 "미검증" 참조).
+- **신규 구현 완료, 테스트 코드 작성 완료, 그러나 실행 검증이 도구 장애로 중단된 상태**:
+  S4b/S4d 트랙 채널 전송(transfer_track() 신설, engine/songcore/transfer.py) +
+  mediapool.xml 클립 이식/useCount 로직(_copy_clip_to_mediapool) +
+  engine/tests/test_transfer_track.py(8개 테스트, 코드 리뷰로 로직 확인했으나 pytest 미실행).
+  **다음 세션 최우선**: `python -m pytest engine/tests -q` 전체 재실행해 이 파일들 통과 확인부터.
+
+### 이번 세션 핵심 발견 (재발견 비용 큼 — 실측 기반)
+- **song.xml 실측 구조 확정** (engine/songcore/song_parser.py 근거):
+  Tracks 리스트는 `<List x:id="Tracks">`(대문자 T) — 계획 문서의 소문자 표기는 오타였음.
+  MediaTrack: trackID/trackNumber(1부터)/자식 `<UID x:id="channelID">`.
+  AutomationTrack: trackID만(trackNumber 없음 — 실측 확인, Critic Minor 4 예측 적중),
+  channelID 자식 없이 AutomationRegion identity(`param:///AudioMixer/{UID}/...`)로 채널 참조.
+- **MediaTrack mediaType 구분 발견 (song3/song1.song "MODO DRUM" 실측)**: mediaType="Audio"만
+  audiomixer.xml 채널을 참조. mediaType="Music"(악기/MIDI 트랙)은 완전히 다른
+  Devices/musictrackdevice.xml 채널을 참조 — v2 범위(오디오 트랙) 밖이라 dangling-track-channel
+  검사에서 반드시 제외해야 함(안 그러면 코퍼스 전체에서 오탐 19건).
+- **원본 코퍼스에 스테일 오토메이션 dangling 실존 (naiite_20 실측)**: 삭제된 구 S.BUS UID
+  `{7AEF0C5E-...}`를 여전히 참조하는 hidden(visible="0") AutomationTrack이 존재 — notepad.xml
+  스테일 UID(v1 기지식)와 동일 현상. uid_refs.validate()의 신규 검사 3종은 반드시
+  require_console_for(이 전송이 새로 만든 채널) 기반 error/warning 비대칭을 적용해야 함
+  (그렇지 않으면 naiite_20을 열기만 해도 save_pipeline이 항상 실패하는 회귀가 생김 —
+  116곡 코퍼스 회귀 테스트로 사전에 잡음, 실전 배치 전 필수 검증 패턴 재확인).
+- **List 태그는 중첩된다** (Tracks 안에 MediaTrack의 Events 등) — song.xml에 신규 블록을
+  삽입할 때 첫 `</List>`로 단순 검색하면 안 되고 태그 깊이를 세어야 한다
+  (transfer.py `_list_content_span` 헬퍼로 해결).
+- RecordUnit(트랙의 녹음 입력 라우팅)은 소스 전용 하드웨어 참조라 트랙 전송 시 전송하지
+  않음(빈 채널) — v1 채널 COPY의 "입력 없음" 설계와 동일 원칙 적용.
+- 트랙 전송은 현재 덮어쓰기 미지원(동명 채널 존재 시 TransferError) — 스코프 최소화(YAGNI),
+  필요시 후속 스토리에서 확장.
+
+### 도구 장애 기록
+- 이번 세션 후반부(engine/songcore/transfer.py의 mediapool 이식 코드 작성 직후)부터
+  Bash/PowerShell/Agent 툴이 장시간(다수 재시도) "claude-sonnet-5 is temporarily unavailable"
+  classifier 오류로 실행 불가 상태. Read/Grep 등 읽기 전용 도구는 정상 동작.
+  코드는 기존 패턴(transfer_subtree/replace_insert_chain)과 실측 XML 구조 대조로 리뷰했으나
+  **pytest 미실행 상태로 세션 종료 가능성 있음 — 다음 세션 시작 시 최우선 확인 사항**.
+
+## v2 세션 완료 (2026-07-13, 도구 복구 후 이어서 진행)
+
+도구 장애 복구 후 위에서 미검증이던 부분 전부 확인 완료, 이후 Phase P/S1/Phase V까지 마무리.
+**.omc/plans/song-mix-gui-v2-consensus-plan.md 19개 스토리 전부 passes:true.**
+최종 상태: `.omc/RUN_REPORT-v2.md` 참조 (AC-1~11 판정표 포함). pytest 262(v1)+271(v2 신규)=533개,
+빌드 성공, self-test PASS, E2E PASS(Undo/검색/최근파일/비교/체인이식/전송 전 시나리오 전부 포함).
+
+### 이번 후반 세션 작업
+- **S4b/S4d 확인**: 도구 복구 후 pytest 8종 전부 즉시 통과(코드 리뷰 결론과 일치).
+- **P1 성능 계측**: app/main.py에 [perf] startup/open_to_graph 타임스탬프 마커 추가 +
+  spikes/perf_budget.py 신설. 실측 4항목 전부 예산 대비 큰 여유(시작 0.43s/열기 0.51s/
+  캐시해석 0.001s/전송저장 0.07s) → P2/P4는 "이미 예산 내 → 최적화 불필요"로 판정(원칙 5 준수).
+- **P3 프리웜 우선순위**: engine/introspect/service.py를 순차 for-loop에서 그룹 큐(list+lock)
+  구조로 리팩터링. hint_visible()(그룹 승격, interpret() 캐시 미스 시 자동 호출),
+  prewarm_status()(그룹 단위 진행률) 신설 + main.py 브리지 슬롯. 화이트박스 pytest 5종.
+  프론트 배선(뷰포트 힌트 자동 호출, 진행률 폴링 UI)은 스코프 밖으로 남김.
+- **S1 체인 이식 UI**: 엔진(replace_insert_chain)·브리지(replace_chain)는 이미 완비돼 있어
+  프론트 배선만 추가 — Ctrl+우클릭=체인 복사(트랙 포함), 평범한 우클릭 시 클립보드가 체인
+  모드면 확인 다이얼로그→교체. **E2E에서 실제 버그 발견**: 체인 복사 후 clipboard가 리셋
+  안 되면 이후 모든 평범한 우클릭이 붙여넣기로 오인식(서브트리 복사 완전히 막힘) — 교체 확정
+  시 clipboard.current=null로 수정. 재현 테스트 필수였던 사례(코드 리뷰만으론 못 잡음).
+- **S2 UI 배선 마무리**: 브리지 transfer_subtree 슬롯에 preserve_sends bool 인자 추가,
+  툴바에 상시 토글 "외부 send 보존" 체크박스(계획 문구는 "다이얼로그"였으나 충돌 유무와
+  무관하게 항상 적용되는 전역 토글이 더 실용적이라 판단).
+- MANUAL_CHECKLIST.md에 S3b/S4b/S4d 엔진 완료 상태 갱신, RUN_REPORT-v2.md 신규 작성.
+
+### 남은 일 (완전 자동화 불가)
+- Studio One 8.1로 .omc/verify/05~07 확인 (MANUAL_CHECKLIST.md 참조) — 결과 알려주면 조건부→정식 통과.
+- AC-5/6의 프론트 배선 잔여(hint_visible 자동 호출, 프리웜 진행률 폴링 UI, 트랙 전송 다이얼로그)는
+  기능적으로 필수는 아니나 완전한 UX를 위해서는 후속 스토리로 진행 여지 있음.
+
+### 아키텍트 검증(Opus) + 디슬롭 패스
+- 아키텍트 검증: CRITICAL/HIGH 0건. MEDIUM 2건(undo가 save_over 대신 직접 write — 의도된 예외,
+  mtime+hash AND 조건의 이론적 fail-open — 실사용상 안전 확인됨) — 둘 다 문서화로 충분, 코드 변경 불필요.
+  LOW 3건 중 2건 실제 수정: (1) trackNumber 결측(-1 센티널) 트랙 2개 이상이면 duplicate-track-number
+  오탐 가능 → 검사에서 -1 제외 + 합성 테스트 추가. (2) MediaTrack Events 리스트 제거가 단순 정규식이라
+  중첩 List 시 오판 가능 → _list_content_span 재사용하는 _strip_list() 헬퍼로 교체.
+- 디슬롭: transfer_subtree/transfer_track에 중복되던 Presets/Envelopes 복사 루프를
+  _copy_channel_files() 헬퍼로 통합. 완전 미사용 죽은 변수 2개 제거(transferred_set,
+  중복 dst_names_now 계산) — 둘 다 헬퍼 추출 전부터 존재하던 죽은 코드였음.
+- 최종 회귀: pytest 534 passed(533 + trackNumber 센티널 합성 테스트 1개 추가),
+  프론트 빌드 성공, E2E PASS(전 시나리오 유지 확인).
+
+## v2 세션 최종 완료 — ralph 22/22 스토리 전부 passes:true, 아키텍트 승인, 디슬롭 완료.
+
+## v2 후속 세션 (사용자 "계속 진행" 지시, 같은 세션에서 이어서 완료)
+
+1차 완료 시점에 note로만 남겨뒀던 프론트 배선 잔여 3건을 새 스토리(US-V2-020/021,
+US-GATE-V-followup)로 PRD에 추가해 마저 구현. 25/25 스토리 전부 passes:true.
+
+- **US-V2-020 (P3 프론트 배선)**: SongPane에 useEffect 추가 — doc 변경 시 전체 채널 uid로
+  api.hintVisible() 자동 호출. App.tsx에 800ms 폴링(prewarm_status, done<total일 때만 상태바
+  노출) 추가. E2E에서 hint_visible/prewarm_status 브리지가 실제로 {'done':0,'total':12}처럼
+  미캐시 그룹 반영함을 확인.
+- **US-V2-021 (트랙 전송 다이얼로그)**: **실제 갭 발견** — engine.songcore.transfer.transfer_track()과
+  pytest 8종은 이전 세션에 이미 완성돼 있었는데, app/main.py에 이를 호출하는 브리지 슬롯이
+  통째로 없었음(grep으로 실측 확인, "pytest 통과"가 "GUI에서 실제로 쓸 수 있음"을 보장하지
+  않는다는 교훈). main.py에 transfer_track 슬롯 신설, bridge.ts/api.transferTrack 추가,
+  ChannelNode의 트랙 채널도 draggable로 전환(DragPayload.mode에 "track" 추가), 드롭/붙여넣기 시
+  이벤트 포함 체크박스가 있는 확인 다이얼로그 → 전송.
+  **부수 효과 발견·수정**: 트랙이 draggable이 되며 라벨에 drag-hint(⠿) span이 붙어 기존
+  체인이식 E2E의 정확 텍스트 매칭(`=== '1 - guitar 1'`)이 깨질 뻔함 — startsWith 매칭으로 전환해
+  방지. E2E로 naiite_14 "kick out" 트랙을 dst로 DnD 전송 → 다이얼로그 → 재파싱에서 실제 채널
+  생성까지 확인.
+- pytest 534 passed 유지, 빌드 성공, E2E PASS(신규 시나리오 포함). RUN_REPORT-v2.md의
+  AC-5를 조건부→통과로, AC-6을 "Studio One 게이트만 남음"으로 갱신.
+- 남은 것은 이제 순수하게 Studio One 8.1 수동 확인(.omc/verify/05~07)뿐 — 소프트웨어 구현은
+  전부 완료.
+
+### 후속 작업 STANDARD 리뷰 — 실제 MEDIUM 버그 발견·수정
+아키텍트(Sonnet) 리뷰가 코드 읽기만으로 재현 시나리오까지 제시: 트랙 전송 확인 다이얼로그가
+"붙여넣기"(clipboard 기반)와 "드래그드롭"(clipboard 무관) 두 경로 모두에서 열리는데, "전송"
+버튼이 clipboard.current를 무조건 null 처리 — 사용자가 버스를 복사해둔 상태에서 무관한 트랙을
+드래그드롭 전송하면 그 복사가 조용히 사라짐(체인 클립보드 버그와 동일 클래스, 방향만 반대:
+과소 리셋이 아니라 과잉 리셋). 참조 동일성(clipboard.current === payload) 체크로 수정.
+회귀 방지 E2E 추가 중 테스트 자체의 버그도 하나 더 발견: 새로 추가한 검증 스텝이 S.BUS를
+정확 텍스트 매칭(===)으로 찾았는데, 버스는 원래부터 draggable이라 drag-hint span이 붙어
+매칭 실패 — startsWith로 수정 후 최종 PASS. 교훈: 리뷰가 지적한 버그를 고친 뒤 반드시 실제
+E2E로 재현·검증해야 한다(코드만 보고 "고쳤다"고 판단하면 안 됨 — 실제로 첫 검증 시도에서
+테스트 자체 버그로 인해 진짜 수정 여부를 판단할 수 없었음).
+25/25 스토리 전부 passes:true, pytest 534 passed, 빌드 성공, E2E PASS 최종 확인.
+
+### 디슬롭 패스 (V-followup)
+App.tsx의 runTransfer/runTrackTransfer/runChainReplace 3곳에 반복되던 "clipboard.docId로
+소스 문서 찾기" 로직을 resolveSrcPath() 헬퍼로 통합. 미사용 변수/타입 오류 없음(tsc
+--noUnusedLocals 확인). 최종 회귀: pytest 534 passed, 빌드 성공, self-test PASS, E2E PASS.
+
+## v2 세 번째 후속 세션 (사용자 "계속 진행" 재요청)
+
+25/25 완료 상태를 재검토하다 발견: transfer_subtree/transfer_track/replace_insert_chain 등
+다수 pytest가 src로 실제 코퍼스 경로(NAIITE 등)를 직접 읽어 쓰는데, "원본 .song 절대 수정
+금지"라는 v1 핵심 불가침 원칙을 스위트 차원에서 자동 강제하는 안전망이 없었음(개별 테스트
+작성자의 재량에만 의존). engine/tests/conftest.py 신설 — 세션 스코프 autouse fixture로
+전체 코퍼스(116곡) md5를 스위트 실행 전/후 비교. 오버헤드 무시 가능(8.61s, 기존과 동일),
+이번 실행 자체가 지금까지의 모든 전송 테스트가 원본을 건드리지 않았음을 실증.
+US-V2-022로 PRD에 추가해 passes:true. pytest 534 passed 유지(총 개수는 그대로 — 신규
+fixture 추가일 뿐 신규 테스트 함수 추가 아님).
+
+## v2 최종 게이트 확정 (2026-07-13, 사용자 Studio One 8.1 실측 확인)
+
+05-automation-transfer / 06-track-transfer-empty / 07-track-transfer-events **3종 전부 통과**
+(사용자가 실제 Studio One 8.1에서 열어 확인). 계획 문서 Open Question 1(오토메이션 삽입 순서
+무관)/2(빈 MediaTrack에 Events 리스트 불필요)/4(신규 트랙에 LauncherCell 항목 없어도 Show/
+Launcher 뷰 정상 표시) 전부 해소. MANUAL_CHECKLIST.md/RUN_REPORT-v2.md의 조건부 표기를
+정식 통과로 갱신 완료. **v2 계획 26/26 스토리 + 수동 게이트 전부 완료 — 조건부 요소 없음.**
+잔여(기능 영향 없음, 문서화 목적): v1 S0.3 잠금 실측 미확인.
+
+## v3: 여러 곡 일괄 믹스 레시피 적용 (2026-07-13)
+
+### 요청 배경
+한 곡(예: naiite_14) 기준으로 믹스를 완성한 뒤, 스네어 트리거처럼 곡마다 세팅이 달라야
+하는 트랙은 그대로 두고 나머지 트랙의 채널별 플러그인 + 버스구조/병렬구조를 여러 다른 곡에
+동시에 반영하고 싶다는 요청. GUI는 항목 하나씩 드래그하는 구조라 다수 곡에 반복 적용이
+비효율적 → 배치 엔진 신규 필요. 라벨(채널명)이 곡마다 표기가 다를 수 있어(실측: naiite_14의
+"kick" vs sp_hwa_14의 "1 - kick", "S.BUS" vs "SN") 정확 라벨 일치만 인정하고 사전에 매칭
+결과를 보여주기로 사용자와 합의(자동 유사매칭 금지 — 잘못된 채널에 덮어쓰기 방지).
+
+### 구현
+- engine/songcore/bulk_apply.py (신규): TDD로 작성.
+  - find_bus_roots(model): 버스/FX 채널 중 "자신의 목적지가 버스가 아닌" 최상위 루트만 추출
+    (실측: naiite_14는 최종 서브믹스버스 "MIXOUT" 단 하나가 유일한 루트 — 그 아래 드럼/기타/
+    베이스버스+병렬버스+FX버스 전부가 한 서브트리 안에 중첩돼 있음. 즉 버스구조 일괄 적용은
+    사실상 "MIXOUT 이하 전체"를 통째로 옮기는 것과 동일 — dst에 동등 역할의 마스터버스가
+    다른 라벨로 있어도 인식 못 하고 별개로 새로 추가하니 사용 전 반드시 인지할 것).
+  - plan_recipe(src_model, dst_model, exclude_labels): 버스 루트=bus-subtree, 트랙 채널은
+    라벨 매칭되면 chain-replace, exclude_labels에 있으면 excluded, 매칭 안 되면 no-match로
+    분류 — 실제 전송 전 dry-run 미리보기로도 그대로 재사용.
+  - apply_recipe/apply_recipe_to_songs: dst 컨테이너별 실패 격리(fail-closed) — 한 dst의
+    레시피 도중 TransferError가 나면 그 dst는 save_over 자체를 호출하지 않아 원본 파일이
+    한 바이트도 안 바뀜(다른 dst는 계속 진행). dry_run=True면 아예 저장 시도 자체를 안 함.
+  - exclude_labels 알려진 한계: 최상위 버스 루트/트랙 채널에만 적용됨 — 전송될 버스 서브트리
+    "내부"에 중첩된 라벨(예: 최상위가 아닌 FX 버스)은 exclude해도 서브트리에 그대로 딸려감
+    (문서화만 해둠, 이번 스코프에서 서브트리 내부 가지치기는 안 함 — YAGNI).
+- engine/apply_mix_recipe.py (신규 CLI): `python -m engine.apply_mix_recipe src.song dst1.song
+  dst2.song --exclude "SN T"`. 기본은 --plan-only/미리보기(dry-run)만 하고 실제 파일은 절대
+  안 건드림 — --apply를 명시해야 실전 저장. --plan-only는 전송을 아예 시도하지 않고 라벨
+  매칭표만 보여줌(버스 서브트리가 구조적으로 실패할 상황이어도 매칭 확인은 항상 가능).
+  실제 코퍼스로 dry-run 스모크 테스트 완료(정상 동작, 실제 파일 미변경 확인).
+- engine/tests/test_bulk_apply.py: 9 tests (순수 로직 2 + 실제 코퍼스 통합 5 + 배치 격리 2).
+  code-reviewer 1차 리뷰에서 HIGH 1건(배치 예외 처리 범위가 OSError만 잡아 ValueError/
+  BadZipFile/XML ParseError 등에서 배치 전체가 죽음) + MEDIUM 3건(dst 라벨 중복 시 dict가
+  조용히 하나만 선택 — plan_recipe에서 fail-closed ValueError로 수정, exclude_labels 서브트리
+  미가지치기 문서화, MIXOUT 전체 이식 문서화) 발견 → 전부 수정 반영, 회귀 테스트 추가
+  (라벨중복 거부 1개 + "선행 단계 성공 후 후행 단계 실패 시 원본 미변경" 실제 검증 1개).
+- 최종 회귀: pytest 567 passed(534+9 신규+conftest 무결성 재확인), 코퍼스 불변성 가드 유지.
+
+### 후속 라운드 (2차 code-reviewer 검증 → HIGH 1 + MEDIUM 4 전부 수정)
+"확인하고 진행해" 지시에 따라 1차 리뷰의 "블라스트 반경/exclude 한계" 지적을 실제로
+메우는 2개 기능을 추가하고, 그 기능 자체도 재리뷰해 발견된 문제를 전부 고쳤다:
+- **include_bus_labels 파라미터** (plan_recipe/apply_recipe/apply_recipe_to_songs +
+  CLI `--bus`(반복 지정)/`--bus-none`): 버스 루트를 전부가 아니라 특정 라벨만 선택
+  가능. 최상위 루트가 아닌 중첩 버스(예: naiite_14의 "DR.B"는 유일 최상위 루트인
+  "MIXOUT" 아래 중첩됨)를 직접 지정해도 transfer_subtree가 루트 위치 무관하게
+  작동하므로 그대로 존중(실제 apply_recipe로 e2e 검증 완료).
+  - 2차 리뷰 HIGH: `{"MIXOUT","DR.B"}`처럼 조상-자손 관계인 라벨을 동시 지정하면
+    어느 쪽이 최종 결과로 남을지 세트 순회 순서에 좌우돼 비결정적 → ValueError로
+    명시 거부(겹치지 않게 하나만 고르라고 안내)로 수정.
+  - 2차 리뷰 MEDIUM: 소스에 라벨 중복 버스가 있으면 dict가 조용히 하나만 선택 →
+    dst 쪽과 동일하게 ValueError 가드 추가. include_bus_labels에 존재하지 않는
+    라벨을 주면 조용히 사라지던 것 → "unknown-bus-label" plan 항목으로 가시화.
+- **nested_exclusion_warnings + 기본 차단**: exclude_labels가 서브트리 내부 라벨에는
+  안 먹히는 걸 경고 문자열로만 남기면 사용자가 못 보고 그냥 --apply할 위험이 있다는
+  2차 리뷰 MEDIUM 지적 → apply_recipe가 이 경고 발생 시 **기본적으로 아무 것도 쓰지
+  않고 TransferError로 거부**하도록 변경(allow_nested_exclusion_warnings=True로
+  명시 허용해야 강행). CLI에 `--allow-nested-exclusion-warnings` 플래그 추가.
+- 최종 pytest 578 passed(9종 신규 테스트 추가: 중첩 버스 e2e, 겹침 거부, 소스 라벨
+  중복 거부, 미지 라벨 가시화, 기본 차단+명시 허용 양쪽 경로). CLI 3개 시나리오
+  실제 코퍼스로 스모크 테스트(기본 차단/명시 허용/겹침 거부) 전부 의도대로 동작 확인,
+  실제 파일 변경 없음 재확인(find -newer로 대조).
+
+### 남은 일 / 사용 전 필독
+- 실제 프로덕션 곡에 --apply로 적용하기 전 반드시 --plan-only로 라벨 매칭표부터 확인할 것
+  (라벨 표기가 곡마다 달라 no-match가 대량으로 나올 수 있음 — 실측: naiite_14→sp_hwa_14는
+  트랙 라벨이 대부분 불일치).
+- MIXOUT 전체 이식이 부담스러우면 `--bus`로 특정 버스만(중첩 버스도 가능) 선택하거나
+  `--bus-none`으로 버스는 아예 건드리지 않고 트랙 체인만 적용 가능(둘 다 구현 완료).
+
+### GUI 배선 (2026-07-13, 사용자 "gui로는 못해?" 요청에 따라 추가)
+CLI 전용이던 것을 PySide6 GUI에도 노출. 엔진(bulk_apply.py)은 전혀 수정 없이 그대로 재사용.
+- **app/main.py**: `pick_song_files_dialog`(대상 곡 다중 선택 네이티브 다이얼로그),
+  `preview_bulk_recipe`(전송 시도 없이 라벨 매칭 + 버스 루트 목록만 계산),
+  `apply_bulk_recipe`(실제 적용 — 기존 단일 전송 슬롯들과 동일하게 Undo 스택 편입 +
+  save_pipeline 재사용, dst별 fail-closed 격리) 3개 브리지 슬롯 신설.
+- **app/frontend/src/BulkApplyDialog.tsx** (신규 컴포넌트): 소스 곡(열린 문서 중 선택) +
+  대상 곡 목록(파일 다이얼로그로 추가/제거) + 제외 라벨(쉼표 구분) + 버스 선택(전체/안 함/
+  직접 선택, 직접 선택은 미리보기 후 발견된 버스 루트 체크박스) + "중첩 배제 경고 강행"
+  체크박스. "미리보기"는 항상 안전(엔진 plan_recipe만 호출, 전송 없음), "적용"은
+  bulk_apply.apply_recipe의 기본 차단 정책을 그대로 물려받음.
+- 툴바에 "레시피 일괄 적용…" 버튼 추가(App.tsx).
+- 헤드리스 E2E용 테스트 훅 `window.__bulkApplyAddDst`를 기존 `window.__openSong` 패턴과
+  동일하게 추가(네이티브 다중 파일 다이얼로그는 자동화 스크립트로 조작 불가하므로).
+- app/e2e_test.py에 시나리오 추가(다이얼로그 열기→미리보기→MIXOUT 버스서브트리 계획
+  확인→닫기, 읽기 전용). 스텝이 늘어 총 실행 시간이 기존 120s 타임아웃에 근접/초과해
+  160s로 상향 조정(교훈: 시나리오 추가 시 고정 타임아웃 상수도 같이 점검할 것).
+- 최종 확인: 프론트 빌드 성공, pytest 578 passed(엔진 무변경), 헤드리스 self-test PASS,
+  E2E PASS(신규 시나리오 포함, 30/31 유지).
+
+### 사용성/UI 개선 (2026-07-14, 사용자 "사용성 및 UI 개선" → "앱 전체" 범위 지정)
+- **상태바 색상**: statusMsg 문자열에서 실패/완료를 유추해 파생 상태(statusKind)로 색칠
+  (실패=빨강, 완료/복원/복사=초록) — 기존 setStatusMsg 호출부는 전혀 안 건드림(derive-
+  during-render로 상태 중복 없이 해결).
+- **모달 일관성**: chainPasteConfirm/trackTransferConfirm/conflict/BulkApplyDialog에
+  배경 클릭 시 닫힘 추가(showShortcuts/compareResult만 되던 것과 통일). App 전역에
+  Esc 키로 열린 모달/드롭다운 전부 닫힘 핸들러 추가.
+- **최근 파일 드롭다운**: 바깥 클릭 시 자동 닫힘(document mousedown 리스너, 열려있을
+  때만 부착).
+- **툴바 그룹화**: 버튼들을 논리 그룹(파일/보기·편집/일괄적용·설정)으로 나누고
+  구분선(.toolbar-divider) 추가 — 기존엔 한 줄에 전부 나열돼 스캔하기 어려웠음.
+- **BulkApplyDialog 대폭 개선**: 제외할 라벨을 자유 텍스트(쉼표 구분, 오타 위험) 대신
+  소스 곡의 실제 트랙 라벨 체크박스 목록으로 교체 — 신규 브리지 슬롯 `describe_source`
+  (대상 없이 소스만으로 트랙 라벨+버스 루트 즉시 조회)를 소스 선택 시(useEffect)
+  자동 호출해 미리보기를 누르기 전에도 버스 선택/제외 체크박스가 바로 채워짐. 미리보기
+  결과에 액션별 카운트 요약(예: "체인 교체 12 · 버스 전송 1 · 매칭 안 됨 5") 추가.
+- **회귀 발견·수정**: 툴바 버튼을 `<div class="toolbar-group">`로 감싸면서 E2E의
+  `.toolbar > button`(직계 자식) 선택자가 깨져 "스플릿" 클릭이 조용히 실패 →
+  isSplit이 그대로 false인 채 dst 파일이 좌측 패널을 덮어써 이후 전체 시나리오가
+  연쇄 실패. DOM 상태 진단 스텝을 임시로 넣어 좌측 패널 라벨이 dst 것으로 나오는 걸
+  실측 확인 후 원인 특정 → 선택자를 `.toolbar button`(자손, 구조 비의존)으로 수정해
+  해결. 교훈: 마크업 구조를 바꿀 때 직계 자식(`>`) CSS 선택자를 쓰는 E2E 테스트가
+  있는지 항상 확인할 것.
+- 최종 확인: 프론트 빌드 성공, pytest 578 passed, self-test PASS, E2E PASS(전체
+  시나리오 재확인, 회귀 없음).
+
+### 상용 소프트웨어 수준 UI/UX 폴리싱 (2026-07-14, 사용자 "상용 소프트웨어 수준까지" 지시)
+전면 디자인 패스. 새 파일 없이 CSS/일부 JSX만으로 진행(엔진 무변경).
+- **styles.css 전면 재작성**: `:root`에 디자인 토큰 도입(색상 레이어 6단계, 간격 스케일,
+  반경 3단계, 그림자 3단계, 모션 duration/easing) — 이전엔 색상 hex가 곳곳에 하드코딩돼
+  있었음. 전 규칙을 토큰 참조로 교체. 스크롤바 얇게 테마 통일, `:focus-visible`(키보드
+  포커스만 표시, 마우스 클릭 시엔 안 보임) 추가.
+- **Icons.tsx 신규**: 외부 아이콘 라이브러리 없이 최소 스트로크 SVG 6종(폴더/시계/컬럼/
+  되돌리기/키보드/레이어) — currentColor 상속이라 버튼 색과 자동 동기화. 툴바 버튼 전체에
+  적용.
+- **버튼/툴바**: hover(표면색 밝아짐+accent 테두리)/active(눌림 스케일)/disabled(불투명도)
+  일관 적용. 탭에 활성 인디케이터 바 추가.
+- **모달**: 전부 fade+scale 진입 애니메이션(`modal-in`/`backdrop-in` keyframes), 배경
+  blur 추가. `.modal-actions button:first-child`(위험/확정 버튼)는 danger 토큰 색상.
+- **채널 노드/디테일패널**: 그림자+hover 시 그림자 강조, 디테일패널 슬라이드인 애니메이션,
+  인서트 아이템 선택 시 accent 배경톤.
+- **빈 상태(empty state)**: 텍스트 한 줄뿐이던 걸 아이콘+제목+"song 열기…" CTA 버튼으로
+  교체(좌측 패널), 우측 빈 패널도 아이콘+안내 문구로 통일.
+- **드래그앤드롭 시각 피드백**: 유효한 페이로드를 패널 위로 드래그하면 accent 테두리
+  강조 + "여기에 놓기" 오버레이 표시(`dragleave`는 `relatedTarget` 컨테인 체크로 자식
+  이동 시 깜빡임 방지).
+- **창 제목**: 신규 브리지 슬롯 `set_window_title` + 프론트 useEffect(leftDoc 변경 시
+  호출) — 창 제목이 "파일명 — Song Mix GUI"로 항상 현재 활성 문서를 반영(상용 데스크톱
+  앱 관례).
+- **회귀 없음 확인**: 프론트 빌드 성공, pytest 578 passed(엔진 무변경), 헤드리스
+  self-test PASS(30/31 노드), E2E PASS(신규 UI 요소 포함 전체 시나리오 재확인).
+- **참고**: 이 환경의 Claude Browser 미리보기 도구가 응답하지 않아(preview_start/navigate
+  둘 다 타임아웃) 실제 픽셀 단위 시각 검증은 못 했음 — CSS 코드 리뷰 + 기능 회귀
+  테스트(self-test/E2E)로만 검증됨. 실제 실행해서 눈으로 확인 필요.
+
+### BulkApplyDialog 3종 보강 (2026-07-14, 사용자 스크린샷 지적: "경로 하위 song 탐색
+선택 옵션", "파일별 트랙 현황", "버스가 다 안 보이는 이유")
+- **원인 규명(버스 누락)**: describe_source가 `find_bus_roots`(최상위 버스만, 중첩
+  버스는 부모 서브트리 전송에 자동으로 딸려가고 개별 항목으로 안 보임)만 반환해
+  "직접 선택" 체크박스에 중첩 버스(예: MIXOUT 아래 DR.B)가 애초에 노출되지 않았음 —
+  엔진(`plan_recipe`의 `include_bus_labels`)은 중첩 라벨 직접 지정을 이미 지원하는데
+  UI가 그 능력을 숨기고 있었던 것. `bulk_apply.py`에 `bus_channel_tree(model)` 신설
+  (모든 버스/FX 채널을 DFS 트리 순서로 depth와 함께 반환) → `describe_source`가
+  `busRoots` 대신 `busTree`를 반환하도록 교체 → BulkApplyDialog "직접 선택"이 depth로
+  들여쓴 전체 버스 트리를 보여줌. "전체" 모드 옆에도 "왜 하나만 보이는지" 설명 문구
+  추가(중첩 버스는 상위 서브트리에 자동 포함되어 미리보기에 별도 행으로 안 나온다는
+  것은 사양이지 버그가 아님 — 오해 방지용 힌트).
+- **폴더 스캔 선택**: 신규 브리지 슬롯 `pick_song_directory_dialog`(폴더 선택)
+  + `scan_song_directory`(경로 하위 `*.song` 재귀 탐색, 파일별 트랙 라벨+버스 개수
+  계산, 개별 파일 파싱 실패는 파일 단위로 격리해 배치 전체를 막지 않음 — 기존
+  apply_bulk_recipe의 fail-closed 격리 원칙과 동일). 프론트에 `BulkScanPanel.tsx`
+  신규(프레젠테이셔널 — 조회/상태는 BulkApplyDialog가 소유, 컨테이너/프레젠테이셔널
+  분리). 대상 곡 영역에 "폴더에서 스캔..." 버튼 추가 → 폴더 지정 시 하위 song 파일들을
+  체크박스 목록(파일별 "트랙 N개 · 버스 M개" 요약 포함)으로 보여주고 선택한 것만
+  대상 곡 목록에 추가.
+- **엔진 테스트**: `bus_channel_tree`가 최상위(depth 0)와 중첩(depth 1+)을 올바르게
+  구분하고 DFS 순서(부모 다음에 자식)로 반환하는지 검증하는 유닛 테스트 추가.
+- **최종 확인**: 프론트 빌드 성공, pytest 579 passed(엔진 로직 1종 신규 테스트
+  포함, 기존 578개 회귀 없음), 헤드리스 self-test PASS, E2E PASS(기존 시나리오
+  전부 그대로 통과 — `bus_channel_tree` 도입이 `find_bus_roots` 기반 "전체" 모드
+  플랜 계산에는 영향 없음을 확인).
+- **후속(같은 날, 사용자 "하위도 적용되는거면 펼쳤을때 상위 누르면 다 적용되게
+  해야지")**: "직접 선택" 체크박스가 상위-하위를 각각 독립적으로만 토글해 트리
+  구조와 실제 전송 의미(상위 선택 = 서브트리 전체 통째 전송)가 UI에서 안 드러나던
+  문제. `bus_channel_tree`가 `(Channel, depth)`뿐 아니라 `parentLabel`도 반환하도록
+  확장(엔진 테스트도 갱신) → `describe_source`의 `busTree` 항목에 `parentLabel`
+  추가. 프론트에 `buildDescendantsMap`/`buildAncestorsMap` 순수 함수 추가해 상위를
+  체크하면 그 아래 모든 하위 항목이 자동으로 "포함됨" 표시 + 비활성화(개별 해제
+  불가 — 서브트리째 전송되므로 부분 제외가 애초에 불가능함)되도록 `toggleCustomBus`
+  수정. 실제 제출되는 `customBus` 집합에는 항상 최상위 선택 하나만 남도록 토글 시
+  하위 항목을 자동 제거해, 엔진의 조상-자손 동시 지정 거부(ValueError)와 절대
+  충돌하지 않는 불변식을 유지. 회귀 확인: 프론트 빌드 성공, pytest 579 passed,
+  E2E PASS(bulk apply 미리보기 시나리오 포함 전체 재확인).
+- **후속(같은 날, 사용자 "폴더로 고를때도 auto saved같은건 빼고 원본만 보이도록")**:
+  `scan_song_directory`가 Studio One의 `History/` 폴더(자동저장 + "(오리지널)"/
+  "(MIX_FIXED)" 등 명명된 스냅샷 전부 여기 쌓임)까지 그대로 훑어서 원본 대비 몇
+  배로 목록이 부풀던 문제. `app/main.py`에 `is_history_snapshot(song_path)` 모듈
+  함수 추가(경로 컴포넌트 중 "history"가 있으면 True — 대소문자 무시) → 폴더 스캔
+  루프에서 매칭되면 건너뜀. 실제 코퍼스(`C:\Users\yhkze\Documents\Studio Pro\Songs`)
+  로 필터 전/후 개수 검증: 전체 122개 중 필터링된 87개가 CLAUDE.md에 기록된
+  "History 87"과 정확히 일치(원본 35개 = 문서 작성 이후 늘어난 신규 테스트 fixture
+  포함, 필터 로직 자체는 정확함을 확인). 스캔 패널에 "History 폴더의 자동저장/
+  스냅샷은 제외" 힌트 문구도 추가. 회귀 확인: 프론트 빌드 성공, pytest 579 passed,
+  헤드리스 self-test PASS.
