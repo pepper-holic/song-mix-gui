@@ -12,12 +12,25 @@ from pathlib import Path
 
 _PROC_START = time.perf_counter()  # P1 성능 계측(spikes/perf_budget.py)의 "시작" 기준점
 
-ROOT = Path(__file__).resolve().parent.parent
+# PyInstaller 얼린 빌드에서는 소스가 sys._MEIPASS(onedir의 _internal/) 아래 번들되고
+# __file__ 기준 상대경로가 더 이상 유효하지 않다.
+if getattr(sys, "frozen", False):
+    ROOT = Path(sys._MEIPASS)  # type: ignore[attr-defined]
+else:
+    ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+
+# 배포용 exe에서 engine/introspect가 host_probe를 서브프로세스로 띄울 때 sys.executable은
+# 파이썬 인터프리터가 아니라 이 앱 자신이므로, --probe-mode로 자기 자신을 재호출해 여기서
+# 가로챈다. 무거운 Qt/WebEngine 임포트보다 먼저 처리해 프로브 왕복을 가볍게 유지한다.
+if len(sys.argv) > 2 and sys.argv[1] == "--probe-mode":
+    from spikes import host_probe
+    sys.argv = [sys.argv[0], *sys.argv[2:]]
+    sys.exit(host_probe.main())
 
 from PySide6.QtCore import QObject, QSettings, QTimer, QUrl, Slot
 from PySide6.QtWebChannel import QWebChannel
-from PySide6.QtWebEngineCore import QWebEngineSettings
+from PySide6.QtWebEngineCore import QWebEnginePage, QWebEngineSettings
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import QApplication, QFileDialog, QMainWindow
 
@@ -488,6 +501,14 @@ class Bridge(QObject):
                               ensure_ascii=False)
 
 
+class LoggingPage(QWebEnginePage):
+    """프론트 JS console.log/error를 stdout으로 전달 — 배포 빌드에서 로드/런타임 오류를
+    화면 없이도 진단할 수 있게 한다(원래는 QtWebEngine이 조용히 삼킴)."""
+
+    def javaScriptConsoleMessage(self, level, message, line_number, source_id):  # noqa: N802
+        print(f"[js:{level.name}] {source_id}:{line_number} {message}", flush=True)
+
+
 def run_self_test(window: QMainWindow, view: QWebEngineView, app: QApplication) -> None:
     """헤드리스 자기검증: naiite_14 로드 → React Flow 노드 수 확인 → 스크린샷.
 
@@ -536,6 +557,7 @@ def main() -> int:
     window = QMainWindow()
     window.setWindowTitle("Song Mix GUI — Studio One .song 믹스 분석/전송")
     view = QWebEngineView()
+    view.setPage(LoggingPage(view))
     settings = view.settings()
     settings.setAttribute(QWebEngineSettings.WebAttribute.LocalContentCanAccessRemoteUrls, True)
     settings.setAttribute(QWebEngineSettings.WebAttribute.LocalContentCanAccessFileUrls, True)

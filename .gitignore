@@ -9,6 +9,11 @@ node_modules/
 app/frontend/dist/
 app/frontend/*.tsbuildinfo
 
+# PyInstaller 배포 빌드 산출물 (packaging/song-mix-gui.spec으로 재생성 가능, 용량 커서 미추적)
+build/
+dist/
+*.zip
+
 # Studio One autosave/history snapshots (regenerable, filtered by app/main.py too)
 **/History/
 

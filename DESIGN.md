@@ -52,22 +52,28 @@ ChannelNode.tsx 등)에서 역산했다.
 
 ## 3. 디자인 토큰 (`styles.css` `:root`)
 
+2026-07-15 후반 세션에서 "너무 둥글둥글한 SaaS풍" 인상을 지우고 Studio One 콘솔에 가까운
+뉴트럴 차콜 그레이 + 앰버 액센트로 재설계(각진 모서리, 블러/글로우 제거). 이전 팔레트(코발트
+블루 배경 + 시안 액센트, 라운드 4/7/10px, 모달 backdrop-blur)는 git 히스토리에 남아있음.
+
 | 카테고리 | 토큰 | 값 | 용도 |
 |---|---|---|---|
-| 배경 | `--color-bg` | `#0b1220` | 앱 최하단 배경 |
-| 표면 | `--color-surface-1/2/3` | `#1a2436` / `#22304a` / `#2b3b58` | 레이어 깊이(1=툴바/모달, 2=버튼 기본, 3=hover/active) |
-| 테두리 | `--color-border` / `--color-border-strong` | `#2f3f58` / `#435269` | 구분선 / 인터랙티브 요소 테두리 |
-| 텍스트 | `--color-text` / `-muted` / `-dim` | `#e7edf7` / `#93a1ba` / `#64748b` | 본문 / 보조정보 / placeholder급 |
-| 강조 | `--color-accent` / `-strong` / `-soft` | `#4fc3f7` 계열 | 포커스, 활성 탭, 주요 CTA |
-| 상태 | `--color-success` / `-error` / `-warning` | 초록/빨강/노랑 + `-soft` 배경 변형 | 상태바, 배지, diff 하이라이트 |
-| 위험 | `--color-danger` / `-hover` | 주황 계열 | 모달의 확정/파괴적 버튼(첫 번째 액션 버튼) |
-| 간격 | `--space-1`~`--space-7` | 4~24px | 전 컴포넌트 padding/gap |
-| 반경 | `--radius-sm/md/lg` | 4/7/10px | 버튼·입력=md, 모달·비교패널=lg, 배지=sm |
-| 그림자 | `--shadow-sm/md/lg` | 얕음/보통/깊음 | 카드=sm, hover/드롭다운=md, 모달/디테일패널=lg |
-| 모션 | `--duration-fast/normal`, `--ease-out` | 120/200ms, `cubic-bezier(0.16,1,0.3,1)` | 전 트랜지션·키프레임 공통 |
+| 배경 | `--color-bg` | `#1b1b1b` | 앱 최하단 배경 |
+| 표면 | `--color-surface-1/2/3` | `#222222` / `#2a2a2a` / `#343434` | 레이어 깊이(1=툴바/모달, 2=버튼 기본, 3=hover/active) |
+| 테두리 | `--color-border` / `--color-border-strong` | `#3a3a3a` / `#4b4b4b` | 구분선 / 인터랙티브 요소 테두리 |
+| 텍스트 | `--color-text` / `-muted` / `-dim` | `#d9d9d6` / `#96968f` / `#6b6b66` | 본문 / 보조정보 / placeholder급 |
+| 강조 | `--color-accent` / `-strong` / `-soft` | `#d98a2e` 계열(앰버) | 포커스, 활성 탭, 주요 CTA — Studio One 콘솔 하이라이트 참고 |
+| 상태 | `--color-success` / `-error` / `-warning` | 톤다운된 초록/빨강/노랑 + `-soft` 배경 변형 | 상태바, 배지, diff 하이라이트 |
+| 위험 | `--color-danger` / `-hover` | 적갈색 계열 | 모달의 확정/파괴적 버튼(첫 번째 액션 버튼) |
+| 간격 | `--space-1`~`--space-7` | 4~24px | 전 컴포넌트 padding/gap(변경 없음) |
+| 반경 | `--radius-sm/md/lg` | 전부 2px | **각진 모서리** — pill/카드형 라운드 지양(플랫 디자인) |
+| 그림자 | `--shadow-sm/md/lg` | 최소한의 깊이감만(글로우·블러 없음) | 카드=sm, hover/드롭다운=md, 모달/디테일패널=lg |
+| 모션 | `--duration-fast/normal`, `--ease-out` | 100/160ms, `cubic-bezier(0.16,1,0.3,1)` | 전 트랜지션·키프레임 공통(더 스냅감 있게 단축) |
 
-**채널 종류 색상**(`ChannelNode.tsx` `KIND_COLORS`, 토큰화 안 되어 있음 — 갭):
-`track #1e3a5f` / `group #4a2d5f` / `effect #5f452d` / `output #2d5f3a`.
+**채널 종류 색상**(`ChannelNode.tsx` `KIND_COLORS` → `styles.css` `--kind-*` 토큰 참조,
+`track` #3d4750(청회색) / `group` #55452f(앰버브라운) / `effect` #4a3a2c(브라운) /
+`output` #3c4d3e(그린그레이) — 새 뉴트럴 팔레트와 어울리도록 채도를 낮춤).
+`.modal-backdrop`의 `backdrop-filter: blur()`도 제거(플랫 톤 유지, 불투명도만으로 배경 차단).
 
 ## 4. 컴포넌트 패턴
 

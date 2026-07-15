@@ -11,16 +11,15 @@ import hashlib
 import json
 import shutil
 import subprocess
-import sys
 import tempfile
 import threading
 from pathlib import Path
 
 from ..songcore import SongContainer
 from .inventory import Inventory
+from .runtime import data_dir, probe_cmd
 
-PROBE = Path(__file__).resolve().parents[2] / "spikes/host_probe.py"
-CACHE_DIR = Path(__file__).resolve().parents[2] / "spikes/out/param_cache"
+CACHE_DIR = data_dir() / "param_cache"
 PROBE_TIMEOUT = 240
 
 
@@ -123,7 +122,7 @@ class InterpretService:
             spec_file = tmpdir / "batch.json"
             spec_file.write_text(json.dumps({"presets": spec_presets}),
                                  encoding="utf-8")
-            cmd = [sys.executable, str(PROBE), bin_path, "--presets-json", str(spec_file)]
+            cmd = probe_cmd(bin_path, "--presets-json", str(spec_file))
             if subname:
                 cmd += ["--name", subname]
             timeout = PROBE_TIMEOUT + 30 * len(items)
@@ -198,8 +197,7 @@ class InterpretService:
             tf.write(preset_bytes)
             tmp = Path(tf.name)
         try:
-            cmd = [sys.executable, str(PROBE), res.path,
-                   "--preset", str(tmp), "--dump"]
+            cmd = probe_cmd(res.path, "--preset", str(tmp), "--dump")
             if res.subname:
                 cmd += ["--name", res.subname]
             r = subprocess.run(cmd, capture_output=True, text=True,

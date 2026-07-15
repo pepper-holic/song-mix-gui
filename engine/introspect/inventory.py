@@ -6,14 +6,14 @@ WaveShell 서브플러그인 열거 결과는 캐시(JSON)로 보관한다.
 import json
 import re
 import subprocess
-import sys
 import threading
 from dataclasses import dataclass
 from pathlib import Path
 
+from .runtime import data_dir, probe_cmd
+
 VST3_DIR = Path("C:/Program Files/Common Files/VST3")
-CACHE_PATH = Path(__file__).resolve().parents[2] / "spikes/out/inventory_cache.json"
-PROBE = Path(__file__).resolve().parents[2] / "spikes/host_probe.py"
+CACHE_PATH = data_dir() / "inventory_cache.json"
 SHELL_SCAN_TIMEOUT = 300
 
 
@@ -44,7 +44,7 @@ class Inventory:
         for shell in sorted(VST3_DIR.glob("WaveShell*-VST3*.vst3")):
             try:
                 r = subprocess.run(
-                    [sys.executable, str(PROBE), str(shell), "--list-names"],
+                    probe_cmd(str(shell), "--list-names"),
                     capture_output=True, text=True, encoding="utf-8",
                     timeout=SHELL_SCAN_TIMEOUT)
                 data = json.loads((r.stdout or "").strip().splitlines()[-1])

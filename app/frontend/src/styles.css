@@ -2,33 +2,33 @@
 html, body, #root { height: 100%; margin: 0; }
 
 :root {
-  /* 색상 — 레이어드 다크 테마 */
-  --color-bg: #0b1220;
-  --color-surface-1: #1a2436;
-  --color-surface-2: #22304a;
-  --color-surface-3: #2b3b58;
-  --color-border: #2f3f58;
-  --color-border-strong: #435269;
-  --color-text: #e7edf7;
-  --color-text-muted: #93a1ba;
-  --color-text-dim: #64748b;
-  --color-accent: #4fc3f7;
-  --color-accent-strong: #29b6f6;
-  --color-accent-soft: rgba(79, 195, 247, 0.14);
-  --color-success: #4ade80;
-  --color-success-soft: rgba(74, 222, 128, 0.14);
-  --color-error: #f87171;
-  --color-error-soft: rgba(248, 113, 113, 0.14);
-  --color-warning: #fbbf24;
-  --color-warning-soft: rgba(251, 191, 36, 0.14);
-  --color-danger: #c2660f;
-  --color-danger-hover: #d97b1f;
+  /* 색상 — 뉴트럴 차콜 그레이 + 앰버 액센트(Studio One 콘솔 배색 참고) */
+  --color-bg: #1b1b1b;
+  --color-surface-1: #222222;
+  --color-surface-2: #2a2a2a;
+  --color-surface-3: #343434;
+  --color-border: #3a3a3a;
+  --color-border-strong: #4b4b4b;
+  --color-text: #d9d9d6;
+  --color-text-muted: #96968f;
+  --color-text-dim: #6b6b66;
+  --color-accent: #d98a2e;
+  --color-accent-strong: #e89b3a;
+  --color-accent-soft: rgba(217, 138, 46, 0.16);
+  --color-success: #7fb37a;
+  --color-success-soft: rgba(127, 179, 122, 0.14);
+  --color-error: #cf6a56;
+  --color-error-soft: rgba(207, 106, 86, 0.14);
+  --color-warning: #d0ab3f;
+  --color-warning-soft: rgba(208, 171, 63, 0.14);
+  --color-danger: #a8451c;
+  --color-danger-hover: #bc5324;
 
   /* 채널 종류 색상 — ChannelNode.tsx KIND_COLORS와 App.tsx 범례가 여기 하나만 참조 */
-  --kind-track: #1e3a5f;
-  --kind-group: #4a2d5f;
-  --kind-effect: #5f452d;
-  --kind-output: #2d5f3a;
+  --kind-track: #3d4750;
+  --kind-group: #55452f;
+  --kind-effect: #4a3a2c;
+  --kind-output: #3c4d3e;
 
   /* 간격 스케일 */
   --space-1: 4px;
@@ -39,19 +39,19 @@ html, body, #root { height: 100%; margin: 0; }
   --space-6: 18px;
   --space-7: 24px;
 
-  /* 반경 */
-  --radius-sm: 4px;
-  --radius-md: 7px;
-  --radius-lg: 10px;
+  /* 반경 — 각진 모서리(플랫 디자인, 둥근 pill/카드 지양) */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
 
-  /* 그림자 */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
-  --shadow-md: 0 6px 20px rgba(0,0,0,0.4);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.55);
+  /* 그림자 — 최소한의 깊이감만(글로우/블러 없는 플랫 톤) */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 2px 6px rgba(0,0,0,0.45);
+  --shadow-lg: 0 4px 14px rgba(0,0,0,0.5);
 
   /* 모션 */
-  --duration-fast: 120ms;
-  --duration-normal: 200ms;
+  --duration-fast: 100ms;
+  --duration-normal: 160ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -165,7 +165,7 @@ button {
 .legend { display: flex; align-items: center; gap: 10px; margin-left: 4px; color: var(--color-text-muted); }
 .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; }
 .legend-swatch {
-  display: inline-block; width: 10px; height: 10px; border-radius: 3px;
+  display: inline-block; width: 10px; height: 10px; border-radius: 0;
   border: 1px solid #ffffff2e;
 }
 
@@ -216,7 +216,7 @@ button {
 }
 
 .shortcut-list { list-style: none; padding: 0; margin: 8px 0; }
-.shortcut-list li { padding: 4px 0; color: #cbd5e1; }
+.shortcut-list li { padding: 4px 0; color: var(--color-text); }
 .shortcut-list kbd {
   background: var(--color-surface-2); border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-sm); padding: 1px 5px; font-size: 11px; margin: 0 2px;
@@ -274,7 +274,7 @@ button {
 .empty-pane-title { font-size: 14px; color: var(--color-text-muted); margin: 0; }
 .empty-cta {
   display: inline-flex; align-items: center; gap: 6px;
-  background: var(--color-accent-strong); color: #06222f; border: none;
+  background: var(--color-accent-strong); color: #1c1200; border: none;
   border-radius: var(--radius-md); padding: 7px 16px; font-weight: 600; cursor: pointer;
   transition: filter var(--duration-fast);
 }
@@ -282,7 +282,7 @@ button {
 
 .channel-node {
   border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
-  padding: 7px 9px; min-width: 190px; max-width: 210px; color: #f4f7fb;
+  padding: 7px 9px; min-width: 190px; max-width: 210px; color: #efefe9;
   box-shadow: var(--shadow-sm); transition: box-shadow var(--duration-fast), transform var(--duration-fast);
 }
 .channel-node:hover { box-shadow: var(--shadow-md); }
@@ -303,7 +303,7 @@ button {
 
 .detail-panel {
   position: absolute; z-index: 10; top: 0; right: 0; width: 320px; height: 100%;
-  background: rgba(26, 36, 54, 0.94);
+  background: rgba(28, 28, 28, 0.94);
   border-left: 1px solid var(--color-border); padding: var(--space-4);
   overflow-y: auto; box-shadow: var(--shadow-lg);
   animation: slide-in-right var(--duration-normal) var(--ease-out);
@@ -323,8 +323,8 @@ button {
 .close-btn:hover { background: var(--color-surface-2); }
 .detail-route { color: var(--color-text-muted); }
 .send-tag {
-  margin-left: 6px; font-size: 11px; color: #c084fc;
-  border: 1px solid #c084fc55; border-radius: var(--radius-sm); padding: 0 4px;
+  margin-left: 6px; font-size: 11px; color: #b39ddb;
+  border: 1px solid #b39ddb55; border-radius: var(--radius-sm); padding: 0 4px;
 }
 .insert-list { padding-left: 0; list-style: none; }
 .insert-item {
@@ -385,7 +385,7 @@ button {
 .statusbar.status-success { color: var(--color-success); }
 
 .modal-backdrop {
-  position: fixed; inset: 0; background: rgba(4, 9, 20, 0.6); backdrop-filter: blur(2px);
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
   display: flex; align-items: center; justify-content: center; z-index: 100;
   animation: backdrop-in var(--duration-fast) var(--ease-out);
 }
@@ -425,14 +425,14 @@ button {
 }
 .bulk-step-num {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 18px; height: 18px; border-radius: 50%; background: var(--color-accent-soft);
+  width: 18px; height: 18px; border-radius: var(--radius-sm); background: var(--color-accent-soft);
   color: var(--color-accent); font-size: 11px; flex-shrink: 0;
 }
 .bulk-error { font-size: 12px; color: var(--color-error); }
 .bulk-ok { font-size: 12px; color: var(--color-success); }
 .bulk-warning { font-size: 12px; color: var(--color-warning); }
 .bulk-summary { font-size: 12px; color: var(--color-text-muted); margin: 2px 0 4px; }
-.bulk-field { display: block; margin-bottom: 14px; font-size: 12px; color: #cbd5e1; }
+.bulk-field { display: block; margin-bottom: 14px; font-size: 12px; color: var(--color-text); }
 .bulk-field select, .bulk-field input[type="text"] {
   display: block; width: 100%; margin-top: 5px; background: var(--color-surface-1); color: var(--color-text);
   border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); padding: 6px 9px;

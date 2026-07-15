@@ -75,6 +75,19 @@ QT_QPA_PLATFORM=offscreen python app/e2e_test.py
 
 콘솔에 한글/이모지를 출력할 때는 `PYTHONIOENCODING=utf-8`을 함께 지정하세요(Windows `cp949` 인코딩 크래시 방지).
 
+## 배포용 실행파일 빌드 (PyInstaller)
+
+```bash
+pip install pyinstaller
+cd app/frontend && npm run build && cd ../..
+python -m PyInstaller packaging/song-mix-gui.spec --distpath dist --workpath build --noconfirm
+```
+
+결과물: `dist/song-mix-gui/`(onedir — `song-mix-gui.exe` + 동봉 DLL/리소스 폴더 전체를 그대로 배포).
+onefile이 아니라 onedir을 쓰는 이유와 얼린 빌드 전용 처리(호스트 프로브 서브프로세스 재호출,
+파라미터 캐시 영속 위치)는 `packaging/song-mix-gui.spec` 및 `engine/introspect/runtime.py` 주석 참고.
+첫 실행은 Windows Defender 등이 새 실행파일을 스캔하느라 수십 초 걸릴 수 있음(이후 실행은 빠름).
+
 ## 핵심 도메인 지식
 
 - `.song` 파일은 zip 컨테이너입니다: `Devices/audiomixer.xml`(채널·라우팅·인서트), `Presets/Channels/<라벨>/N - <플러그인>.vstpreset`(파일명 순번이 체인 순서), `Envelopes/<라벨>/`. 채널 라벨이 폴더 키로 쓰이며 UID가 아니므로 라벨 충돌은 별도로 검사합니다.
