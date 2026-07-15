@@ -287,8 +287,13 @@ button {
 }
 .channel-node:hover { box-shadow: var(--shadow-md); }
 .channel-node[draggable="true"]:active { cursor: grabbing; transform: scale(0.98); }
-.channel-node .node-label { font-weight: 600; display: flex; justify-content: space-between; }
-.drag-hint { opacity: 0.55; cursor: grab; }
+.channel-node .node-label {
+  font-weight: 600; display: flex; align-items: center; gap: 4px;
+}
+.node-label-text {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.drag-hint { flex-shrink: 0; opacity: 0.55; cursor: grab; }
 .insert-badges { margin: 5px 0 0; padding: 0; list-style: none; }
 .insert-badge {
   font-size: 11px; background: rgba(255,255,255,0.10); border-radius: var(--radius-sm);

@@ -49,7 +49,7 @@ export function ChannelNode({ data }: NodeProps<Node<ChannelNodeData>>) {
     >
       <Handle type="target" position={Position.Left} />
       <div className="node-label">
-        {ch.label || ch.name}
+        <span className="node-label-text" title={ch.label || ch.name}>{ch.label || ch.name}</span>
         {draggable && <span className="drag-hint">⠿</span>}
       </div>
       {ch.inserts.length > 0 && (
