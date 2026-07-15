@@ -24,6 +24,12 @@ html, body, #root { height: 100%; margin: 0; }
   --color-danger: #c2660f;
   --color-danger-hover: #d97b1f;
 
+  /* 채널 종류 색상 — ChannelNode.tsx KIND_COLORS와 App.tsx 범례가 여기 하나만 참조 */
+  --kind-track: #1e3a5f;
+  --kind-group: #4a2d5f;
+  --kind-effect: #5f452d;
+  --kind-output: #2d5f3a;
+
   /* 간격 스케일 */
   --space-1: 4px;
   --space-2: 6px;
@@ -80,7 +86,7 @@ body {
 button {
   font-family: inherit; font-size: inherit;
 }
-.toolbar button, .modal-actions button, .bulk-dst-header button {
+.toolbar button, .modal-actions button, .bulk-dst-header button, .tab {
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--color-surface-2); color: var(--color-text);
   border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
@@ -89,10 +95,10 @@ button {
               border-color var(--duration-fast) var(--ease-out),
               transform var(--duration-fast) var(--ease-out);
 }
-.toolbar button:hover, .modal-actions button:hover, .bulk-dst-header button:hover {
+.toolbar button:hover, .modal-actions button:hover, .bulk-dst-header button:hover, .tab:hover {
   background: var(--color-surface-3); border-color: var(--color-accent);
 }
-.toolbar button:active, .modal-actions button:active, .bulk-dst-header button:active {
+.toolbar button:active, .modal-actions button:active, .bulk-dst-header button:active, .tab:active {
   transform: scale(0.97);
 }
 .toolbar button:disabled, .modal-actions button:disabled {
@@ -101,7 +107,11 @@ button {
 .icon { display: inline-flex; width: 14px; height: 14px; flex-shrink: 0; }
 .icon svg { width: 100%; height: 100%; }
 
-.tabs { display: flex; gap: 4px; overflow-x: auto; }
+.tabs {
+  display: flex; gap: 4px; overflow-x: auto; flex-shrink: 0;
+  padding: var(--space-2) var(--space-3); background: var(--color-surface-1);
+  border-bottom: 1px solid var(--color-border);
+}
 .tab {
   white-space: nowrap; opacity: 0.65; position: relative;
 }
@@ -110,6 +120,47 @@ button {
   content: ""; position: absolute; left: 8px; right: 8px; bottom: -7px; height: 2px;
   background: var(--color-accent); border-radius: 2px;
 }
+.tab-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; border-radius: var(--radius-sm); opacity: 0.6;
+}
+.tab-close:hover { opacity: 1; background: var(--color-surface-2); }
+
+/* VSCode식 자유 분할 레이아웃 */
+.pane-leaf { flex: 1; display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.pane-leaf-body { position: relative; flex: 1; min-width: 0; min-height: 0; }
+.pane-split { flex: 1; display: flex; min-width: 0; min-height: 0; }
+.pane-split-row { flex-direction: row; }
+.pane-split-column { flex-direction: column; }
+.pane-split-child { flex-basis: 0; min-width: 0; min-height: 0; display: flex; }
+.pane-split-child > * { flex: 1; min-width: 0; min-height: 0; }
+.resize-handle { flex: 0 0 auto; background: var(--color-border); transition: background var(--duration-fast); }
+.resize-handle:hover { background: var(--color-accent); }
+.resize-handle-row { width: 4px; cursor: col-resize; }
+.resize-handle-column { height: 4px; cursor: row-resize; }
+
+.pane-dropzone-overlay {
+  position: absolute; z-index: 4; background: var(--color-accent-soft);
+  border: 2px solid var(--color-accent); pointer-events: none;
+}
+.pane-dropzone-overlay.zone-center { inset: 0; }
+.pane-dropzone-overlay.zone-left { top: 0; left: 0; width: 50%; height: 100%; }
+.pane-dropzone-overlay.zone-right { top: 0; right: 0; width: 50%; height: 100%; }
+.pane-dropzone-overlay.zone-top { top: 0; left: 0; width: 100%; height: 50%; }
+.pane-dropzone-overlay.zone-bottom { bottom: 0; left: 0; width: 100%; height: 50%; }
+
+.tab-context-menu {
+  position: fixed; z-index: 200; min-width: 160px; margin: 0; padding: 4px;
+  list-style: none; background: var(--color-surface-1); border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+  animation: dropdown-in var(--duration-fast) var(--ease-out);
+}
+.tab-context-menu li button {
+  width: 100%; text-align: left; background: none; border: none; color: var(--color-text);
+  padding: 6px 9px; cursor: pointer; border-radius: var(--radius-sm);
+}
+.tab-context-menu li button:hover { background: var(--color-surface-2); }
+.tab-context-menu-divider { height: 1px; margin: 4px 2px; background: var(--color-border); }
 
 .legend { display: flex; align-items: center; gap: 10px; margin-left: 4px; color: var(--color-text-muted); }
 .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; }
@@ -153,6 +204,15 @@ button {
 .prewarm-indicator {
   margin-left: 10px; font-size: 11px; color: var(--color-text-muted);
   border-left: 1px solid var(--color-border); padding-left: 10px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.prewarm-bar {
+  width: 60px; height: 4px; border-radius: 2px; background: var(--color-surface-3);
+  overflow: hidden;
+}
+.prewarm-bar-fill {
+  height: 100%; background: var(--color-accent); border-radius: 2px;
+  transition: width var(--duration-normal) var(--ease-out);
 }
 
 .shortcut-list { list-style: none; padding: 0; margin: 8px 0; }
@@ -164,8 +224,6 @@ button {
 
 .panes { flex: 1; display: flex; min-height: 0; }
 .panes .song-pane, .panes .empty-pane { flex: 1; min-width: 0; }
-.panes.split .song-pane, .panes.split .empty-pane { width: 50%; }
-.panes.split > * + * { border-left: 1px solid var(--color-border); }
 
 .song-pane { position: relative; height: 100%; outline: none; transition: box-shadow var(--duration-fast); }
 .song-pane.drop-active { box-shadow: inset 0 0 0 2px var(--color-accent); }
@@ -194,8 +252,18 @@ button {
   font-size: 11px; color: var(--color-text-muted); display: flex; align-items: center; gap: 3px;
 }
 
+/* React Flow 기본 확대/축소 컨트롤은 라이트 테마 전제(흰 배경+흰 아이콘)라 이 다크 테마에서
+ * 안 보임 — 테마 토큰으로 오버라이드 */
+.react-flow__controls-button {
+  background: var(--color-surface-2); border-bottom: 1px solid var(--color-border);
+  fill: var(--color-text); color: var(--color-text);
+}
+.react-flow__controls-button:hover { background: var(--color-surface-3); }
+.react-flow__controls-button svg { fill: var(--color-text); }
 .react-flow__node.search-match .channel-node { outline: 2px solid var(--color-accent); outline-offset: 1px; }
 .react-flow__node.search-dim { opacity: 0.22; }
+/* A: 방향키로 이동한 논리적 활성 노드(aria-activedescendant 대상) */
+.react-flow__node.kbd-active .channel-node { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
 .empty-pane {
   display: flex; align-items: center; justify-content: center; color: var(--color-text-dim);
@@ -337,8 +405,29 @@ button {
 .modal-actions button:first-child { background: var(--color-danger); border-color: var(--color-danger); }
 .modal-actions button:first-child:hover { background: var(--color-danger-hover); }
 
+/* C-3: 파괴적 확인(덮어쓰기/체인교체/트랙전송)만 danger로 시각 구분 — 정보성 모달은 중립 유지 */
+.modal-danger { border-top: 3px solid var(--color-danger); }
+.modal-danger h3::before { content: "⚠ "; color: var(--color-danger); }
+
 .modal-wide { max-width: 640px; width: 90vw; max-height: 85vh; overflow-y: auto; }
 .bulk-hint { font-size: 12px; color: var(--color-text-muted); margin: 4px 0 10px; }
+/* B: 번호 매긴 섹션 + 상시 요약 바 — 상태 파악을 위해 스크롤 없이 항상 보이게 */
+.bulk-summary-bar {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--color-text);
+  background: var(--color-surface-2); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 7px 10px; margin: 0 0 14px;
+}
+.bulk-summary-bar strong { color: var(--color-accent); font-weight: 600; }
+.bulk-step { margin-bottom: 18px; }
+.bulk-step-header {
+  display: flex; align-items: center; gap: 8px; margin: 0 0 8px;
+  font-size: 13px; font-weight: 600; color: var(--color-text);
+}
+.bulk-step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%; background: var(--color-accent-soft);
+  color: var(--color-accent); font-size: 11px; flex-shrink: 0;
+}
 .bulk-error { font-size: 12px; color: var(--color-error); }
 .bulk-ok { font-size: 12px; color: var(--color-success); }
 .bulk-warning { font-size: 12px; color: var(--color-warning); }

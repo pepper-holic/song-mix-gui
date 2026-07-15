@@ -4,7 +4,8 @@
   1. naiite_14 열기 → 그래프 30노드
   2. K.BUS 노드 클릭 → 상세 패널 + 인서트 4개
   3. 인서트(Pro-Q 3) 클릭 → 파라미터 테이블 (캐시 경유, 해석 가능)
-  4. 좌우 스플릿 + 두 번째 song(임시 사본) 열기
+  4. 두 번째 song(임시 사본)을 같은 leaf에 탭으로 연 뒤 컨텍스트 메뉴로 오른쪽 분할,
+     드래그로 중앙 병합 → 가장자리 재분할(자유 분할 레이아웃 검증)
   5. K.BUS 드래그앤드롭 시뮬레이션 → 전송 → 상태바 완료 + .bak 생성
   6. 같은 전송 재시도 → 충돌 다이얼로그 → 덮어쓰기 → 완료
   7. 대상 재파싱: K.BUS 존재 + 그래프 갱신
@@ -41,6 +42,13 @@ DST_JS = str(DST).replace("\\", "/")
 
 STEPS: list[tuple[str, str]] = [
     ("open naiite", f"window.__openSong('{NAIITE}').then(() => 'ok')"),
+    # VSCode식 자유 분할 레이아웃: data-pane 값이 이제 "left"/"right" 리터럴이 아니라 생성된
+    # leaf id라서 문서 제목(pane-title)으로 song-pane을 찾는 헬퍼를 전역에 등록해 재사용한다.
+    ("define paneByTitle helper", """(() => {
+        window.__paneByTitle = (substr) => [...document.querySelectorAll('.song-pane')]
+          .find(p => p.querySelector('.pane-title')?.textContent.includes(substr));
+        return 'helper-defined';
+    })()"""),
     ("graph nodes", """(() => JSON.stringify({
         nodes: document.querySelectorAll('.react-flow__node').length}))()"""),
     ("click K.BUS node", """(() => {
@@ -71,9 +79,21 @@ STEPS: list[tuple[str, str]] = [
     ("wait badge", """(() => JSON.stringify({
         badge: !!document.querySelector('.badge-uninterpretable'),
         loading: !!document.querySelector('.param-loading')}))()"""),
+    # ---- 그래프 키보드 내비게이션 (접근성, aria-activedescendant 패턴): K.BUS가 선택된
+    # 상태에서 ArrowRight → 다음 열의 논리적 활성 노드로 이동 + 상세패널이 그 노드로 갱신되는지 확인.
+    ("keyboard nav right", """(() => {
+        const pane = window.__paneByTitle('naiite_14');
+        const before = pane.getAttribute('aria-activedescendant');
+        pane.dispatchEvent(new KeyboardEvent('keydown', {key: 'ArrowRight', bubbles: true, cancelable: true}));
+        return JSON.stringify({before});
+    })()"""),
+    ("keyboard nav right result", """(() => JSON.stringify({
+        activedescendant: window.__paneByTitle('naiite_14').getAttribute('aria-activedescendant'),
+        detailTitle: document.querySelector('.detail-panel h2')?.textContent,
+        kbdActive: window.__paneByTitle('naiite_14').querySelectorAll('.react-flow__node.kbd-active').length}))()"""),
     # ---- 검색/필터 (U2, AC-2): "CLA-76" 검색 → 실제 사용 채널 수만큼 하이라이트 ----
     ("search CLA-76", """(() => {
-        const input = document.querySelector('[data-pane="left"] .search-input');
+        const input = window.__paneByTitle('naiite_14').querySelector('.search-input');
         const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
         setter.call(input, 'CLA-76');
         input.dispatchEvent(new Event('input', {bubbles: true}));
@@ -81,9 +101,9 @@ STEPS: list[tuple[str, str]] = [
     })()"""),
     ("wait search tick", "'tick'"),
     ("search result", """(() => JSON.stringify({
-        matches: document.querySelectorAll('[data-pane="left"] .react-flow__node.search-match').length}))()"""),
+        matches: window.__paneByTitle('naiite_14').querySelectorAll('.react-flow__node.search-match').length}))()"""),
     ("clear search", """(() => {
-        const input = document.querySelector('[data-pane="left"] .search-input');
+        const input = window.__paneByTitle('naiite_14').querySelector('.search-input');
         const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
         setter.call(input, '');
         input.dispatchEvent(new Event('input', {bubbles: true}));
@@ -92,14 +112,14 @@ STEPS: list[tuple[str, str]] = [
     # ---- 체인 비교 (U4, AC-4): K.BUS를 A로 지정(Shift+우클릭) 후 S.BUS와 비교(Alt+우클릭) ----
     # 둘 다 Pro-Q 3(FX01)를 쓰지만 프리셋이 다르므로 캐시 워밍 후 value-diff 행이 기대됨.
     ("shift-rightclick K.BUS (set baseline)", """(() => {
-        const src = [...document.querySelectorAll('[data-pane="left"] .channel-node')]
+        const src = [...window.__paneByTitle('naiite_14').querySelectorAll('.channel-node')]
           .find(n => n.textContent.includes('K.BUS') && !n.textContent.includes('RT'));
         src.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, shiftKey: true}));
         return 'baseline-set';
     })()"""),
     ("baseline status", "document.querySelector('.statusbar')?.textContent"),
     ("alt-rightclick S.BUS (compare)", """(() => {
-        const src = [...document.querySelectorAll('[data-pane="left"] .channel-node')]
+        const src = [...window.__paneByTitle('naiite_14').querySelectorAll('.channel-node')]
           .find(n => n.textContent.includes('S.BUS'));
         src.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, altKey: true}));
         return 'compare-triggered';
@@ -114,30 +134,74 @@ STEPS: list[tuple[str, str]] = [
         document.querySelector('.compare-panel .close-btn')?.click();
         return 'closed';
     })()"""),
-    ("split view", """(() => {
-        [...document.querySelectorAll('.toolbar button')]
-          .find(b => b.textContent.includes('스플릿')).click();
-        return 'split';
-    })()"""),
+    # ---- 자유 분할 레이아웃: dst song을 같은 leaf에 탭으로 연 뒤 탭 컨텍스트 메뉴로 오른쪽 분할.
     ("open dst", f"window.__openSong('{DST_JS}').then(() => 'ok')"),
-    ("assign right pane", """(() => {
-        const tabs = [...document.querySelectorAll('.tab')];
-        const t = tabs.find(t => t.textContent.includes('e2e_target'));
-        t.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true}));
-        return 'right-assigned';
+    ("dst tab count check", """(() => JSON.stringify({
+        tabCount: document.querySelectorAll('.tab').length,
+        songPaneCount: document.querySelectorAll('.song-pane').length}))()"""),
+    ("rightclick dst tab (open split menu)", """(() => {
+        const tab = [...document.querySelectorAll('.tab')].find(t => t.textContent.includes('e2e_target'));
+        tab.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, clientX: 200, clientY: 100}));
+        return 'menu-opened';
     })()"""),
+    ("split menu shown", """(() => JSON.stringify({
+        menu: !!document.querySelector('.tab-context-menu')}))()"""),
+    ("click split right", """(() => {
+        const btn = [...document.querySelectorAll('.tab-context-menu li button')]
+          .find(b => b.textContent.includes('오른쪽으로 분할'));
+        btn.click();
+        return 'split-clicked';
+    })()"""),
+    ("split result", """(() => JSON.stringify({
+        splitRow: !!document.querySelector('.pane-split-row'),
+        songPaneCount: document.querySelectorAll('.song-pane').length,
+        hasNaiite: !!window.__paneByTitle('naiite_14'),
+        hasTarget: !!window.__paneByTitle('e2e_target')}))()"""),
+    # ---- 드래그 기반 분할(핵심 요청) 검증: e2e_target 탭을 naiite 패널 중앙으로 드래그해
+    # 병합(leaf 1개로 평탄화) → 다시 그 패널 우측 가장자리로 드래그해 재분할.
+    ("drag merge to center", """(() => {
+        const dstTab = [...document.querySelectorAll('.tab')].find(t => t.textContent.includes('e2e_target'));
+        const body = window.__paneByTitle('naiite_14').parentElement;
+        const rect = body.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
+        const dt = new DataTransfer();
+        dstTab.dispatchEvent(new DragEvent('dragstart', {bubbles: true, dataTransfer: dt}));
+        body.dispatchEvent(new DragEvent('dragover', {bubbles: true, cancelable: true, dataTransfer: dt, clientX: cx, clientY: cy}));
+        body.dispatchEvent(new DragEvent('drop', {bubbles: true, cancelable: true, dataTransfer: dt, clientX: cx, clientY: cy}));
+        return 'merge-dropped';
+    })()"""),
+    ("merge result", """(() => JSON.stringify({
+        splitRow: !!document.querySelector('.pane-split-row'),
+        songPaneCount: document.querySelectorAll('.song-pane').length,
+        tabCount: document.querySelectorAll('.tab').length}))()"""),
+    ("drag resplit to right edge", """(() => {
+        const dstTab = [...document.querySelectorAll('.tab')].find(t => t.textContent.includes('e2e_target'));
+        const body = document.querySelector('.pane-leaf-body');
+        const rect = body.getBoundingClientRect();
+        const cx = rect.left + rect.width * 0.9, cy = rect.top + rect.height / 2;
+        const dt = new DataTransfer();
+        dstTab.dispatchEvent(new DragEvent('dragstart', {bubbles: true, dataTransfer: dt}));
+        body.dispatchEvent(new DragEvent('dragover', {bubbles: true, cancelable: true, dataTransfer: dt, clientX: cx, clientY: cy}));
+        body.dispatchEvent(new DragEvent('drop', {bubbles: true, cancelable: true, dataTransfer: dt, clientX: cx, clientY: cy}));
+        return 'resplit-dropped';
+    })()"""),
+    ("resplit result", """(() => JSON.stringify({
+        splitRow: !!document.querySelector('.pane-split-row'),
+        songPaneCount: document.querySelectorAll('.song-pane').length,
+        hasNaiite: !!window.__paneByTitle('naiite_14'),
+        hasTarget: !!window.__paneByTitle('e2e_target')}))()"""),
     # ---- 체인 이식 (S1, AC-7): 우측(dst 사본) 내 트랙 채널 "1 - guitar 1"(Decapitator+
     # Little MicroShift) → "1 - TOM M"(빈 체인)으로 체인 교체 — 트랙 포함 요구사항 검증.
     # dst 사본 내부에서 진행(전송 전이라 우측 모델이 원본 그대로) — 원본 naiite_14는 건드리지 않음.
     ("ctrl-rightclick guitar1 (chain copy)", """(() => {
-        const nodes = [...document.querySelectorAll('[data-pane="right"] .channel-node')];
+        const nodes = [...window.__paneByTitle('e2e_target').querySelectorAll('.channel-node')];
         const src = nodes.find(n => n.querySelector('.node-label')?.textContent.trim().startsWith('1 - guitar 1'));
         src.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, ctrlKey: true}));
         return 'chain-copied';
     })()"""),
     ("chain copy status", "document.querySelector('.statusbar')?.textContent"),
     ("rightclick TOM M (chain paste target)", """(() => {
-        const nodes = [...document.querySelectorAll('[data-pane="right"] .channel-node')];
+        const nodes = [...window.__paneByTitle('e2e_target').querySelectorAll('.channel-node')];
         const dst = nodes.find(n => n.querySelector('.node-label')?.textContent.trim().startsWith('1 - TOM M'));
         dst.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true}));
         return 'target-clicked';
@@ -157,7 +221,7 @@ STEPS: list[tuple[str, str]] = [
     # 무관해야 한다 — 먼저 S.BUS를 복사해 clipboard를 채워둔 뒤, 아래 트랙 DnD 전송이
     # 이 복사를 조용히 지우지 않는지 확인한다.
     ("ctx copy S.BUS (clipboard guard setup)", """(() => {
-        const src = [...document.querySelectorAll('[data-pane="left"] .channel-node')]
+        const src = [...window.__paneByTitle('naiite_14').querySelectorAll('.channel-node')]
           .find(n => n.querySelector('.node-label')?.textContent.trim().startsWith('S.BUS'));
         src.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true}));
         return 'copied';
@@ -166,9 +230,9 @@ STEPS: list[tuple[str, str]] = [
     # ---- 트랙 채널 전송 (S4b, AC-6, US-V2-021): 좌측(naiite_14)의 "kick out" 트랙을
     # 우측(dst 사본)으로 드래그앤드롭 — 기본 모드(이벤트 미포함) 확인 후 전송.
     ("dnd track transfer", """(() => {
-        const src = [...document.querySelectorAll('[data-pane="left"] .channel-node')]
+        const src = [...window.__paneByTitle('naiite_14').querySelectorAll('.channel-node')]
           .find(n => n.querySelector('.node-label')?.textContent.trim().startsWith('kick out'));
-        const dstPane = document.querySelector('[data-pane="right"]');
+        const dstPane = window.__paneByTitle('e2e_target');
         const dt = new DataTransfer();
         src.dispatchEvent(new DragEvent('dragstart', {bubbles: true, dataTransfer: dt}));
         dstPane.dispatchEvent(new DragEvent('dragover', {bubbles: true, dataTransfer: dt, cancelable: true}));
@@ -189,15 +253,15 @@ STEPS: list[tuple[str, str]] = [
     # 클립보드 보존 확인: 트랙 DnD 전송이 확정된 뒤에도 S.BUS 복사가 살아있어야
     # 붙여넣기가 "붙여넣을 항목 없음"이 아니라 실제 전송 흐름으로 이어진다.
     ("paste S.BUS after track transfer (clipboard guard check)", """(() => {
-        const pane = document.querySelector('[data-pane="right"] .react-flow__pane');
+        const pane = window.__paneByTitle('e2e_target').querySelector('.react-flow__pane');
         pane.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true}));
         return 'pasted';
     })()"""),
     ("clipboard guard paste status", "document.querySelector('.statusbar')?.textContent"),
     ("dnd transfer", """(() => {
-        const src = [...document.querySelectorAll('[data-pane="left"] .channel-node')]
+        const src = [...window.__paneByTitle('naiite_14').querySelectorAll('.channel-node')]
           .find(n => n.textContent.includes('K.BUS'));
-        const dstPane = document.querySelector('[data-pane="right"]');
+        const dstPane = window.__paneByTitle('e2e_target');
         const dt = new DataTransfer();
         src.dispatchEvent(new DragEvent('dragstart', {bubbles: true, dataTransfer: dt}));
         dstPane.dispatchEvent(new DragEvent('dragover', {bubbles: true, dataTransfer: dt, cancelable: true}));
@@ -208,14 +272,14 @@ STEPS: list[tuple[str, str]] = [
         status: document.querySelector('.statusbar')?.textContent,
         modal: !!document.querySelector('.modal')}))()"""),
     ("ctx copy K.BUS", """(() => {
-        const src = [...document.querySelectorAll('[data-pane="left"] .channel-node')]
+        const src = [...window.__paneByTitle('naiite_14').querySelectorAll('.channel-node')]
           .find(n => n.textContent.includes('K.BUS'));
         src.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true}));
         return 'copied';
     })()"""),
     ("copy status", "document.querySelector('.statusbar')?.textContent"),
     ("ctx paste right (conflict)", """(() => {
-        const pane = document.querySelector('[data-pane="right"] .react-flow__pane');
+        const pane = window.__paneByTitle('e2e_target').querySelector('.react-flow__pane');
         pane.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true}));
         return 'pasted';
     })()"""),
@@ -229,16 +293,16 @@ STEPS: list[tuple[str, str]] = [
     })()"""),
     ("final status", """(() => JSON.stringify({
         status: document.querySelector('.statusbar')?.textContent,
-        rightNodes: document.querySelectorAll('[data-pane="right"] .react-flow__node').length}))()"""),
+        rightNodes: window.__paneByTitle('e2e_target').querySelectorAll('.react-flow__node').length}))()"""),
     # ---- Undo (US-V2-004): 우측 패널 포커스 → Ctrl+Z → 이전 전송 상태로 원복 ----
     ("focus right pane", """(() => {
-        document.querySelector('[data-pane="right"]').focus();
+        window.__paneByTitle('e2e_target').focus();
         return 'focused';
     })()"""),
     ("nodes before undo", """(() => JSON.stringify({
-        rightNodes: document.querySelectorAll('[data-pane="right"] .react-flow__node').length}))()"""),
+        rightNodes: window.__paneByTitle('e2e_target').querySelectorAll('.react-flow__node').length}))()"""),
     ("ctrl+z undo", """(() => {
-        const pane = document.querySelector('[data-pane="right"]');
+        const pane = window.__paneByTitle('e2e_target');
         pane.dispatchEvent(new KeyboardEvent('keydown', {key: 'z', ctrlKey: true, bubbles: true, cancelable: true}));
         return 'undo-sent';
     })()"""),
@@ -246,7 +310,7 @@ STEPS: list[tuple[str, str]] = [
     ("wait undo tick 2", "'tick'"),
     ("undo status", """(() => JSON.stringify({
         status: document.querySelector('.statusbar')?.textContent,
-        rightNodes: document.querySelectorAll('[data-pane="right"] .react-flow__node').length}))()"""),
+        rightNodes: window.__paneByTitle('e2e_target').querySelectorAll('.react-flow__node').length}))()"""),
     # ---- US-V3-001 GUI: 여러 곡 일괄 레시피 적용 다이얼로그 (미리보기까지, 읽기 전용) ----
     ("open bulk apply dialog", """(() => {
         const btn = [...document.querySelectorAll('button')]
@@ -257,6 +321,17 @@ STEPS: list[tuple[str, str]] = [
     ("bulk dialog shown", """(() => JSON.stringify({
         modal: !!document.querySelector('.modal-wide'),
         title: document.querySelector('.modal-wide h3')?.textContent}))()"""),
+    # 자유 분할 레이아웃에서는 "포커스된 leaf"가 Undo 등 이전 조작에 따라 바뀌므로(예: 방금
+    # 우측 패널에 포커스를 줬던 Undo 스텝) 다이얼로그의 기본 소스가 naiite_14가 아닐 수 있다
+    # — 소스 select를 명시적으로 naiite_14로 지정해 이후 미리보기 검증을 focus 이력과 분리한다.
+    ("select bulk src naiite", """(() => {
+        const select = document.querySelector('.modal-wide select');
+        const opt = [...select.options].find(o => o.textContent.includes('naiite_14'));
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLSelectElement.prototype, 'value').set;
+        setter.call(select, opt.value);
+        select.dispatchEvent(new Event('change', {bubbles: true}));
+        return select.value;
+    })()"""),
     ("inject dst path", f"""(() => {{
         window.__bulkApplyAddDst('{DST_JS}');
         return 'injected';
@@ -337,6 +412,31 @@ def main() -> int:
             assert p["rows"] > 0, f"파라미터 행 없음: {p}"
             b = json.loads(report["wait badge"])
             assert b["badge"] and not b["loading"], f"해석불가 배지 미표시: {b}"
+            # 그래프 키보드 내비게이션: ArrowRight로 activedescendant가 실제로 이동하고
+            # 상세패널/시각 하이라이트가 그 노드를 따라가는지 확인
+            kbd_before = json.loads(report["keyboard nav right"])["before"]
+            kbd_after = json.loads(report["keyboard nav right result"])
+            assert kbd_before, "초기 activedescendant 없음(K.BUS 선택 안 됨)"
+            assert kbd_after["activedescendant"] and kbd_after["activedescendant"] != kbd_before, \
+                f"방향키 이동 후 activedescendant 불변: {kbd_after}"
+            assert kbd_after["detailTitle"] and kbd_after["detailTitle"] != "K.BUS", kbd_after
+            assert kbd_after["kbdActive"] == 1, f"kbd-active 시각 하이라이트 없음: {kbd_after}"
+            # 자유 분할 레이아웃: 컨텍스트 메뉴로 오른쪽 분할 생성 + 드래그로 병합/재분할이
+            # 실제로 트리를 올바르게 변형하는지 확인(핵심 요청 검증).
+            dtc = json.loads(report["dst tab count check"])
+            assert dtc["tabCount"] == 2 and dtc["songPaneCount"] == 1, \
+                f"dst 탭 추가 후 상태 불일치(같은 leaf에 탭으로 들어가야 함): {dtc}"
+            sm = json.loads(report["split menu shown"])
+            assert sm["menu"], "탭 우클릭 컨텍스트 메뉴 미표시"
+            sr = json.loads(report["split result"])
+            assert sr["splitRow"] and sr["songPaneCount"] == 2 and sr["hasNaiite"] and sr["hasTarget"], \
+                f"컨텍스트 메뉴 오른쪽 분할 결과 불일치: {sr}"
+            mr = json.loads(report["merge result"])
+            assert not mr["splitRow"] and mr["songPaneCount"] == 1 and mr["tabCount"] == 2, \
+                f"드래그 중앙 병합 결과 불일치: {mr}"
+            rr = json.loads(report["resplit result"])
+            assert rr["splitRow"] and rr["songPaneCount"] == 2 and rr["hasNaiite"] and rr["hasTarget"], \
+                f"드래그 가장자리 재분할 결과 불일치: {rr}"
             # U2 검색/필터: "CLA-76"을 실제로 쓰는 채널 수와 하이라이트 노드 수가 일치해야 함
             naiite_model = load_model(SongContainer.read(Path(NAIITE)))
             expected_cla76 = sum(
@@ -436,7 +536,7 @@ def main() -> int:
     ticker = QTimer(window)
     ticker.timeout.connect(advance)
     ticker.start(1800)
-    QTimer.singleShot(160000, lambda: (print("E2E TIMEOUT"), app.exit(2)))
+    QTimer.singleShot(190000, lambda: (print("E2E TIMEOUT"), app.exit(2)))
     return app.exec()
 
 

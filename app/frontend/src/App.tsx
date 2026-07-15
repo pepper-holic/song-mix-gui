@@ -3,9 +3,13 @@ import { api } from "./bridge";
 import { BulkApplyDialog } from "./BulkApplyDialog";
 import { ComparePanel } from "./ComparePanel";
 import { KIND_COLORS } from "./ChannelNode";
-import { IconClock, IconColumns, IconFolderOpen, IconKeyboard, IconLayers,
-        IconUndo } from "./Icons";
-import { SongPane } from "./SongPane";
+import { IconClock, IconFolderOpen, IconKeyboard, IconLayers, IconUndo } from "./Icons";
+import {
+  closeDocFromLayout, createLeaf, findLeaf, firstLeafId, moveDocToLeaf, openDocInLeaf,
+  resizeSplit, setActiveDoc, splitLeafWithDoc,
+  type PaneNode, type SplitDirection, type SplitPosition,
+} from "./paneLayout";
+import { PaneGroup } from "./PaneGroup";
 import type { ChannelInfo, CompareRow, DragPayload, PrewarmStatus, SongDoc, SongModel,
              TransferResponse } from "./types";
 
@@ -57,13 +61,11 @@ let docSeq = 0;
 
 export default function App() {
   const [docs, setDocs] = useState<SongDoc[]>([]);
-  const [leftDocId, setLeftDocId] = useState<string | null>(null);
-  const [rightDocId, setRightDocId] = useState<string | null>(null);
-  const [isSplit, setIsSplit] = useState(false);
+  const [layout, setLayout] = useState<PaneNode>(() => createLeaf(null));
+  const [focusedLeafId, setFocusedLeafId] = useState(() => firstLeafId(layout));
   const [conflict, setConflict] = useState<ConflictState | null>(null);
   const [statusMsg, setStatusMsg] = useState("");
   const [isBusy, setIsBusy] = useState(false);
-  const [focusedPaneId, setFocusedPaneId] = useState<"left" | "right">("left");
   const [recentFiles, setRecentFiles] = useState<string[]>([]);
   const [showRecentMenu, setShowRecentMenu] = useState(false);
   const [showShortcuts, setShowShortcuts] = useState(false);
@@ -78,8 +80,39 @@ export default function App() {
   const clipboard = useRef<DragPayload | null>(null);
   const autoOpened = useRef(false);
 
-  const leftDoc = docs.find((d) => d.id === leftDocId) ?? null;
-  const rightDoc = docs.find((d) => d.id === rightDocId) ?? null;
+  const focusedActiveDocId = findLeaf(layout, focusedLeafId)?.activeDocId ?? null;
+  const focusedDoc = docs.find((d) => d.id === focusedActiveDocId) ?? null;
+
+  // 레이아웃을 변형하는 모든 조작의 공통 진입점 — 변형 후 포커스된 leaf가 사라졌으면
+  // (마지막 탭이 닫혀 트리가 평탄화된 경우) 첫 leaf로 폴백한다.
+  const applyLayout = useCallback((updater: (l: PaneNode) => PaneNode) => {
+    const next = updater(layout);
+    setLayout(next);
+    if (!findLeaf(next, focusedLeafId)) setFocusedLeafId(firstLeafId(next));
+  }, [layout, focusedLeafId]);
+
+  const handleCloseTab = useCallback((docId: string) => {
+    applyLayout((l) => closeDocFromLayout(l, docId));
+    setDocs((prev) => prev.filter((d) => d.id !== docId));
+  }, [applyLayout]);
+
+  const handleMoveTab = useCallback((docId: string, toLeafId: string, atIndex?: number) => {
+    applyLayout((l) => moveDocToLeaf(l, docId, toLeafId, atIndex));
+  }, [applyLayout]);
+
+  const handleSplitTab = useCallback((targetLeafId: string, docId: string,
+                                      direction: SplitDirection, position: SplitPosition) => {
+    applyLayout((l) => splitLeafWithDoc(l, targetLeafId, docId, direction, position));
+  }, [applyLayout]);
+
+  const handleSelectTab = useCallback((leafId: string, docId: string) => {
+    applyLayout((l) => setActiveDoc(l, docId));
+    setFocusedLeafId(leafId);
+  }, [applyLayout]);
+
+  const handleResizeSplit = useCallback((splitId: string, sizes: number[]) => {
+    applyLayout((l) => resizeSplit(l, splitId, sizes));
+  }, [applyLayout]);
 
   const refreshRecent = useCallback(async () => {
     try {
@@ -99,9 +132,8 @@ export default function App() {
       const fileName = fileNameOf(path);
       setDocs((prev) => [...prev, { id, path, fileName, model }]);
     }
-    if (!leftDocId || !isSplit) setLeftDocId(id);
-    else setRightDocId(id);
-  }, [docs, leftDocId, isSplit]);
+    applyLayout((l) => openDocInLeaf(l, focusedLeafId, id));
+  }, [docs, focusedLeafId, applyLayout]);
 
   const handleOpen = useCallback(async () => {
     setStatusMsg("파일 선택 중…");
@@ -301,10 +333,9 @@ export default function App() {
   }, []);
 
   const handleUndoToolbar = useCallback(() => {
-    const target = focusedPaneId === "right" && rightDoc ? rightDoc : leftDoc;
-    if (!target) { setStatusMsg("실행 취소할 문서가 없습니다"); return; }
-    void handleUndo(target);
-  }, [focusedPaneId, leftDoc, rightDoc, handleUndo]);
+    if (!focusedDoc) { setStatusMsg("실행 취소할 문서가 없습니다"); return; }
+    void handleUndo(focusedDoc);
+  }, [focusedDoc, handleUndo]);
 
   // U4 체인 비교(AC-4): 우클릭(Shift)=A로 지정, 우클릭(Alt)=A와 비교. diff 계산은 Python(compare.py) 재사용.
   const handleSetCompareBaseline = useCallback((doc: SongDoc, channel: ChannelInfo) => {
@@ -390,12 +421,12 @@ export default function App() {
     return () => { cancelled = true; clearInterval(id); };
   }, [docs.length]);
 
-  // 창 제목에 현재 좌측 문서를 반영(상용 데스크톱 앱 관례)
+  // 창 제목에 현재 포커스된 문서를 반영(상용 데스크톱 앱 관례)
   useEffect(() => {
-    api.setWindowTitle(leftDoc
-      ? `${leftDoc.fileName} — Song Mix GUI`
+    api.setWindowTitle(focusedDoc
+      ? `${focusedDoc.fileName} — Song Mix GUI`
       : "Song Mix GUI — Studio One .song 믹스 분석/전송");
-  }, [leftDoc]);
+  }, [focusedDoc]);
 
   // 상태바 색상: 메시지 문자열에서 성공/실패를 유추(별도 상태 없이 파생 — 기존 setStatusMsg
   // 호출부를 전부 건드리지 않고도 실패 메시지를 눈에 띄게 만든다)
@@ -457,10 +488,6 @@ export default function App() {
         </div>
         <div className="toolbar-divider" />
         <div className="toolbar-group">
-          <button type="button" onClick={() => setIsSplit((s) => !s)}>
-            <span className="icon"><IconColumns /></span>
-            {isSplit ? "단일 뷰" : "좌우 스플릿"}
-          </button>
           <button type="button" onClick={handleUndoToolbar} title="Ctrl+Z">
             <span className="icon"><IconUndo /></span>실행 취소
           </button>
@@ -491,76 +518,28 @@ export default function App() {
             </span>
           ))}
         </div>
-        <nav className="tabs">
-          {docs.map((d) => (
-            <button
-              type="button"
-              key={d.id}
-              className={d.id === leftDocId ? "tab active" : "tab"}
-              onClick={() => setLeftDocId(d.id)}
-              onContextMenu={(e) => { e.preventDefault(); setRightDocId(d.id); setIsSplit(true); }}
-              title="클릭: 좌측에 표시 / 우클릭: 우측에 표시"
-            >
-              {d.fileName}
-            </button>
-          ))}
-        </nav>
       </header>
-      <main className={isSplit ? "panes split" : "panes"}>
-        {leftDoc ? (
-          <SongPane
-            doc={leftDoc} paneId="left"
-            onTransferDrop={handleTransferDrop}
-            onCopyRequest={handleNodeRightClick}
-            onChainCopyRequest={handleChainCopy}
-            onPasteRequest={handlePaste}
-            onUndoRequest={handleUndo}
-            onSetCompareBaseline={handleSetCompareBaseline}
-            onCompareWith={(doc, channel) => void handleCompareWith(doc, channel)}
-            onFocusPane={() => setFocusedPaneId("left")}
-          />
-        ) : (
-          <div className="empty-pane">
-            <div className="empty-pane-content">
-              <span className="empty-pane-icon"><IconFolderOpen /></span>
-              <p className="empty-pane-title">열려 있는 song 파일이 없습니다</p>
-              <button type="button" className="empty-cta" onClick={() => void handleOpen()}>
-                <span className="icon"><IconFolderOpen /></span>song 열기…
-              </button>
-              {recentFiles.length > 0 && (
-                <ul className="recent-list">
-                  {recentFiles.map((p) => (
-                    <li key={p}>
-                      <button type="button" onClick={() => void openFromRecent(p)}>
-                        {fileNameOf(p)}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
-        )}
-        {isSplit && (rightDoc ? (
-          <SongPane
-            doc={rightDoc} paneId="right"
-            onTransferDrop={handleTransferDrop}
-            onCopyRequest={handleNodeRightClick}
-            onChainCopyRequest={handleChainCopy}
-            onPasteRequest={handlePaste}
-            onUndoRequest={handleUndo}
-            onSetCompareBaseline={handleSetCompareBaseline}
-            onCompareWith={(doc, channel) => void handleCompareWith(doc, channel)}
-            onFocusPane={() => setFocusedPaneId("right")}
-          />
-        ) : (
-          <div className="empty-pane">
-            <div className="empty-pane-content">
-              <span className="empty-pane-icon"><IconColumns /></span>
-              <p className="empty-pane-title">탭을 우클릭하면 이 패널에 표시됩니다</p>
-            </div>
-          </div>
-        ))}
+      <main className="panes">
+        <PaneGroup
+          node={layout}
+          docs={docs}
+          recentFiles={recentFiles}
+          onOpenFromRecent={(p) => void openFromRecent(p)}
+          onFocusLeaf={setFocusedLeafId}
+          onOpenDoc={() => void handleOpen()}
+          onCloseTab={handleCloseTab}
+          onMoveTab={handleMoveTab}
+          onSplitTab={handleSplitTab}
+          onSelectTab={handleSelectTab}
+          onResizeSplit={handleResizeSplit}
+          onTransferDrop={handleTransferDrop}
+          onCopyRequest={handleNodeRightClick}
+          onChainCopyRequest={handleChainCopy}
+          onPasteRequest={handlePaste}
+          onUndoRequest={handleUndo}
+          onSetCompareBaseline={handleSetCompareBaseline}
+          onCompareWith={(doc, channel) => void handleCompareWith(doc, channel)}
+        />
       </main>
       <footer className={`statusbar status-${statusKind}`}>
         {isBusy && <span className="spinner" aria-label="처리 중" />}
@@ -568,6 +547,12 @@ export default function App() {
         {prewarmStatus && (
           <span className="prewarm-indicator">
             프리웜 {prewarmStatus.done}/{prewarmStatus.total}
+            <span className="prewarm-bar">
+              <span
+                className="prewarm-bar-fill"
+                style={{ width: `${(prewarmStatus.done / prewarmStatus.total) * 100}%` }}
+              />
+            </span>
           </span>
         )}
       </footer>
@@ -605,7 +590,7 @@ export default function App() {
       )}
       {chainPasteConfirm && (
         <div className="modal-backdrop" onClick={() => setChainPasteConfirm(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
+          <div className="modal modal-danger" onClick={(e) => e.stopPropagation()}>
             <h3>체인 붙여넣기(교체)</h3>
             <p>
               <strong>{chainPasteConfirm.dstChannel.label}</strong>의 인서트 체인을
@@ -633,7 +618,7 @@ export default function App() {
       )}
       {trackTransferConfirm && (
         <div className="modal-backdrop" onClick={() => setTrackTransferConfirm(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
+          <div className="modal modal-danger" onClick={(e) => e.stopPropagation()}>
             <h3>트랙 채널 전송</h3>
             <p>
               <strong>{trackTransferConfirm.payload.label}</strong>을(를)
@@ -671,13 +656,13 @@ export default function App() {
       {showBulkApply && (
         <BulkApplyDialog
           docs={docs}
-          defaultSrcPath={leftDoc?.path ?? null}
+          defaultSrcPath={focusedDoc?.path ?? null}
           onClose={() => setShowBulkApply(false)}
         />
       )}
       {conflict && (
         <div className="modal-backdrop" onClick={() => setConflict(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
+          <div className="modal modal-danger" onClick={(e) => e.stopPropagation()}>
             <h3>이름 충돌</h3>
             <p>
               대상에 같은 이름의 채널/버스가 있습니다:

@@ -1,12 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Background, Controls, ReactFlow, type NodeMouseHandler, type Node,
-        type ReactFlowInstance } from "@xyflow/react";
+        type ReactFlowInstance, type Viewport } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { api } from "./bridge";
 import { ChannelNode } from "./ChannelNode";
 import { DetailPanel } from "./DetailPanel";
+import { buildColumns, nextNode, type NavDirection } from "./graphNav";
 import { buildFlow, type ChannelNodeData } from "./layout";
 import type { ChannelInfo, DragPayload, SongDoc } from "./types";
+
+const ARROW_DIRECTIONS: Record<string, NavDirection> = {
+  ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right",
+};
 
 const nodeTypes = { channel: ChannelNode };
 
@@ -38,6 +43,7 @@ export function SongPane({ doc, paneId, onTransferDrop, onCopyRequest, onChainCo
   const [isDropTarget, setIsDropTarget] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const rfInstance = useRef<ReactFlowInstance<Node<ChannelNodeData>> | null>(null);
+  const viewportByDoc = useRef(new Map<string, Viewport>());
   const { nodes, edges } = useMemo(() => {
     const flow = buildFlow(doc.model);
     for (const n of flow.nodes) {
@@ -47,16 +53,39 @@ export function SongPane({ doc, paneId, onTransferDrop, onCopyRequest, onChainCo
     return flow;
   }, [doc]);
 
+  // A: 그래프 키보드 내비게이션 — dagre가 배정한 x/y로 열(column) 그룹화해 방향키 이동 계산
+  const navColumns = useMemo(
+    () => buildColumns(nodes.map((n) => ({ id: n.id, x: n.position.x, y: n.position.y }))),
+    [nodes],
+  );
+
+  // C-4: 패널에 표시 중인 문서가 바뀔 때 그 문서의 마지막 뷰포트를 복원(처음 보는 문서는 fitView)
+  useEffect(() => {
+    if (!rfInstance.current) return;
+    const saved = viewportByDoc.current.get(doc.id);
+    if (saved) rfInstance.current.setViewport(saved);
+    else rfInstance.current.fitView();
+  }, [doc.id]);
+
+  const handleMoveEnd = useCallback((_: unknown, viewport: Viewport) => {
+    viewportByDoc.current.set(doc.id, viewport);
+  }, [doc.id]);
+
   // U2 검색/필터(AC-2): 매칭 노드 하이라이트(.search-match) + 필터 모드 시 비매칭 dim(.search-dim)
+  // A: 키보드로 이동한 논리적 활성 노드(.kbd-active) 하이라이트 — search 클래스와 병기 가능
   const styledNodes = useMemo(() => {
     const query = searchQuery.trim();
-    if (!query) return nodes;
-    return nodes.map((n) => {
-      const isMatch = matchesQuery(n.data.channel, query);
-      const className = isMatch ? "search-match" : filterMode ? "search-dim" : undefined;
-      return { ...n, className };
+    return nodes.map((n): Node<ChannelNodeData> => {
+      const classes: string[] = [];
+      if (query) {
+        const isMatch = matchesQuery(n.data.channel, query);
+        if (isMatch) classes.push("search-match");
+        else if (filterMode) classes.push("search-dim");
+      }
+      if (n.id === selected?.uid) classes.push("kbd-active");
+      return { ...n, className: classes.length > 0 ? classes.join(" ") : undefined };
     });
-  }, [nodes, searchQuery, filterMode]);
+  }, [nodes, searchQuery, filterMode, selected]);
 
   useEffect(() => {
     const query = searchQuery.trim();
@@ -134,8 +163,15 @@ export function SongPane({ doc, paneId, onTransferDrop, onCopyRequest, onChainCo
     } else if (e.ctrlKey && e.key.toLowerCase() === "z") {
       onUndoRequest(doc);
       e.preventDefault();
+    } else if (e.key in ARROW_DIRECTIONS) {
+      // A: 방향키로 그래프 노드 이동(aria-activedescendant 패턴 — 실제 DOM 포커스는
+      // 패널 컨테이너에 유지한 채 "논리적 활성 노드"만 이동시킨다)
+      e.preventDefault();
+      const id = nextNode(navColumns, selected?.uid ?? null, ARROW_DIRECTIONS[e.key]);
+      const ch = id ? doc.model.channels.find((c) => c.uid === id) : undefined;
+      if (ch) setSelected(ch);
     }
-  }, [doc, selected, onCopyRequest, onPasteRequest, onUndoRequest]);
+  }, [doc, selected, navColumns, onCopyRequest, onPasteRequest, onUndoRequest]);
 
   return (
     <div
@@ -148,6 +184,9 @@ export function SongPane({ doc, paneId, onTransferDrop, onCopyRequest, onChainCo
       onKeyDown={handleKeyDown}
       onFocus={onFocusPane}
       tabIndex={0}
+      role="listbox"
+      aria-label={`${doc.fileName} 채널 그래프`}
+      aria-activedescendant={selected?.uid}
     >
       <div className="pane-title">{doc.fileName}</div>
       <div className="pane-search">
@@ -175,6 +214,7 @@ export function SongPane({ doc, paneId, onTransferDrop, onCopyRequest, onChainCo
         onNodeContextMenu={handleNodeContextMenu}
         onPaneContextMenu={handlePaneContextMenu}
         onInit={(inst) => { rfInstance.current = inst; }}
+        onMoveEnd={handleMoveEnd}
         fitView
         minZoom={0.1}
         nodesDraggable={false}

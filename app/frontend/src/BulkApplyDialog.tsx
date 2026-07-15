@@ -96,6 +96,11 @@ export function BulkApplyDialog({ docs, defaultSrcPath, onClose }: Props) {
   const descendantsOf = useMemo(() => buildDescendantsMap(busTree), [busTree]);
   const ancestorsOf = useMemo(() => buildAncestorsMap(busTree), [busTree]);
 
+  // B: 상시 요약 바 — 스크롤 없이 현재 선택 상태를 항상 보여줌(NN/g "visibility of system status")
+  const busModeSummary = busMode === "all" ? "전체"
+    : busMode === "none" ? "안 함"
+    : `직접 선택 ${customBus.size}개`;
+
   // 헤드리스 E2E용 훅 — 네이티브 다중 파일 다이얼로그(pick_song_files_dialog)는
   // 자동화 스크립트로 조작 불가하므로, __openSong과 동일한 패턴으로 경로 직접 주입을 허용
   useEffect(() => {
@@ -255,158 +260,182 @@ export function BulkApplyDialog({ docs, defaultSrcPath, onClose }: Props) {
           미리보기로 매칭 결과를 확인하세요.
         </p>
 
-        <label className="bulk-field">
-          소스 곡
-          <select value={srcPath} onChange={(e) => setSrcPath(e.target.value)}>
-            {docs.length === 0 && <option value="">(열린 곡 없음 — 먼저 song을 여세요)</option>}
-            {docs.map((d) => (
-              <option key={d.id} value={d.path}>{d.fileName}</option>
-            ))}
-          </select>
-        </label>
-
-        <div className="bulk-field">
-          <div className="bulk-dst-header">
-            대상 곡 ({dstPaths.length}개)
-            <span>
-              <button type="button" onClick={() => void addDstFiles()}>파일 추가...</button>
-              <button type="button" onClick={() => void runScan()}>폴더에서 스캔...</button>
-            </span>
-          </div>
-          <ul className="bulk-dst-list">
-            {dstPaths.map((p) => (
-              <li key={p}>
-                {fileNameOf(p)}
-                <button type="button" className="close-btn" onClick={() => removeDst(p)}>×</button>
-              </li>
-            ))}
-            {dstPaths.length === 0 && <li className="bulk-empty">없음</li>}
-          </ul>
-          {scanEntries && (
-            <BulkScanPanel dirPath={scanDir} entries={scanEntries} checked={scanChecked}
-                          onToggle={toggleScanChecked} onAddSelected={addSelectedFromScan}
-                          onClose={() => setScanEntries(null)} />
-          )}
+        <div className="bulk-summary-bar">
+          <span>소스: <strong>{srcPath ? fileNameOf(srcPath) : "(없음)"}</strong></span>
+          <span>대상: <strong>{dstPaths.length}개</strong></span>
+          <span>제외: <strong>{excludeLabels.size}개</strong></span>
+          <span>버스: <strong>{busModeSummary}</strong></span>
         </div>
 
-        <div className="bulk-field">
-          제외할 트랙(정확 일치 — 소스에 있는 트랙 라벨 중에서 고르기)
-          {trackLabels.length === 0 ? (
-            <p className="bulk-hint">소스 곡을 선택하면 트랙 목록이 여기 나타납니다.</p>
-          ) : (
-            <div className="bulk-bus-checks bulk-track-checks">
-              {trackLabels.map((label) => (
-                <label key={label}>
-                  <input type="checkbox" checked={excludeLabels.has(label)}
-                        onChange={() => toggleExcludeLabel(label)} />
-                  {label}
-                </label>
+        <section className="bulk-step">
+          <h4 className="bulk-step-header">
+            <span className="bulk-step-num">1</span>소스와 대상
+          </h4>
+          <label className="bulk-field">
+            소스 곡
+            <select value={srcPath} onChange={(e) => setSrcPath(e.target.value)}>
+              {docs.length === 0 && <option value="">(열린 곡 없음 — 먼저 song을 여세요)</option>}
+              {docs.map((d) => (
+                <option key={d.id} value={d.path}>{d.fileName}</option>
               ))}
+            </select>
+          </label>
+
+          <div className="bulk-field">
+            <div className="bulk-dst-header">
+              대상 곡 ({dstPaths.length}개)
+              <span>
+                <button type="button" onClick={() => void addDstFiles()}>파일 추가...</button>
+                <button type="button" onClick={() => void runScan()}>폴더에서 스캔...</button>
+              </span>
             </div>
-          )}
-        </div>
-
-        <div className="bulk-field">
-          버스/병렬 구조
-          <div className="bulk-bus-modes">
-            <label><input type="radio" checked={busMode === "all"}
-                          onChange={() => setBusMode("all")} /> 전체</label>
-            <label><input type="radio" checked={busMode === "none"}
-                          onChange={() => setBusMode("none")} /> 건드리지 않음(트랙만)</label>
-            <label><input type="radio" checked={busMode === "custom"}
-                          onChange={() => setBusMode("custom")} /> 직접 선택</label>
+            <ul className="bulk-dst-list">
+              {dstPaths.map((p) => (
+                <li key={p}>
+                  {fileNameOf(p)}
+                  <button type="button" className="close-btn" onClick={() => removeDst(p)}>×</button>
+                </li>
+              ))}
+              {dstPaths.length === 0 && <li className="bulk-empty">없음</li>}
+            </ul>
+            {scanEntries && (
+              <BulkScanPanel dirPath={scanDir} entries={scanEntries} checked={scanChecked}
+                            onToggle={toggleScanChecked} onAddSelected={addSelectedFromScan}
+                            onClose={() => setScanEntries(null)} />
+            )}
           </div>
-          <p className="bulk-hint">
-            "전체"는 최상위 버스만 옮기고 그 아래 중첩된 버스는 함께 딸려가 미리보기에
-            별도 항목으로 나오지 않습니다(예: MIXOUT 하나만 [버스 전송]으로 보여도
-            그 아래 서브버스가 전부 포함됨). 특정 중첩 버스만 따로 옮기려면 "직접
-            선택"에서 고르세요.
-          </p>
-          {busMode === "custom" && (
-            busTree.length === 0 ? (
-              <p className="bulk-hint">소스 곡에서 버스를 찾지 못했습니다.</p>
-            ) : (
-              <>
-                <p className="bulk-hint">
-                  상위 버스를 선택하면 하위 버스도 서브트리째 함께 전송되므로 자동으로
-                  "포함됨" 처리되어 개별 해제할 수 없습니다. 하위 버스만 따로 옮기려면
-                  상위는 선택하지 말고 해당 하위만 고르세요.
-                </p>
-                <div className="bulk-bus-checks bulk-bus-tree">
-                  {busTree.map((node) => {
-                    const impliedBy = (ancestorsOf.get(node.label) ?? [])
-                      .find((ancestor) => customBus.has(ancestor));
-                    const checked = customBus.has(node.label) || impliedBy !== undefined;
-                    return (
-                      <label key={node.label} style={{ paddingLeft: node.depth * 14 }}>
-                        <input type="checkbox" checked={checked} disabled={impliedBy !== undefined}
-                              onChange={() => toggleCustomBus(node.label)} />
-                        {node.depth > 0 ? `└ ${node.label}` : node.label}
-                        {impliedBy !== undefined && (
-                          <span className="bulk-bus-implied">({impliedBy}에 포함됨)</span>
-                        )}
-                      </label>
-                    );
-                  })}
-                </div>
-              </>
-            )
-          )}
-        </div>
+        </section>
 
-        <label className="preserve-sends-toggle">
-          <input type="checkbox" checked={allowNestedWarnings}
-                onChange={(e) => setAllowNestedWarnings(e.target.checked)} />
-          제외 라벨이 버스 서브트리 내부에 중첩돼 있어도 강행(기본은 안전하게 거부)
-        </label>
+        <section className="bulk-step">
+          <h4 className="bulk-step-header">
+            <span className="bulk-step-num">2</span>제외·버스 옵션
+          </h4>
+          <div className="bulk-field">
+            제외할 트랙(정확 일치 — 소스에 있는 트랙 라벨 중에서 고르기)
+            {trackLabels.length === 0 ? (
+              <p className="bulk-hint">소스 곡을 선택하면 트랙 목록이 여기 나타납니다.</p>
+            ) : (
+              <div className="bulk-bus-checks bulk-track-checks">
+                {trackLabels.map((label) => (
+                  <label key={label}>
+                    <input type="checkbox" checked={excludeLabels.has(label)}
+                          onChange={() => toggleExcludeLabel(label)} />
+                    {label}
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="bulk-field">
+            버스/병렬 구조
+            <div className="bulk-bus-modes">
+              <label><input type="radio" checked={busMode === "all"}
+                            onChange={() => setBusMode("all")} /> 전체</label>
+              <label><input type="radio" checked={busMode === "none"}
+                            onChange={() => setBusMode("none")} /> 건드리지 않음(트랙만)</label>
+              <label><input type="radio" checked={busMode === "custom"}
+                            onChange={() => setBusMode("custom")} /> 직접 선택</label>
+            </div>
+            <p className="bulk-hint">
+              "전체"는 최상위 버스만 옮기고 그 아래 중첩된 버스는 함께 딸려가 미리보기에
+              별도 항목으로 나오지 않습니다(예: MIXOUT 하나만 [버스 전송]으로 보여도
+              그 아래 서브버스가 전부 포함됨). 특정 중첩 버스만 따로 옮기려면 "직접
+              선택"에서 고르세요.
+            </p>
+            {busMode === "custom" && (
+              busTree.length === 0 ? (
+                <p className="bulk-hint">소스 곡에서 버스를 찾지 못했습니다.</p>
+              ) : (
+                <>
+                  <p className="bulk-hint">
+                    상위 버스를 선택하면 하위 버스도 서브트리째 함께 전송되므로 자동으로
+                    "포함됨" 처리되어 개별 해제할 수 없습니다. 하위 버스만 따로 옮기려면
+                    상위는 선택하지 말고 해당 하위만 고르세요.
+                  </p>
+                  <div className="bulk-bus-checks bulk-bus-tree">
+                    {busTree.map((node) => {
+                      const impliedBy = (ancestorsOf.get(node.label) ?? [])
+                        .find((ancestor) => customBus.has(ancestor));
+                      const checked = customBus.has(node.label) || impliedBy !== undefined;
+                      return (
+                        <label key={node.label} style={{ paddingLeft: node.depth * 14 }}>
+                          <input type="checkbox" checked={checked} disabled={impliedBy !== undefined}
+                                onChange={() => toggleCustomBus(node.label)} />
+                          {node.depth > 0 ? `└ ${node.label}` : node.label}
+                          {impliedBy !== undefined && (
+                            <span className="bulk-bus-implied">({impliedBy}에 포함됨)</span>
+                          )}
+                        </label>
+                      );
+                    })}
+                  </div>
+                </>
+              )
+            )}
+          </div>
+
+          <label className="preserve-sends-toggle">
+            <input type="checkbox" checked={allowNestedWarnings}
+                  onChange={(e) => setAllowNestedWarnings(e.target.checked)} />
+            제외 라벨이 버스 서브트리 내부에 중첩돼 있어도 강행(기본은 안전하게 거부)
+          </label>
+        </section>
 
         {errorMsg && <p className="bulk-error">{errorMsg}</p>}
 
-        {previews && (
-          <div className="bulk-results">
-            {previews.map((p) => (
-              <div key={p.path} className="bulk-result-block">
-                <strong>{fileNameOf(p.path)}</strong>
-                {p.status === "error" ? (
-                  <p className="bulk-error">실패: {p.message}</p>
-                ) : (
-                  <>
-                    <p className="bulk-summary">{summarize(p.plans ?? [])}</p>
-                    <ul className="bulk-plan-list">
-                      {(p.plans ?? []).map((plan) => (
-                        <li key={plan.label} className={`bulk-action-${plan.action}`}>
-                          [{ACTION_LABEL[plan.action] ?? plan.action}] {plan.label}
-                        </li>
-                      ))}
-                    </ul>
-                    {(p.warnings ?? []).map((w) => (
-                      <p key={w} className="bulk-warning">경고: {w}</p>
-                    ))}
-                  </>
-                )}
+        {(previews || outcomes) && (
+          <section className="bulk-step">
+            <h4 className="bulk-step-header">
+              <span className="bulk-step-num">3</span>결과
+            </h4>
+            {previews && (
+              <div className="bulk-results">
+                {previews.map((p) => (
+                  <div key={p.path} className="bulk-result-block">
+                    <strong>{fileNameOf(p.path)}</strong>
+                    {p.status === "error" ? (
+                      <p className="bulk-error">실패: {p.message}</p>
+                    ) : (
+                      <>
+                        <p className="bulk-summary">{summarize(p.plans ?? [])}</p>
+                        <ul className="bulk-plan-list">
+                          {(p.plans ?? []).map((plan) => (
+                            <li key={plan.label} className={`bulk-action-${plan.action}`}>
+                              [{ACTION_LABEL[plan.action] ?? plan.action}] {plan.label}
+                            </li>
+                          ))}
+                        </ul>
+                        {(p.warnings ?? []).map((w) => (
+                          <p key={w} className="bulk-warning">경고: {w}</p>
+                        ))}
+                      </>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
+            )}
 
-        {outcomes && (
-          <div className="bulk-results">
-            {outcomes.map((o) => (
-              <div key={o.path} className="bulk-result-block">
-                <strong>{fileNameOf(o.path)}</strong>
-                {o.status === "error" ? (
-                  <p className="bulk-error">실패(파일 미변경): {o.message}</p>
-                ) : (
-                  <>
-                    <p className="bulk-ok">적용 완료 — 백업: {o.savedBackup}</p>
-                    {(o.warnings ?? []).map((w) => (
-                      <p key={w} className="bulk-warning">경고: {w}</p>
-                    ))}
-                  </>
-                )}
+            {outcomes && (
+              <div className="bulk-results">
+                {outcomes.map((o) => (
+                  <div key={o.path} className="bulk-result-block">
+                    <strong>{fileNameOf(o.path)}</strong>
+                    {o.status === "error" ? (
+                      <p className="bulk-error">실패(파일 미변경): {o.message}</p>
+                    ) : (
+                      <>
+                        <p className="bulk-ok">적용 완료 — 백업: {o.savedBackup}</p>
+                        {(o.warnings ?? []).map((w) => (
+                          <p key={w} className="bulk-warning">경고: {w}</p>
+                        ))}
+                      </>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </section>
         )}
 
         <div className="modal-actions">
