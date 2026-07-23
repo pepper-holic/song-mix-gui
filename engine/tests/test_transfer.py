@@ -112,6 +112,29 @@ def test_transfer_drum_subtree(src, src_model, dst):
     assert errors_of(validate(dst, new_model)) == []
 
 
+def test_replace_insert_chain_carries_new_bus_sends(src, src_model, dst):
+    """실사용 버그 재현: replace_insert_chain은 인서트 체인만 다뤄 send가 이식되지
+    않음("FX1은 생성되고 플러그인도 받아지는데 send는 반영 안 됨") — 같은 배치에서
+    방금 이식된 버스/FX(bus_uid_map)로 가는 send만 골라 새로 연결해야 한다."""
+    # 1) MIXOUT 서브트리를 먼저 이식(FX 1 포함) — 신규 uid 맵 확보(실제 apply_recipe 순서와 동일)
+    mixout_uid = src_model.by_label("MIXOUT").uid
+    bus_result = transfer_subtree(src, src_model, mixout_uid, dst, overwrite_confirmed=True)
+    new_fx1_uid = bus_result.new_channel_uids[src_model.by_label("FX 1").uid]
+
+    # 2) "vox"(FX 1로 send를 보내는 소스 트랙)를 대상 트랙에 체인 교체
+    dst_model = load_model(dst)
+    target = next(c for c in dst_model.channels if c.group == "AudioTrack")
+    vox = src_model.by_label("vox")
+    replace_insert_chain(src, src_model, vox.uid, dst, target.uid,
+                         bus_uid_map=bus_result.new_channel_uids)
+
+    new_model = parse_mixer(dst.read_text(MIXER_ENTRY))
+    new_target = new_model.by_uid()[target.uid]
+    assert any(s.destination_uid == new_fx1_uid for s in new_target.sends), \
+        f"신규 FX 1로의 send가 대상 트랙에 없음: {[s.destination_uid for s in new_target.sends]}"
+    assert errors_of(validate(dst, new_model)) == []
+
+
 def test_transfer_creates_missing_channel_group(src, src_model, dst):
     """실사용 버그 재현: 대상에 그 종류 채널이 하나도 없어 Studio One이
     <ChannelGroup> 자체를 생략한 경우("ChannelGroup 없음: AudioEffect"로 실패했음) —

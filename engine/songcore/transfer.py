@@ -25,6 +25,7 @@ TRANSFERABLE_TAGS = ("AudioGroupChannel", "AudioEffectChannel")
 UID_PATTERN = r"\{[0-9A-F-]{36}\}"
 AUTOMATION_TRACK_RE = re.compile(r"<AutomationTrack\b.*?</AutomationTrack>", re.S)
 LIST_TAG_RE = re.compile(r"<(/?)List\b[^>]*?(/?)>")
+ATTR_TAG_RE = re.compile(r"<(/?)Attributes\b[^>]*?(/?)>")
 
 
 class TransferError(RuntimeError):
@@ -113,6 +114,109 @@ def _next_channel_name(used: set[str]) -> str:
         n += 1
     used.add(f"Channel{n:02d}")
     return f"Channel{n:02d}"
+
+
+def _next_send_name(used: set[str]) -> str:
+    n = 1
+    while f"Send{n:02d}" in used:
+        n += 1
+    used.add(f"Send{n:02d}")
+    return f"Send{n:02d}"
+
+
+def _attributes_span(xml: str, open_pattern: str) -> tuple[int, int, int]:
+    """open_pattern(정규식)으로 찾은 <Attributes ...> 여는 태그의
+    (여는태그 시작, 내용 시작, 닫는 태그 시작) 오프셋.
+
+    Attributes는 서로 중첩되므로(예: Sends 안의 SendNN 안의 Panner) 첫 </Attributes>로
+    단순 검색하면 중첩된 자식의 닫는 태그를 오판한다 — 태그 깊이를 세어 진짜 닫는
+    태그를 찾는다(_list_content_span과 동일한 패턴, 대상 태그만 다름).
+    """
+    m = re.search(open_pattern, xml)
+    if not m:
+        raise TransferError(f"Attributes 블록을 찾을 수 없음: {open_pattern}")
+    content_start = m.end()
+    depth = 1
+    for tm in ATTR_TAG_RE.finditer(xml, content_start):
+        is_close, is_selfclose = tm.group(1) == "/", tm.group(2) == "/"
+        if is_selfclose:
+            continue
+        depth += -1 if is_close else 1
+        if depth == 0:
+            return m.start(), content_start, tm.start()
+    raise TransferError(f"Attributes 닫는 태그를 찾지 못함: {open_pattern}")
+
+
+def _top_level_attr_children(xml: str, start: int, end: int) -> list[tuple[int, int]]:
+    """[start, end) 구간에서 depth 1(바로 아래) 자식 <Attributes>...</Attributes>
+    블록들의 (시작, 끝) 오프셋 목록 — Sends 안의 개별 SendNN 블록을 열거하는 데 쓴다."""
+    depth = 0
+    cur_start = None
+    spans: list[tuple[int, int]] = []
+    for tm in ATTR_TAG_RE.finditer(xml, start, end):
+        is_close, is_selfclose = tm.group(1) == "/", tm.group(2) == "/"
+        if is_selfclose:
+            continue
+        if not is_close:
+            if depth == 0:
+                cur_start = tm.start()
+            depth += 1
+        else:
+            depth -= 1
+            if depth == 0:
+                spans.append((cur_start, tm.end()))
+    return spans
+
+
+def _carry_over_sends(src_block: str, dst_block: str, bus_uid_map: dict[str, str],
+                      ch_label: str, result: TransferResult) -> str:
+    """src_block(소스 채널)의 send 중 이번 배치에서 함께 이식된 버스/FX(bus_uid_map의
+    키)를 향하던 것만 골라 dst_block(대상 채널)에 새로 추가한다.
+
+    체인 교체(replace_insert_chain)는 인서트 체인만 다루고 send는 그대로 두므로,
+    소스 트랙이 이번에 새로 이식된 FX 리턴 버스로 보내던 send가 대상에는 없어
+    "반영 안 됨"으로 보이는 문제(실사용 리포트)를 메운다. 대상에 이미 있던
+    무관한 send나, 이번 배치 밖의(이미 대상에 존재하는) 채널로의 send는 건드리지
+    않는다 — 이번에 새로 이식된 대상만 자동 연결(범위를 최소화, YAGNI).
+    """
+    if not bus_uid_map:
+        return dst_block
+    try:
+        _o, src_start, src_end = _attributes_span(src_block, r'<Attributes x:id="Sends">')
+    except TransferError:
+        return dst_block
+
+    new_sends: list[str] = []
+    for c_start, c_end in _top_level_attr_children(src_block, src_start, src_end):
+        send_block = src_block[c_start:c_end]
+        conn_m = re.search(
+            rf'<Connection x:id="destination" objectID="({UID_PATTERN})/Input" friendlyName="([^"]*)"',
+            send_block)
+        if not conn_m or conn_m.group(1) not in bus_uid_map:
+            continue
+        new_target = bus_uid_map[conn_m.group(1)]
+        nb = send_block.replace(conn_m.group(1), new_target)
+        for um in re.finditer(rf'<UID x:id="uniqueID" uid="({UID_PATTERN})"/>', nb):
+            nb = nb.replace(um.group(1), new_guid())
+        new_sends.append(nb)
+        result.notes.append(f"{ch_label} send→{conn_m.group(2)} 자동 연결(신규 이식분)")
+
+    if not new_sends:
+        return dst_block
+    try:
+        _o, dst_start, dst_end = _attributes_span(dst_block, r'<Attributes x:id="Sends">')
+    except TransferError:
+        return dst_block  # 대상에 Sends 블록 자체가 없으면 조용히 스킵(관측상 항상 존재)
+
+    used = {m.group(1) for m in re.finditer(r'name="(Send\d+)"',
+                                            dst_block[dst_start:dst_end])}
+    renamed = []
+    for nb in new_sends:
+        name = _next_send_name(used)
+        renamed.append(re.sub(r'name="Send\d+"', f'name="{name}"', nb, count=1))
+    insert_at = dst_end
+    return (dst_block[:insert_at] + "\r\n\t\t\t\t\t"
+           + "\r\n\t\t\t\t\t".join(renamed) + dst_block[insert_at:])
 
 
 def safe_label_path(label: str) -> str:
@@ -425,8 +529,15 @@ def transfer_subtree(src: SongContainer, src_model: MixerModel, root_uid: str,
 
 
 def replace_insert_chain(src: SongContainer, src_model: MixerModel, src_uid: str,
-                         dst: SongContainer, dst_uid: str) -> TransferResult:
-    """소스 채널의 인서트 체인/세팅을 대상 채널에 이식 (기존 체인 교체)."""
+                         dst: SongContainer, dst_uid: str,
+                         bus_uid_map: dict[str, str] | None = None) -> TransferResult:
+    """소스 채널의 인서트 체인/세팅을 대상 채널에 이식 (기존 체인 교체).
+
+    bus_uid_map: 같은 배치에서 함께 이식된 버스/FX의 (소스 uid → 대상 신규 uid) 맵.
+    지정하면 소스 채널이 그 대상들로 보내던 send만 골라 대상 채널에도 새로 연결한다
+    (bulk_apply에서 사용 — 인서트 체인 교체만으로는 send가 이식되지 않는 문제 보완).
+    단일 채널 GUI 체인 복사(Ctrl+우클릭)에서는 이 문맥이 없으므로 생략(None)해도 무방.
+    """
     result = TransferResult()
     src_by_uid = src_model.by_uid()
     src_ch = src_by_uid[src_uid]
@@ -442,9 +553,12 @@ def replace_insert_chain(src: SongContainer, src_model: MixerModel, src_uid: str
     _s, _e, _t, src_block = _find_channel_block(src_mixer, src_uid)
     ds, de, _dt, dst_block = _find_channel_block(dst_mixer, dst_uid)
 
+    dst_block = _carry_over_sends(src_block, dst_block, bus_uid_map or {},
+                                  src_ch.label, result)
+
     ins_re = re.compile(r'<Attributes x:id="Inserts">.*?\r\n\t{4}</Attributes>', re.S)
     src_ins = ins_re.search(src_block)
-    dst_ins = ins_re.search(dst_block)
+    dst_ins = ins_re.search(dst_block)  # send 삽입으로 오프셋이 바뀌었을 수 있어 재탐색
     if not src_ins or not dst_ins:
         raise TransferError("Inserts 블록을 찾을 수 없음")
     new_ins = src_ins.group(0)

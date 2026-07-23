@@ -228,14 +228,23 @@ def apply_recipe(src: SongContainer, src_model: MixerModel, dst: SongContainer,
             "없음(allow_nested_exclusion_warnings=True로 명시적으로 허용하거나 "
             "exclude_labels/include_bus_labels를 조정할 것): " + "; ".join(warnings))
     result = RecipeResult(plans=plans, warnings=warnings)
+    # 버스/FX 서브트리를 먼저 전부 이식해 신규 uid 맵을 만든 뒤, 트랙 체인교체가 그
+    # 맵을 참조해 "이번 배치에서 새로 이식된 버스/FX로의 send"만 함께 연결한다
+    # (순서 고정 — plans 목록 자체의 원 순서와 무관하게 항상 버스 먼저 처리해야
+    # 트랙이 아직 없는 버스로의 send를 놓치지 않는다).
+    bus_uid_map: dict[str, str] = {}
     for plan in plans:
         if plan.action == "bus-subtree":
-            result.transfers.append(transfer_subtree(
+            transfer_result = transfer_subtree(
                 src, src_model, plan.src_uid, dst, overwrite_confirmed=True,
-                preserve_external_sends=preserve_external_sends))
-        elif plan.action == "chain-replace":
+                preserve_external_sends=preserve_external_sends)
+            result.transfers.append(transfer_result)
+            bus_uid_map.update(transfer_result.new_channel_uids)
+    for plan in plans:
+        if plan.action == "chain-replace":
             result.transfers.append(replace_insert_chain(
-                src, src_model, plan.src_uid, dst, plan.dst_uid))
+                src, src_model, plan.src_uid, dst, plan.dst_uid,
+                bus_uid_map=bus_uid_map))
     return result
 
 
