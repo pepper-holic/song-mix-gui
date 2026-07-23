@@ -61,16 +61,44 @@ def _find_channel_block(mixer: str, uid: str) -> tuple[int, int, str, str]:
     raise TransferError(f"채널 블록을 찾을 수 없음: {uid}")
 
 
-def _group_insert_pos(mixer: str, group_name: str) -> int:
-    """해당 ChannelGroup의 닫는 태그 직전 삽입 위치."""
+# audiomixer.xml의 <ChannelGroup> 표준 순서(실제 코퍼스로 확인) — 대상 song에 해당
+# 종류 채널이 하나도 없으면 Studio One이 그룹 자체를 아예 생략하므로, 새로 만들 때
+# 형제 그룹 중 어디에 끼워 넣어야 할지 판단하는 기준으로 쓴다.
+GROUP_ORDER = ("AudioInput", "AudioOutput", "AudioTrack", "AudioGroup", "AudioEffect")
+
+
+def _ensure_channel_group(mixer: str, group_name: str) -> str:
+    """group_name의 <ChannelGroup>이 통째로 없으면(대상에 그 종류 채널이 하나도
+    없어 Studio One이 그룹 자체를 생략한 경우 — 예: FX 채널이 전혀 없던 곡에
+    버스/FX 서브트리를 처음 이식) GROUP_ORDER 순서에 맞는 위치에 빈 그룹을 새로
+    만들어 삽입한다. 이미 있으면 그대로 반환."""
+    if re.search(rf'<ChannelGroup name="{group_name}"[^>]*>', mixer):
+        return mixer
+    idx = GROUP_ORDER.index(group_name)
+    new_group = f'<ChannelGroup name="{group_name}" flags="1">\r\n\t\t</ChannelGroup>'
+    for later in GROUP_ORDER[idx + 1:]:
+        m = re.search(rf'\r\n(\t+)<ChannelGroup name="{later}"[^>]*>', mixer)
+        if m:
+            return mixer[:m.start()] + f"\r\n{m.group(1)}" + new_group + mixer[m.start():]
+    for earlier in reversed(GROUP_ORDER[:idx]):
+        m = re.search(rf'\r\n(\t+)<ChannelGroup name="{earlier}"[^>]*>.*?</ChannelGroup>',
+                      mixer, re.S)
+        if m:
+            return mixer[:m.end()] + f"\r\n{m.group(1)}" + new_group + mixer[m.end():]
+    raise TransferError(f"ChannelGroup을 삽입할 기준 위치를 찾을 수 없음: {group_name}")
+
+
+def _group_insert_pos(mixer: str, group_name: str) -> tuple[str, int]:
+    """해당 ChannelGroup의 닫는 태그 직전 삽입 위치. 반환: (갱신된 mixer, 위치) —
+    그룹이 없던 경우 _ensure_channel_group이 새로 만들므로 mixer가 바뀔 수 있다."""
+    mixer = _ensure_channel_group(mixer, group_name)
     m = re.search(rf'<ChannelGroup name="{group_name}"[^>]*>(.*?)</ChannelGroup>',
                   mixer, re.S)
-    if not m:
-        raise TransferError(f"ChannelGroup 없음: {group_name}")
+    assert m is not None  # _ensure_channel_group가 존재를 보장
     inner_end = m.end(1)
     # 닫는 태그 앞의 들여쓰기(\r\n\t\t)를 보존하기 위해 마지막 개행 위치로 후퇴
     tail = mixer.rfind("\r\n", m.start(1), inner_end)
-    return tail if tail != -1 else inner_end
+    return mixer, (tail if tail != -1 else inner_end)
 
 
 def _used_channel_names(mixer: str, group_name: str) -> set[str]:
@@ -343,7 +371,7 @@ def transfer_subtree(src: SongContainer, src_model: MixerModel, root_uid: str,
         new_name = _next_channel_name(used)
         nb = re.sub(r'name="Channel\d+"', f'name="{new_name}"', nb, count=1)
         # 3d) 삽입
-        pos = _group_insert_pos(dst_mixer, group)
+        dst_mixer, pos = _group_insert_pos(dst_mixer, group)
         dst_mixer = dst_mixer[:pos] + "\r\n\t\t\t" + nb + dst_mixer[pos:]
 
         new_uid = uid_map[src_uid]
@@ -592,7 +620,7 @@ def transfer_track(src: SongContainer, src_model: MixerModel, src_channel_uid: s
     new_name = _next_channel_name(used)
     nb = re.sub(r'name="Channel\d+"', f'name="{new_name}"', nb, count=1)
 
-    pos = _group_insert_pos(dst_mixer, "AudioTrack")
+    dst_mixer, pos = _group_insert_pos(dst_mixer, "AudioTrack")
     dst_mixer = dst_mixer[:pos] + "\r\n\t\t\t" + nb + dst_mixer[pos:]
     result.new_channel_uids[src_channel_uid] = new_uid
 

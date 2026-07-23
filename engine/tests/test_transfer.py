@@ -112,6 +112,28 @@ def test_transfer_drum_subtree(src, src_model, dst):
     assert errors_of(validate(dst, new_model)) == []
 
 
+def test_transfer_creates_missing_channel_group(src, src_model, dst):
+    """실사용 버그 재현: 대상에 그 종류 채널이 하나도 없어 Studio One이
+    <ChannelGroup> 자체를 생략한 경우("ChannelGroup 없음: AudioEffect"로 실패했음) —
+    MIXOUT 서브트리 안의 FX 채널("FX 1")을 AudioEffect 그룹이 없는 dst로 전송해도
+    그룹을 새로 만들어 성공해야 한다."""
+    dst_mixer = dst.read_text(MIXER_ENTRY)
+    assert '<ChannelGroup name="AudioEffect"' not in dst_mixer  # 실제 코퍼스 전제 확인
+    mixout_uid = src_model.by_label("MIXOUT").uid
+
+    # dst에 이미 동명 "DR Parallel"이 있어 나는 충돌은 이 테스트의 관심사가 아님 — 승인 처리
+    result = transfer_subtree(src, src_model, mixout_uid, dst, overwrite_confirmed=True)
+
+    transferred_labels = {src_model.by_uid()[u].label for u in result.new_channel_uids}
+    assert "FX 1" in transferred_labels
+    new_mixer = dst.read_text(MIXER_ENTRY)
+    assert '<ChannelGroup name="AudioEffect" flags="1">' in new_mixer
+    new_model = parse_mixer(new_mixer)
+    fx1 = new_model.by_label("FX 1")
+    assert fx1 is not None and fx1.tag == "AudioEffectChannel"
+    assert errors_of(validate(dst, new_model)) == []
+
+
 # ---- US-V2-016 S2: 외부 send 보존 옵션 ----
 
 def test_transfer_preserves_external_send_when_same_label_exists(src, src_model, dst):
